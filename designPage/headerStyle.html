@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    
+    <title>CSMS</title>
+    <style>
+        body {
+            background-image: url("");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .list-group-item-action.logout:hover {
+            background-color: red;
+            color: white;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .card {
+            margin: 0 0.5rem;
+            max-height: 20rem;
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-img-top-custom {
+            height: 100px;
+            object-fit: cover;
+        }
+        .custom-card {
+            margin: 20px;
+        }
+        .content {
+            flex: 1;
+        }
+        .option-container {
+            margin: 8px;
+            padding: 8px;
+        }
+        .option-container input[type="radio"] {
+            margin-right: 10px;
+        }
+        .submit-button {
+            float: right;
+        }
+        .full-width-button {
+            width: 100%;
+            display: block;
+        }
+        .receipt-container {
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        .receipt-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+        .logo-receipt {
+            width: 130px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 2%;
+            margin: 0 auto; /* Center the image horizontally */
+            display: block; /* Ensures proper centering */
+
+            /* Convert the image to black and white */
+            filter: grayscale(100%);
+        }
+        th.action-column {
+            position: sticky;
+            right: 0;
+            z-index: 1;
+            background-color: #f9f9f9;
+            min-width: 100px;
+        }
+        td.action-cell {
+            position: sticky;
+            right: 0;
+            min-width: 100px;
+            padding: 8px;
+            border-left: 1px solod #ddd;
+            background-color: #fff;
+        }
+        .hidden-container {
+            display: block;
+        }
+        .hidden-container2 {
+            display: none;
+        }
+        .readonly-select {
+        background-color: #f8f9fa;
+        border: 1px solid #ccc;
+        pointer-events: none; /* Prevent interaction */
+        }
+        .custom-shadow {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add your desired shadow style */
+        }
+        .custom-container {
+            margin: 20px; /* Adjust the margin value as needed */
+
+        }
+        .custom-container2 {
+            height: 300px; /* Adjust the height value as needed */
+            overflow-y: auto;
+        }
+        .custom-table-container {
+            max-height: 400px; /* Adjust the max height value as needed */
+            overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+        }
+        .accordion {
+            margin: 20px; /* Add left and right margins */
+        }
+    </style>
