@@ -1,5 +1,7 @@
 <?php 
     include("../designPage/headerLogReg.php");
+    include("../database.php");
+session_start();
 ?>
 <?php
     $message = "";
