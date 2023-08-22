@@ -189,3 +189,18 @@
   </div>
 </div>
 
+<script>
+function encryptAndDecrypt() {
+  var key = "kjs";
+
+  // Decrypt
+  var decryptedMessage = "guEI0irH7OQzTmwUSHEQRA==";
+  for (var i = 0; i < encryptedMessage.length; i++) {
+    var charCode = encryptedMessage.charCodeAt(i) - key.charCodeAt(i % key.length);
+    decryptedMessage += String.fromCharCode(charCode);
+  }
+
+  // Display decrypted message in alert
+  alert("Decrypted Message: " + decryptedMessage);
+}
+</script>
