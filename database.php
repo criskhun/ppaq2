@@ -1,8 +1,8 @@
 <?php
-    $db_server = "";
-    $db_user = "root";
-    $db_pass = "";
-    $db_name = "qusysdb";
+    $db_server = "localhost";
+    $db_user = "u854000491_root";
+    $db_pass = "Letmein123";
+    $db_name = "u854000491_csms";
     $conn = "";
 
     try{
