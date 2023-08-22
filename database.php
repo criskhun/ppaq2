@@ -1,5 +1,5 @@
 <?php
-    $db_server = "localhost";
+    $db_server = "";
     $db_user = "u854000491_root";
     $db_pass = "Letmein123";
     $db_name = "u854000491_csms";
