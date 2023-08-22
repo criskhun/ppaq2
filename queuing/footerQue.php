@@ -34,15 +34,18 @@
 
     // Display Selected Value
     function displaySelectedValue() {
-        var selectedValue = document.querySelector('input[name="option"]:checked').value;
-        var otherInputValue = document.querySelector(".optionOtherInputOpta").value;
-        var displayInput = document.getElementById("selectedValueInput");
+    var selectedValue = document.querySelector('input[name="option"]:checked').value;
+    var otherInputValue = document.querySelector(".optionOtherInputOpta").value;
+    var displayInput = document.getElementById("selectedValueInput");
 
-        if (selectedValue === "otherOption") {
-            displayInput.value = "OO: " + otherInputValue;
-        } else {
-            displayInput.value = selectedValue;
-        }
+    if (selectedValue === "otherOption") {
+        displayInput.value = "OO: " + otherInputValue;
+        toggleDivVisibility(); // Call the toggleDivVisibility function here
+    } else {
+        displayInput.value = selectedValue;
+        toggleDivVisibility(); // Call the toggleDivVisibility function here
+    }
+
     }
 </script>
 
