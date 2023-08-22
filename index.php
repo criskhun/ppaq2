@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                        <img src="../ppaq2/images/assessment.jpg" alt="Card Image" class="card-img-top">
+                        <img src="../images/assessment.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">Assessment</h4>
                           <p class="card-text">Assessment Description</p>
@@ -52,7 +52,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                    <img src="../ppaq2/images/marine.jpg" alt="Card Image" class="card-img-top">
+                    <img src="../images/marine.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">Marine</h4>
                           <p class="card-text">Marine Description</p>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                    <img src="../ppaq2/images/terminal.jpg" alt="Card Image" class="card-img-top">
+                    <img src="../images/terminal.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">Terminal</h4>
                           <p class="card-text">Terminal Description</p>
@@ -76,7 +76,7 @@
             <div class="row">
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                    <img src="../ppaq2/images/collection.jpg" alt="Card Image" class="card-img-top">
+                    <img src="../images/collection.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">Collection</h4>
                           <p class="card-text">Collection Description</p>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                    <img src="../ppaq2/images/encoding.jpg" alt="Card Image" class="card-img-top">
+                    <img src="../images/encoding.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">Data Encoding</h4>
                           <p class="card-text">Data Encoding Description</p>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                    <img src="../ppaq2/images/accesspass.jpg" alt="Card Image" class="card-img-top">
+                    <img src="../images/accesspass.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">Access Pass</h4>
                           <p class="card-text">Access Pass Description</p>
@@ -110,7 +110,7 @@
             <div class="row">
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                    <img src="../ppaq2/images/ad.jpg" alt="Card Image" class="card-img-top">
+                    <img src="../images/ad.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">Admin</h4>
                           <p class="card-text">Admin Description</p>
@@ -120,7 +120,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                    <img src="../ppaq2/images/esd.jpg" alt="Card Image" class="card-img-top">
+                    <img src="../images/esd.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">Engineering</h4>
                           <p class="card-text">Engineering Description</p>
@@ -130,7 +130,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                    <img src="../ppaq2/images/fd.jpg" alt="Card Image" class="card-img-top">
+                    <img src="../images/fd.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">Finance</h4>
                           <p class="card-text">Finance Description</p>
@@ -144,7 +144,7 @@
             <div class="row">
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                    <img src="../ppaq2/images/opm.jpg" alt="Card Image" class="card-img-top">
+                    <img src="../images/opm.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">OPM</h4>
                           <p class="card-text">OPM Description</p>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                    <img src="../ppaq2/images/ppd.jpg" alt="Card Image" class="card-img-top">
+                    <img src="../images/ppd.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">Port Police</h4>
                           <p class="card-text">Port Police Description</p>
