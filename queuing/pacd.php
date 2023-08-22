@@ -13,7 +13,7 @@
         <p class="card-text">Port Services Clearance Office </p>
         <form action="../queuing/pico.php" method="POST">
             <input type="hidden" name="pacdToPass" value="PICO">
-            <button type="submit" class="btn btn-primary" name="submitBtnPICO">Click to Proceed</button>
+            <button type="submit" class="btn btn-primary" name="submitBtnPICO"><i class="fa-solid fa-caret-right"></i> Click to Proceed</button>
         </form>
         </div>
     </div>
@@ -24,7 +24,7 @@
         <p class="card-text">External Transaction</p>
         <form action="../queuing/external.php" method="POST">
             <input type="hidden" name="pacdToPass" value="External">
-            <button type="submit" class="btn btn-primary" name="submitBtnPICO">Click to Proceed</button>
+            <button type="submit" class="btn btn-primary" name="submitBtnPICO"><i class="fa-solid fa-caret-right"></i> Click to Proceed</button>
         </form>
         </div>
     </div>

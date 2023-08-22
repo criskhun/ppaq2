@@ -88,7 +88,7 @@
                 </label>
             </div>
             <input type="submit" class="btn btn-success" value="Register" name="submit">
-            <a href="userLogin.php" class="btn btn-primary">Login</a>
+            <a href="userLogin.php" class="btn btn-primary"><i class="fa-solid fa-key"></i> Login</a>
         </form>
         <hr>
         <div class="alert alert-danger <?php if (empty($message)) echo 'd-none'; ?>">

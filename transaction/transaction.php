@@ -84,8 +84,8 @@ ini_set('display_errors', 1);
                                     <td>$rowTransaction[served]</td>
                                     <td>$rowTransaction[duration]</td>
                                     <td class='action-cell'>
-                                        <a class='btn btn-primary btn-sm' href='serve.php?id=$rowTransaction[id]'>Serve</a>
-                                        <a class='btn btn-danger btn-sm' href='#' data-bs-toggle='modal' data-bs-target='#confirmDropModal' data-transaction-id='$transactionId'>Drop</a>
+                                        <a class='btn btn-primary btn-sm' href='serve.php?id=$rowTransaction[id]'><i class='fa-solid fa-wand-sparkles'></i>Serve</a>
+                                        <a class='btn btn-danger btn-sm' href='#' data-bs-toggle='modal' data-bs-target='#confirmDropModal' data-transaction-id='$transactionId'><i class='fa-solid fa-trash-can'></i> Drop</a>
                                     </td>
                                 </tr>
                                 ";
@@ -99,11 +99,11 @@ ini_set('display_errors', 1);
   $totalPages = ceil($totalRows / $itemsPerPage);
 
   if ($currentPage > 1) {
-    echo "<a class='btn btn-primary' href='transaction.php?page=" . ($currentPage - 1) . "'>Previous</a>";
+    echo "<a class='btn btn-primary' href='transaction.php?page=" . ($currentPage - 1) . "'><i class='fa-solid fa-backward'></i> Previous</a>";
   }
 
   if ($currentPage < $totalPages) {
-    echo "<a class='btn btn-primary' href='transaction.php?page=" . ($currentPage + 1) . "'>Next</a>";
+    echo "<a class='btn btn-primary' href='transaction.php?page=" . ($currentPage + 1) . "'><i class='fa-solid fa-forward'></i> Next</a>";
   }
   ?>
         </div>

@@ -177,7 +177,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <input type="text" class="form-control optionOtherInputOpta" name="otherOption" placeholder="Please specify" disabled>
                 </div>
                 <hr>
-                <button type="button" id="submitButton" class="btn btn-outline-primary submit-button" onclick="displaySelectedValue(),toggleDivVisibility()">Next</button>
+                <button type="button" id="submitButton" class="btn btn-outline-primary submit-button" onclick="displaySelectedValue(),toggleDivVisibility()"><i class="fa-solid fa-forward"></i> Next</button>
             </div>
             <div class="col-sm-6" hidden>
                 <input type="text" id="officeInput" name="officeSelected00" value="<?php echo $pacdValue; ?>" >
@@ -201,7 +201,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" class="form-control" id="portUser" placeholder="Enter Name" name="portUserSelected00">
         </div>
         <hr>
-        <button type="submit" name="codeRelay" class="btn btn-primary full-width-button">Submit</button>
+        <button type="submit" name="codeRelay" class="btn btn-primary full-width-button"><i class="fa-solid fa-check"></i> Submit</button>
         
         </div>
     </div>

@@ -22,7 +22,7 @@ if(isset($_POST['submitBtnPICO'])) {
             <form action="../queuing/picoServices.php" method="POST">
                 <input type="hidden" name="accessPassToPass" value="Admin">
                 <input type="hidden" name="pacdToPass" value="<?php echo isset($_POST['pacdToPass']) ? $_POST['pacdToPass'] : ''; ?>">
-                <button type="submit" class="btn btn-primary" name="submitBtnAccessPass">Admin</button>
+                <button type="submit" class="btn btn-primary" name="submitBtnAccessPass"><i class="fa-solid fa-caret-right"></i> Admin</button>
             </form>
             </div>
         </div>
@@ -34,7 +34,7 @@ if(isset($_POST['submitBtnPICO'])) {
             <form action="../queuing/picoServices.php" method="POST">
                 <input type="hidden" name="accessPassToPass" value="Engineering">
                 <input type="hidden" name="pacdToPass" value="<?php echo isset($_POST['pacdToPass']) ? $_POST['pacdToPass'] : ''; ?>">
-                <button type="submit" class="btn btn-primary" name="submitBtnAccessPass">Engineering</button>
+                <button type="submit" class="btn btn-primary" name="submitBtnAccessPass"><i class="fa-solid fa-caret-right"></i> Engineering</button>
             </form>
             </div>
         </div>
@@ -46,7 +46,7 @@ if(isset($_POST['submitBtnPICO'])) {
             <form action="../queuing/picoServices.php" method="POST">
                 <input type="hidden" name="accessPassToPass" value="Finance">
                 <input type="hidden" name="pacdToPass" value="<?php echo isset($_POST['pacdToPass']) ? $_POST['pacdToPass'] : ''; ?>">
-                <button type="submit" class="btn btn-primary" name="submitBtnAccessPass">Finance</button>
+                <button type="submit" class="btn btn-primary" name="submitBtnAccessPass"><i class="fa-solid fa-caret-right"></i> Finance</button>
             </form>
             </div>
         </div>
@@ -60,21 +60,21 @@ if(isset($_POST['submitBtnPICO'])) {
                     <form action="../queuing/picoServices.php" method="POST">
                         <input type="hidden" name="accessPassToPass" value="OPM-Legal">
                         <input type="hidden" name="pacdToPass" value="<?php echo isset($_POST['pacdToPass']) ? $_POST['pacdToPass'] : ''; ?>">
-                        <button type="submit" class="btn btn-primary" name="submitBtnAccessPass">Legal</button>
+                        <button type="submit" class="btn btn-primary" name="submitBtnAccessPass"><i class="fa-solid fa-caret-right"></i> Legal</button>
                     </form>
                 </div>
                 <div class="col-md-4">
                     <form action="../queuing/picoServices.php" method="POST">
                         <input type="hidden" name="accessPassToPass" value="OPM-Permits">
                         <input type="hidden" name="pacdToPass" value="<?php echo isset($_POST['pacdToPass']) ? $_POST['pacdToPass'] : ''; ?>">
-                        <button type="submit" class="btn btn-primary" name="submitBtnAccessPass">Permits</button>
+                        <button type="submit" class="btn btn-primary" name="submitBtnAccessPass"><i class="fa-solid fa-caret-right"></i> Permits</button>
                     </form>
                 </div>
                 <div class="col-md-4">
                     <form action="../queuing/picoServices.php" method="POST">
                         <input type="hidden" name="accessPassToPass" value="OPM-Records">
                         <input type="hidden" name="pacdToPass" value="<?php echo isset($_POST['pacdToPass']) ? $_POST['pacdToPass'] : ''; ?>">
-                        <button type="submit" class="btn btn-primary" name="submitBtnAccessPass">Records</button>
+                        <button type="submit" class="btn btn-primary" name="submitBtnAccessPass"><i class="fa-solid fa-caret-right"></i> Records</button>
                     </form>
                 </div>
             </div>
@@ -88,7 +88,7 @@ if(isset($_POST['submitBtnPICO'])) {
             <form action="../queuing/picoServices.php" method="POST">
                 <input type="hidden" name="accessPassToPass" value="Port Police">
                 <input type="hidden" name="pacdToPass" value="<?php echo isset($_POST['pacdToPass']) ? $_POST['pacdToPass'] : ''; ?>">
-                <button type="submit" class="btn btn-primary" name="submitBtnAccessPass">Port Police</button>
+                <button type="submit" class="btn btn-primary" name="submitBtnAccessPass"><i class="fa-solid fa-caret-right"></i> Port Police</button>
             </form>
             </div>
         </div>
@@ -100,7 +100,7 @@ if(isset($_POST['submitBtnPICO'])) {
             <form action="../queuing/picoServices.php" method="POST">
                 <input type="hidden" name="accessPassToPass" value="Port Services">
                 <input type="hidden" name="pacdToPass" value="<?php echo isset($_POST['pacdToPass']) ? $_POST['pacdToPass'] : ''; ?>">
-                <button type="submit" class="btn btn-primary" name="submitBtnAccessPass">Port Services</button>
+                <button type="submit" class="btn btn-primary" name="submitBtnAccessPass"><i class="fa-solid fa-caret-right"></i> Port Services</button>
             </form>
             </div>
         </div>

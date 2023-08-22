@@ -68,8 +68,8 @@ if (isset($_GET['transaction'])) {
 ?>
 <div class="d-grid">
     
-  <button type="button" class="btn btn-primary btn-block mb-2">Print</button>
-  <a href="../queuing/pacd.php" class="btn btn-primary btn-block mb-2">Home</a>
+  <button type="button" class="btn btn-primary btn-block mb-2"><i class="fa-solid fa-print"></i> Print</button>
+  <a href="../queuing/pacd.php" class="btn btn-primary btn-block mb-2"><i class="fa-solid fa-house"></i> Home</a>
 </div>
 </div>
 

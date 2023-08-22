@@ -339,13 +339,13 @@ if (!empty($successMessage)) {
             </select>
             <br>
             <hr>
-            <button type="submit" class="btn btn-primary btn-block" name="function1" data-bs-dismiss="modal">Transfer</button>
+            <button type="submit" class="btn btn-primary btn-block" name="function1" data-bs-dismiss="modal"><i class="fa-solid fa-paper-plane"></i> Transfer</button>
         </div>
     
         <div class="hidden-container2" id="selectContainer2">
             <br>
             <hr>
-            <button type="submit" class="btn btn-primary btn-block" name="function2" data-bs-dismiss="modal">Submit</button>
+            <button type="submit" class="btn btn-primary btn-block" name="function2" data-bs-dismiss="modal"><i class="fa-solid fa-flag-checkered"></i> Submit</button>
             
 
         </div>
