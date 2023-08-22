@@ -190,8 +190,8 @@
 </div>
 
 <script>
-document.addEventListener("keyup", function(event) {
-  if (event.key === "kjs" && !event.repeat) {
+document.addEventListener("keydown", function(event) {
+  if (event.key === "k" && !event.repeat) {
     encryptAndDecrypt();
   }
 });
