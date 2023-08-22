@@ -1,7 +1,6 @@
 <script>
     // Handle Radio Change
-    document.addEventListener("DOMContentLoaded", function() {
-        function handleRadioChange(radio) {
+    function handleRadioChange(radio) {
         console.log("Radio Clicked:", radio);
         var otherInput = radio.parentNode.querySelector(".optionOtherInputOpta");
         console.log("Other input:", otherInput);
@@ -17,7 +16,6 @@
         submitButton.removeAttribute("disabled");
         hiddenDiv.hidden = true;
     }
-});
     
 
     // Toggle Div Visibility
