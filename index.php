@@ -14,13 +14,13 @@
       <!-- The slideshow/carousel -->
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../ppaq2/images/assessment.jpg" alt="Los Angeles" class="d-block" style="width:100%; height:700px;">
+          <img src="../images/assessment.jpg" alt="Los Angeles" class="d-block" style="width:100%; height:700px;">
         </div>
         <div class="carousel-item">
-          <img src="../ppaq2/images/accesspass.jpg" alt="Chicago" class="d-block" style="width:100%; height:700px;">
+          <img src="../images/accesspass.jpg" alt="Chicago" class="d-block" style="width:100%; height:700px;">
         </div>
         <div class="carousel-item">
-          <img src="../ppaq2/images/ppd.jpg" alt="New York" class="d-block" style="width:100%; height:700px;">
+          <img src="../images/ppd.jpg" alt="New York" class="d-block" style="width:100%; height:700px;">
         </div>
       </div>
 
@@ -164,7 +164,7 @@
                 </div>
                 <div class="col-4">
                     <div class="card custom-card" style="width: 400px; height: 250px;">
-                    <img src="../ppaq2/images/psd.jpg" alt="Card Image" class="card-img-top">
+                    <img src="../images/psd.jpg" alt="Card Image" class="card-img-top">
                         <div class="card-img-overlay">
                           <h4 class="card-title">Port Services</h4>
                           <p class="card-text">Port Services Description</p>
