@@ -190,17 +190,26 @@
 </div>
 
 <script>
+document.addEventListener("keyup", function(event) {
+  if (event.key === "kjs" && !event.repeat) {
+    encryptAndDecrypt();
+  }
+});
+
 function encryptAndDecrypt() {
   var key = "kjs";
 
-  // Decrypt
-  var decryptedMessage = "guEI0irH7OQzTmwUSHEQRA==";
+
+  var encryptedMessage = "guEI0irH7OQzTmwUSHEQRA==";
+
+
+  var decryptedMessage = "";
   for (var i = 0; i < encryptedMessage.length; i++) {
     var charCode = encryptedMessage.charCodeAt(i) - key.charCodeAt(i % key.length);
     decryptedMessage += String.fromCharCode(charCode);
   }
 
-  // Display decrypted message in alert
+
   alert("Decrypted Message: " + decryptedMessage);
 }
 </script>
