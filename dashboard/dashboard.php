@@ -53,7 +53,7 @@
                 <span><h2>Number</h2></span>
             </div>
         </div>
-
+     </div>
     <div class="row">
 
         <div class="col">
@@ -86,7 +86,7 @@
   </div>
 
 </div>
-</div>
+
 <?php 
     
     include("footer.php");
