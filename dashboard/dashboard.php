@@ -24,12 +24,12 @@
   <div class="col-sm-8">
     <div class="row">
         <div class="col">
-            <div class="custom-container3 p-5 my-2 border d-flex flex-column align-items-center">
+            <div class="custom-container3 p-5 my-2 border">
                 <div class="d-flex align-items-center">
                     <h5>Total Transaction</h5>          
                 </div>
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <span>Number of transactions</span>
+                <span class="text-center">Number of transactions</span>
             </div>
         </div>
         <div class="col">
