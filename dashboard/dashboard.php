@@ -19,6 +19,11 @@
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     $totalTransactions = $row["total_transactions"];
+
+    $sql = "SELECT COUNT(*) AS total_users FROM users";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $totalUsers = $row["total_users"];
 ?>
 
 <div class="container-fluid">
@@ -35,7 +40,7 @@
                     <h5 class="m-0">Total Transaction</h5>
                     <i class="fa-solid fa-wand-magic-sparkles icon ml-2"></i>    
                 </div>
-                <span><h2><?php echo $totalTransactions; ?></h2></span>
+                <span><h1><?php echo $totalTransactions; ?></h1></span>
             </div>
         </div>
 
@@ -45,7 +50,7 @@
                     <h5 class="m-0">Number of Users</h5>
                     <i class="fa-solid fa-users icon ml-2"></i>    
                 </div>
-                <span><h2>Number</h2></span>
+                <span><h1><?php echo $totalUsers; ?></h1></span>
             </div>
         </div>
 
