@@ -128,7 +128,8 @@
                     <h5 class="m-0">Yearly Transaction</h5>
                     <i class="fa-solid fa-calendar-days icon ml-2"></i>    
                 </div>
-            <span><h2><?php echo $displayTextMonthly; ?></h2></span>
+                <canvas id="monthlyChart"></canvas>
+
         </div>
     </div>
 
@@ -171,7 +172,6 @@
 
 </div>
 
-<?php 
-    
-    include("footer.php");
-?>
+
+<script src="../dashboard/chart.js"></script>
+
