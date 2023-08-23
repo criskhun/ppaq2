@@ -80,9 +80,15 @@
   </div>
 
   <div class="col-sm-4">
-    <div class="custom-container3 p-5 my-2 border">
-        <h5>Featured Transaction</h5>
-    </div>
+  <div class="col">
+            <div class="custom-container3 p-5 my-2 border d-flex flex-column align-items-start">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <h5 class="m-0">Featured Transaction</h5>
+                    <i class="fa-solid fa-list icon ml-2"></i>   
+                </div>
+<!-- here to code-->
+            </div>
+        </div>
   </div>
 
 </div>
