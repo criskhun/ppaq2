@@ -24,17 +24,17 @@
   <div class="col-sm-8">
     <div class="row">
         <div class="col">
-            <div class="custom-container3 p-5 my-5 border">
+            <div class="custom-container3 p-5 my-1 border">
                 <h5>Total Transaction</h5>
             </div>
         </div>
         <div class="col">
-            <div class="custom-container3 p-5 my-5 border">
+            <div class="custom-container3 p-5 my-1 border">
                 <h5>Number of Users</h5>
             </div>
         </div>
         <div class="col">
-            <div class="custom-container3 p-5 my-5 border">
+            <div class="custom-container3 p-5 my-1 border">
                 <div class="row">
                     <span><h5>Others</h5></span>
                     <span class="icon">Icon</span>
@@ -45,19 +45,19 @@
     </div>
     <div class="row">
         <div class="col">
-            <div class="custom-container3 p-5 my-2 border">
+            <div class="custom-container3 p-5 my-1 border">
                 <h5>Total Transaction</h5>
             </div>
         </div>
         <div class="col">
-            <div class="custom-container3 p-5 my-2 border">
+            <div class="custom-container3 p-5 my-1 border">
                 <h5>Number of Users</h5>
         </div>
     </div>
   </div>
   </div>
   <div class="col-sm-4">
-    <div class="custom-container3 p-5 my-5 border">
+    <div class="custom-container3 p-5 my-1 border">
         <h5>Featured Transaction</h5>
     </div>
   </div>
