@@ -31,6 +31,7 @@
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     $totalTransactionDaily = $row["totalTransactionDaily"];
+    $displayText = ($totalTransactionDaily > 0) ? $totalTransactionDaily : "0";
 ?>
 
 <div class="container-fluid">
@@ -67,7 +68,7 @@
                     <h5 class="m-0">Daily Transaction</h5>
                     <i class="fa-solid fa-calendar-day icon ml-2"></i>    
                 </div>
-                <span><h2><?php echo $totalTransactionDaily; ?></h2></span>
+                <span><h2><?php echo $displayText; ?></h2></span>
             </div>
         </div>
      </div>
