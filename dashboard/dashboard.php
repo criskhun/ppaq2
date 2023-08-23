@@ -128,7 +128,7 @@
                     <h5 class="m-0">Yearly Transaction</h5>
                     <i class="fa-solid fa-calendar icon ml-2"></i>    
                 </div>
-                <canvas id="monthlyChart" width="400" height="200"></canvas>
+                
 
         </div>
     </div>
