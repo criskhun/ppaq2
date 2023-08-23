@@ -36,15 +36,15 @@
                 <div class="d-flex align-items-center">
                     <h5>Number of Users</h5>
                 </div>
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <i class="fa-solid fa-users"></i>
             </div>
         </div>
         <div class="col">
             <div class="custom-container3 p-5 my-2 border">
                 <div class="d-flex align-items-center">
-                    <h5>Others</h5>
+                    <h5>Daily Transaction</h5>
                 </div>
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <i class="fa-solid fa-calendar-day"></i>
             </div>
         </div>
     </div>
@@ -52,17 +52,17 @@
         <div class="col">
             <div class="custom-container3 p-5 my-2 border">
                 <div class="d-flex align-items-center">
-                    <h5>Total Transaction</h5>
+                    <h5>Weekly</h5>
                 </div>
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <i class="fa-solid fa-calendar-week"></i>
             </div>
         </div>
         <div class="col">
             <div class="custom-container3 p-5 my-2 border">
                 <div class="d-flex align-items-center">
-                    <h5>Total Transaction</h5>
+                    <h5>Monthly</h5>
                 </div>
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <i class="fa-solid fa-calendar-days"></i>
         </div>
     </div>
   </div>
