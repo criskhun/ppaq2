@@ -14,6 +14,11 @@
         $role = $_SESSION["role"];
         $des = $_SESSION["designation"];
     }
+
+    $sql = "SELECT COUNT(*) AS total_transactions FROM transaction_tbl";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $totalTransactions = $row["total_transactions"];
 ?>
 
 <div class="container-fluid">
@@ -30,7 +35,7 @@
                     <h5 class="m-0">Total Transaction</h5>
                     <i class="fa-solid fa-wand-magic-sparkles icon ml-2"></i>    
                 </div>
-                <span><h2>Number</h2></span>
+                <span><h2><?php echo $totalTransactions; ?></h2></span>
             </div>
         </div>
 
