@@ -30,6 +30,7 @@
                 </div>
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
             </div>
+            <h3>Number</h3>
         </div>
         <div class="col">
             <div class="custom-container3 p-5 my-2 border">
