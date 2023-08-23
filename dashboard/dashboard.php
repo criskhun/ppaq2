@@ -15,7 +15,7 @@
         $des = $_SESSION["designation"];
     }
 
-    $sql = "SELECT COUNT(*) AS total_transactions FROM transaction_tbl";
+    $sql = "SELECT COUNT(*) AS total_transactions FROM transactionLog_tbl";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     $totalTransactions = $row["total_transactions"];
@@ -27,11 +27,24 @@
 
     $currentDate = date("Y-m-d");
 
-    $sql = "SELECT COUNT(*) AS total_transactions FROM transaction_tbl WHERE date='$currentDate'";
+    $sql = "SELECT COUNT(*) AS totalTransactionDaily FROM transactionLog_tbl WHERE date='$currentDate'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     $totalTransactionDaily = $row["totalTransactionDaily"];
-    $displayText = ($totalTransactionDaily > 0) ? $totalTransactionDaily : "0";
+    $displayTextDaily = ($totalTransactionDaily > 0) ? $totalTransactionDaily : "0";
+
+    $weekStart = date("Y-m-d", strtotime('this week', strtotime($currentDate)));
+    $weekEnd = date("Y-m-d", strtotime('this week +6 days', strtotime($currentDate)));
+
+    // Query to get the total number of transactions for the current week
+    $sql = "SELECT COUNT(*) AS total_transactions FROM transactionLog_tbl WHERE date BETWEEN '$weekStart' AND '$weekEnd'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $totalTransactionsWeekly = $row["total_transactions"];
+
+    // Determine the text to display based on the result
+    $displayTextWeekly = ($totalTransactionsWeekly > 0) ? $totalTransactionsWeekly : "0";
+
 ?>
 
 <div class="container-fluid">
@@ -68,7 +81,7 @@
                     <h5 class="m-0">Daily Transaction</h5>
                     <i class="fa-solid fa-calendar-day icon ml-2"></i>    
                 </div>
-                <span><h2><?php echo $displayText; ?></h2></span>
+                <span><h1><?php echo $displayTextDaily; ?></h1></span>
             </div>
         </div>
      </div>
@@ -80,7 +93,7 @@
                     <h5 class="m-0">Weekly</h5>
                     <i class="fa-solid fa-calendar-week icon ml-2"></i>    
                 </div>
-                <span><h2>Number</h2></span>
+                <span><h2><?php echo $displayTextWeekly; ?></h2></span>
             </div>
         </div>
 
@@ -103,6 +116,7 @@
                 <div class="d-flex justify-content-between align-items-center w-100">
                     <h5 class="m-0">User List</h5>
                     <br>
+                    <hr>
                     <i class="fa-solid fa-list icon ml-2"></i>   
                 </div>
                 <?php
