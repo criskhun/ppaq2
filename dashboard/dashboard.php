@@ -173,5 +173,3 @@
 </div>
 
 
-<script src="../dashboard/chart.js"></script>
-
