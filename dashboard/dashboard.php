@@ -97,7 +97,7 @@
                     <?php
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<li>" . $row["transaction_name"] . "</li>";
+                            echo "<li>" . $row["surname"] . $row["first_name"] . $row["midle_name"] . "</li>";
                         }
                     } else {
                         echo "No transactions found.";
