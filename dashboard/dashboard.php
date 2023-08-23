@@ -37,13 +37,26 @@
     $weekEnd = date("Y-m-d", strtotime('this week +6 days', strtotime($currentDate)));
 
     // Query to get the total number of transactions for the current week
-    $sql = "SELECT COUNT(*) AS total_transactions FROM transactionLog_tbl WHERE date BETWEEN '$weekStart' AND '$weekEnd'";
+    $sql = "SELECT COUNT(*) AS total_weekly FROM transactionLog_tbl WHERE date BETWEEN '$weekStart' AND '$weekEnd'";
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    $totalTransactionsWeekly = $row["total_transactions"];
+    $totalTransactionsWeekly = $row["total_weekly"];
 
     // Determine the text to display based on the result
     $displayTextWeekly = ($totalTransactionsWeekly > 0) ? $totalTransactionsWeekly : "0";
+
+    $monthStart = date("Y-m-01", strtotime($currentDate));
+    $monthEnd = date("Y-m-t", strtotime($currentDate));
+
+    // Query to get the total number of transactions for the current month
+    $sql = "SELECT COUNT(*) AS total_month FROM transactionLog_tbl WHERE date BETWEEN '$monthStart' AND '$monthEnd'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $totalTransactionsMonthly = $row["total_month"];
+
+    // Determine the text to display based on the result
+    $displayTextMonthly = ($totalTransactionsMonthly > 0) ? $totalTransactionsMonthly : "0";
+
 
 ?>
 
@@ -103,7 +116,7 @@
                     <h5 class="m-0">Monthly</h5>
                     <i class="fa-solid fa-calendar-days icon ml-2"></i>    
                 </div>
-                <span><h2>Number</h2></span>
+                <span><h2><?php echo $displayTextMonthly; ?><</h2></span>
             </div>
         </div>
     </div>
