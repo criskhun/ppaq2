@@ -35,8 +35,10 @@
         </div>
         <div class="col">
             <div class="container p-5 my-5 border">
-                <span><h5>Others</h5></span>
-                <span>Icon</span>
+                <div class="row">
+                    <span><h5>Others</h5></span>
+                    <span>Icon</span>
+                </div>
                 <h4>Number</h4>
             </div>
         </div>
