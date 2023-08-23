@@ -86,7 +86,28 @@
                     <h5 class="m-0">Featured Transaction</h5>
                     <i class="fa-solid fa-list icon ml-2"></i>   
                 </div>
-<!-- here to code-->
+                <?php
+                // Fetch data from the database
+                $sql = "SELECT * FROM users";
+                $result = $conn->query($sql);
+                ?>
+
+                <!-- Display the list -->
+                <ul>
+                    <?php
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<li>" . $row["transaction_name"] . "</li>";
+                        }
+                    } else {
+                        echo "No transactions found.";
+                    }
+                    ?>
+                </ul>
+                <?php
+                    $conn->close();
+                ?>
+
             </div>
         </div>
   </div>
