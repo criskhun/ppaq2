@@ -1,7 +1,7 @@
 <?php 
     session_start();
     include("../designPage/headerLogin.php");
-
+    include("navbar.php");
     if (isset($_SESSION["email"])) {
         $email = $_SESSION["email"];
         $id = $_SESSION["id"];
@@ -34,6 +34,6 @@
 </div>
 
 <?php 
-    include("navbar.php");
+    
     include("footer.php");
 ?>
