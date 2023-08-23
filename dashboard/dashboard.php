@@ -29,7 +29,9 @@
                     <h5>Total Transaction</h5>
                 </div>
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
-                <h3>Number</h3>
+                <div>
+                    <h3>Number</h3>
+                </div>
             </div>
         </div>
         <div class="col">
