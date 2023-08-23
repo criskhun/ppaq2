@@ -25,7 +25,7 @@
     <div class="row">
         <div class="col">
             <div class="custom-container3 p-5 my-2 border">
-                <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center justify-content-between">
                     <h5>Total Transaction</h5>          
                 </div>
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
