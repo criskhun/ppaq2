@@ -25,7 +25,10 @@
     <div class="row">
         <div class="col">
             <div class="custom-container3 p-5 my-2 border">
-                <h5>Total Transaction</h5>
+                <div class="d-flex align-items-center">
+                    <h5>Total Transaction</h5>
+                </div>
+                <i class="fa-solid fa-list"></i>
             </div>
         </div>
         <div class="col">
@@ -37,7 +40,7 @@
             <div class="custom-container3 p-5 my-2 border">
                 <div class="row">
                     <span><h5>Others</h5></span>
-                    <span class="icon">Icon</span>
+
                 </div>
                 <h4>Number</h4>
             </div>
