@@ -27,8 +27,8 @@
             <div class="custom-container3 p-5 my-2 border">
                 <div class="d-flex align-items-center">
                     <h5>Total Transaction</h5>
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
                 </div>
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
                 <div class="container">
                     <h3>Numbers:s</h3>
                 </div>
