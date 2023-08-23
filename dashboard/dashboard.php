@@ -107,7 +107,7 @@
                     <h5 class="m-0">Weekly</h5>
                     <i class="fa-solid fa-calendar-week icon ml-2"></i>    
                 </div>
-                <span><h2><?php echo $displayTextWeekly; ?></h2></span>
+                <span><h1><?php echo $displayTextWeekly; ?></h1></span>
             </div>
         </div>
 
@@ -117,7 +117,7 @@
                     <h5 class="m-0">Monthly</h5>
                     <i class="fa-solid fa-calendar-days icon ml-2"></i>    
                 </div>
-                <span><h2><?php echo $displayTextMonthly; ?></h2></span>
+                <span><h1><?php echo $displayTextMonthly; ?></h1></span>
             </div>
         </div>
     </div>
