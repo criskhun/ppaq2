@@ -24,12 +24,13 @@
   <div class="col-sm-8">
     <div class="row">
         <div class="col">
-            <div class="custom-container3 p-5 my-2 border">
-                <div class="d-flex align-items-center justify-content-between">
-                    <h5>Total Transaction</h5>          
+            <div class="custom-container3 p-5 my-2 border d-flex flex-column align-items-center">
+                <div class="d-flex align-items-center mb-3">
+                    <h5 class="m-0">Total Transaction</h5>
+                    <i class="fa-solid fa-wand-magic-sparkles icon ml-2"></i>    
                 </div>
-                <i class="fa-solid fa-wand-magic-sparkles icon"></i>
-                <span class="text-center">Number of transactions</span>
+                
+                <span>Number of transactions</span>
             </div>
         </div>
         <div class="col">
