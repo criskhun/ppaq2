@@ -45,12 +45,12 @@
     </div>
     <div class="row">
         <div class="col">
-            <div class="custom-container3 p-2 my-5 border">
+            <div class="custom-container3 p-5 my-2 border">
                 <h5>Total Transaction</h5>
             </div>
         </div>
         <div class="col">
-            <div class="custom-container3 p-2 my-5 border">
+            <div class="custom-container3 p-5 my-2 border">
                 <h5>Number of Users</h5>
         </div>
     </div>
