@@ -43,6 +43,17 @@
             </div>
         </div>
     </div>
+    <div class="row">
+    <div class="col">
+            <div class="custom-container3 p-5 my-5 border">
+                <h5>Total Transaction</h5>
+            </div>
+        </div>
+        <div class="col">
+            <div class="custom-container3 p-5 my-5 border">
+                <h5>Number of Users</h5>
+        </div>
+    </div>
   </div>
   <div class="col-sm-4">
     <div class="custom-container3 p-5 my-5 border">
