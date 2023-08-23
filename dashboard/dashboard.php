@@ -23,13 +23,27 @@
 <div class="row">
   <div class="col-sm-8">
     <div class="row">
-        <div class="col">Total Transaction</div>
-        <div class="col">Number of Users</div>
-        <div class="col">Other</div>
+        <div class="col">
+            <div class="container p-5 my-5 border">
+                <h4>Total Transaction</h4>
+            </div>
+        </div>
+        <div class="col">
+            <div class="container p-5 my-5 border">
+                <h4>Number of Users</h4>
+            </div>
+        </div>
+        <div class="col">
+            <div class="container p-5 my-5 border">
+                <h4>Others</h4>
+            </div>
+        </div>
     </div>
   </div>
   <div class="col-sm-4">
-    Popular Transaction
+    <div class="container p-5 my-5 border">
+        <h4>Featured Transaction</h4>
+    </div>
   </div>
 </div>
 
