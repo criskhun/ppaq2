@@ -28,33 +28,41 @@
                 <div class="d-flex align-items-center">
                     <h5>Total Transaction</h5>
                 </div>
-                <i class="fa-solid fa-list"></i>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
             </div>
         </div>
         <div class="col">
             <div class="custom-container3 p-5 my-2 border">
-                <h5>Number of Users</h5>
-            </div>
-        </div>
-        <div class="col">
-            <div class="custom-container3 p-5 my-2 border">
-                <div class="row">
-                    <span><h5>Others</h5></span>
-
+                <div class="d-flex align-items-center">
+                    <h5>Number of Users</h5>
                 </div>
-                <h4>Number</h4>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+        </div>
+        <div class="col">
+            <div class="custom-container3 p-5 my-2 border">
+                <div class="d-flex align-items-center">
+                    <h5>Others</h5>
+                </div>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col">
             <div class="custom-container3 p-5 my-2 border">
-                <h5>Total Transaction</h5>
+                <div class="d-flex align-items-center">
+                    <h5>Total Transaction</h5>
+                </div>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
             </div>
         </div>
         <div class="col">
             <div class="custom-container3 p-5 my-2 border">
-                <h5>Number of Users</h5>
+                <div class="d-flex align-items-center">
+                    <h5>Total Transaction</h5>
+                </div>
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
         </div>
     </div>
   </div>
