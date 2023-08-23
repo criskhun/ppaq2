@@ -76,14 +76,16 @@
             </div>
         </div>
     </div>
-    
+
   </div>
+
   <div class="col-sm-4">
     <div class="custom-container3 p-5 my-2 border">
         <h5>Featured Transaction</h5>
     </div>
   </div>
 
+</div>
 </div>
 <?php 
     
