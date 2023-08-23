@@ -13,11 +13,25 @@
         $date = $_SESSION["date"];
         $role = $_SESSION["role"];
         $des = $_SESSION["designation"];
-
-
     }
-
 ?>
+
+<div class="container-fluid">
+    <h3>Dashboard</h3>
+</div>
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="row">
+        <div class="col">Total Transaction</div>
+        <div class="col">Number of Users</div>
+        <div class="col">Other</div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    Popular Transaction
+  </div>
+</div>
 
 <?php 
     include("navbar.php");
