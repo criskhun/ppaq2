@@ -126,7 +126,7 @@
         <div class="custom-container3 p-5 my-2 border d-flex flex-column align-items-start">
             <div class="d-flex justify-content-between align-items-center w-100">
                     <h5 class="m-0">Yearly Transaction</h5>
-                    <i class="fa-solid fa-calendar-days icon ml-2"></i>    
+                    <i class="fa-solid fa-calendar icon ml-2"></i>    
                 </div>
                 <canvas id="monthlyChart"></canvas>
 
