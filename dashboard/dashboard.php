@@ -24,6 +24,13 @@
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     $totalUsers = $row["total_users"];
+
+    $currentDate = date("Y-m-d");
+
+    $sql = "SELECT COUNT(*) AS total_transactions FROM transaction_tbl WHERE date='$currentDate'";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $totalTransactionDaily = $row["totalTransactionDaily"];
 ?>
 
 <div class="container-fluid">
@@ -60,7 +67,7 @@
                     <h5 class="m-0">Daily Transaction</h5>
                     <i class="fa-solid fa-calendar-day icon ml-2"></i>    
                 </div>
-                <span><h2>Number</h2></span>
+                <span><h2><?php echo $totalTransactionDaily; ?></h2></span>
             </div>
         </div>
      </div>
