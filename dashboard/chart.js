@@ -3,7 +3,20 @@
 var ctx = document.getElementById("monthlyChart").getContext("2d");
 
 // Your PHP array containing monthly transaction data
-var monthlyData = <?php echo json_encode($monthlyData); ?>;
+var monthlyData = {
+    "January": 50,
+    "February": 30,
+    "March": 70,
+    "April": 40,
+    "May": 90,
+    "June": 60,
+    "July": 80,
+    "August": 55,
+    "September": 75,
+    "October": 45,
+    "November": 85,
+    "December": 65
+};
 
 // Extract months and counts
 var months = Object.keys(monthlyData);
