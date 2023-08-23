@@ -28,7 +28,7 @@
                 <div class="d-flex align-items-center justify-content-between">
                     <h5>Total Transaction</h5>          
                 </div>
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <i class="fa-solid fa-wand-magic-sparkles icon"></i>
                 <span class="text-center">Number of transactions</span>
             </div>
         </div>
