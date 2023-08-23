@@ -98,6 +98,7 @@
             </div>
         </div>
      </div>
+
     <div class="row">
 
         <div class="col">
@@ -116,8 +117,18 @@
                     <h5 class="m-0">Monthly</h5>
                     <i class="fa-solid fa-calendar-days icon ml-2"></i>    
                 </div>
-                <span><h2><?php echo $displayTextMonthly; ?><</h2></span>
+                <span><h2><?php echo $displayTextMonthly; ?></h2></span>
             </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="custom-container3 p-5 my-2 border d-flex flex-column align-items-start">
+            <div class="d-flex justify-content-between align-items-center w-100">
+                    <h5 class="m-0">Yearly Transaction</h5>
+                    <i class="fa-solid fa-calendar-days icon ml-2"></i>    
+                </div>
+            <span><h2><?php echo $displayTextMonthly; ?></h2></span>
         </div>
     </div>
 
