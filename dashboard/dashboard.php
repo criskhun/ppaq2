@@ -25,24 +25,24 @@
     <div class="row">
         <div class="col">
             <div class="container p-5 my-5 border">
-                <h4>Total Transaction</h4>
+                <h5>Total Transaction</h5>
             </div>
         </div>
         <div class="col">
             <div class="container p-5 my-5 border">
-                <h4>Number of Users</h4>
+                <h5>Number of Users</h5>
             </div>
         </div>
         <div class="col">
             <div class="container p-5 my-5 border">
-                <h4>Others</h4>
+                <h5>Others</h5>
             </div>
         </div>
     </div>
   </div>
   <div class="col-sm-4">
     <div class="container p-5 my-5 border">
-        <h4>Featured Transaction</h4>
+        <h5>Featured Transaction</h5>
     </div>
   </div>
 </div>
