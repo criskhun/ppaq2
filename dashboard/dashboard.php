@@ -35,7 +35,9 @@
         </div>
         <div class="col">
             <div class="container p-5 my-5 border">
-                <h5>Others</h5>
+                <span><h5>Others</h5></span>
+                <span>Icon</span>
+                <h4>Number</h4>
             </div>
         </div>
     </div>
