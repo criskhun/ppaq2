@@ -84,6 +84,7 @@
             <div class="custom-container3 p-5 my-2 border d-flex flex-column align-items-start">
                 <div class="d-flex justify-content-between align-items-center w-100">
                     <h5 class="m-0">User List</h5>
+                    <br>
                     <i class="fa-solid fa-list icon ml-2"></i>   
                 </div>
                 <?php
@@ -93,11 +94,11 @@
                 ?>
 
                 <!-- Display the list -->
-                <ul>
+                <ul class="custom-list">
                     <?php
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
-                            echo "<li>" . $row["surname"] . ", " . $row["first_name"] . " " . $row["midle_name"] . "\t " . $row["role"] . "\t " . $row["designation"] . "</li>";
+                            echo "<li><span>" . $row["surname"] . ", " . $row["first_name"] . " " . $row["midle_name"] . "</span><span> " . $row["role"] . "</span><span>" . $row["designation"] . "</span></li>";
                         }
                     } else {
                         echo "No transactions found.";
