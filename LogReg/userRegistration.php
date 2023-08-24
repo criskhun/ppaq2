@@ -105,7 +105,7 @@ session_start();
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const agreeCheckbox = document.querySelector(".form-check-input");
-    const modal = new bootstrap.Modal(document.getElementById("myModal"));
+    const modal = new bootstrap.Modal(document.getElementById("myModalReg"));
 
     agreeCheckbox.addEventListener("change", function() {
         if (this.checked) {
