@@ -66,18 +66,5 @@
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function() {
-        $('#reminder').on('change', function() {
-            let selectedDate = $(this).val();
-            if (selectedDate !== "") {
-                let parts = selectedDate.split('-');
-                if (parts.length === 3) {
-                    let formattedDate = parts[0] + '-' + parts[1] + '-' + parts[2];
-                    $(this).val(formattedDate);
-                }
-            }
-        });
-    });
-</script>
+
 
