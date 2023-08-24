@@ -73,7 +73,7 @@
                     of the CSMS agreement.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Agree</button>
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal">Agree</button>
             </div>
         </div>
     </div>
