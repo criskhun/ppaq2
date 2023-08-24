@@ -84,7 +84,7 @@
                         <div class="valid-feedback">Valid.</div>
                         <div class="invalid-feedback">Check this checkbox to continue.</div>
                     </div>
-                    <button type="submit" name="login" value="Login" class="btn btn-primary"></button>
+                    <input type="submit" name="login" value="Login" class="btn btn-primary"></input>
                     <hr>
                                 <div class="alert alert-danger <?php if (empty($message)) echo 'd-none'; ?>">
                                     <?php echo $message; ?>
