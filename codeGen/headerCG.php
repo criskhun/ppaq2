@@ -22,13 +22,7 @@ session_start();
             background-position: center;
 
         }
-        .header {
-
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .custom-row {
+        .custom-container {
             padding: 15px; /* Adjust padding as needed */
             border: 1px solid #ccc; /* Border style */
             border-radius: 10px; /* Rounded corners */
@@ -42,7 +36,4 @@ session_start();
 </head>
 <body>
 
-
-<div class="header">
-  </div>
 
