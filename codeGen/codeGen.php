@@ -54,6 +54,10 @@
                 <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
                 <label for="comment">Comments</label>
             </div>
+            <div class="form-floating mb-3 mt-3">
+                <input type="file" class="form-control" id="file" name="file">
+                <label for="file">Select a File</label>
+            </div>
             <button type="submit" class="btn btn-primary">Generate</button>
         </form>
         </div>
