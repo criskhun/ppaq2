@@ -68,10 +68,13 @@
 </div>
 <script>
     $(document).ready(function() {
-        $('#reminder').on('change', function() {
+        $('#reminder').on('input', function() {
             let selectedDate = $(this).val();
-            let formattedDate = new Date(selectedDate).toISOString().split('T')[0];
-            $(this).val(formattedDate);
+            let parts = selectedDate.split('-'); // Split the date into parts
+            if (parts.length === 3) {
+                let formattedDate = parts[0] + '-' + parts[1].padStart(2, '0') + '-' + parts[2].padStart(2, '0');
+                $(this).val(formattedDate);
+            }
         });
     });
 </script>
