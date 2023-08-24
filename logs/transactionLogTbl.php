@@ -25,6 +25,7 @@ $sql5 = "SELECT * FROM transactionLog_tbl ORDER BY date DESC";
                 <table class="table table-striped table-borderless table-hover">
                     <thead class="print-header">
                         <tr>
+                            <th>#</th>
                             <th>Office</th>
                             <th>Process</th>
                             <th>Service</th>
@@ -41,10 +42,12 @@ $sql5 = "SELECT * FROM transactionLog_tbl ORDER BY date DESC";
                     </thead>
                     <tbody id="tableBody">
                         <?php
+                        $counter = 1;
                             while ($rowTransaction = $resultTransactionLog->fetch_assoc()) {
                                 $transactionId = $rowTransaction['id'];
                                 echo "
                                 <tr>
+                                    <td>$counter</td>
                                     <td>$rowTransaction[office]</td>
                                     <td>$rowTransaction[transaction]</td>
                                     <td>$rowTransaction[service]</td>
@@ -58,6 +61,7 @@ $sql5 = "SELECT * FROM transactionLog_tbl ORDER BY date DESC";
                                     <td>$rowTransaction[duration]</td>
                                 </tr>
                                 ";
+                                $counter++;
                             }
                         ?>
                     </tbody>
@@ -65,5 +69,3 @@ $sql5 = "SELECT * FROM transactionLog_tbl ORDER BY date DESC";
                 <div class="print-footer">
 
                 </div>
-
-                <!--<script src="../logs/refreshLog.js"></script>-->
