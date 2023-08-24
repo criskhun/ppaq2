@@ -22,6 +22,14 @@ $sql5 = "SELECT * FROM transactionLog_tbl ORDER BY date DESC";
 <br>
 
 <div class="table-responsive">  
+    <div class="table-responsive">
+        <div id="rowCount">
+            <?php
+                $rowCount = $resultTransactionLog->num_rows;
+                echo "Total rows: $rowCount";
+            ?>
+        </div>
+    </div>
                 <table class="table table-striped table-borderless table-hover">
                     <thead class="print-header">
                         <tr>
@@ -66,6 +74,4 @@ $sql5 = "SELECT * FROM transactionLog_tbl ORDER BY date DESC";
                         ?>
                     </tbody>
                 </table>
-                <div class="print-footer">
 
-                </div>

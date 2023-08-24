@@ -47,59 +47,39 @@
     }
 </script>
 
-
-<script>
-    let currentPage = 1;
-    let rowsPerPage = 10;
-    function updateTable() {
-        const tableBody = document.getElementById('tableBody');
-        const rows = tableBody.getElementsByTagName('tr');
-        for (let i = 0; i < rows.length; i++) {
-            rows[i].style.display = 'none';
-        }
-        const startIndex = (currentPage -1) * rowsPerPage;
-        const endIndex = startIndex + rowsPerPage;
-        for (let i = startIndex; i < Math.min(endIndex, rows.length); i++) {
-            rows[i].style.display = 'table-row';
-        }
-    }
-    function changePage(pageChange) {
-        currentPage += pageChange;
-        if (currentPage < 1) {
-            currentPage = 1;
-        }
-        updateTable();
-    }
-    function changeRowsPerPage() {
-        const selectElement = document.getElementById('rowsPerPage');
-        rowsPerPage = parseInt(selectElement.value);
-        currentPage = 1;
-        updateTable();
-    }
-    updateTable();
-</script>
-
 <script>
     $(document).ready(function() {
-    function filterTableRows(searchValue) {
-        searchValue = searchValue.toLowerCase();
+        function updateRowCount() {
+            const visibleRowCount = $("#tableBody tr:visible").length;
+            $("#rowCount").text(`Total rows: ${visibleRowCount}`);
+        }
 
-        $("#tableBody tr").each(function () {
-            const rowText = $(this).text().toLowerCase();
+        function filterTableRows(searchValue) {
+            searchValue = searchValue.toLowerCase();
 
-            if (rowText.includes(searchValue)) {
-                $(this).show();
-            } else {
-                $(this).hide();
-            }
+            $("#tableBody tr").each(function () {
+                const rowText = $(this).text().toLowerCase();
+
+                if (rowText.includes(searchValue)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+
+            updateRowCount();
+        }
+
+        $("#searchInput").on("input", function() {
+            const searchValue = $(this).val();
+            filterTableRows(searchValue);
         });
-    }
-    $("#searchInput").on("input", function() {
-        const searchValue = $(this).val();
-        filterTableRows(searchValue);
+
+        // Initial row count display
+        updateRowCount();
     });
-});
 </script>
+
 
 </body>
 </html>
