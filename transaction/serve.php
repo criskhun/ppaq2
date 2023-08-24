@@ -207,7 +207,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             $sql = "DELETE FROM transaction_tbl WHERE id = $id";
             if ($conn->query($sql) === TRUE) {
                 // Successful deletion
-                header("location: transaction.php");
+                $redirectUrl = "../transaction/transaction.php";
+
+                echo '<script>window.location.href = "' . $redirectUrl . '";</script>';
                 exit;
             } else {
                 // Error in deletion
