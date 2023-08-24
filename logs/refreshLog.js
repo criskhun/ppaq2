@@ -14,4 +14,4 @@
     // Refresh the table data every 1/2 second
     setInterval(function() {
         refreshTableData('#tableBody', '../logs/fetchTransLog.php');
-    }, 500);
+    }, );
