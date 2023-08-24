@@ -6,7 +6,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
-                <h4><i class="fa-solid fa-triangle-exclamation"></i> Privacy Notice</h4>
+                <h5><i class="fa-solid fa-triangle-exclamation"></i> Privacy Notice</h5>
                 <br>
                 <p>This Privacy Notice is adopted in compliance with Republic Act No. 10173 or the Data 
                     Privacy Act of 2012 (DPA), its Implementing Rules and Regulations, and other relevant 
@@ -33,7 +33,7 @@
                     pursuant to a lawful purpose and to authorized recipients of such data.</p>
                 <br>
                 <br>
-                <h4><i class="fa-solid fa-user"></i> User Registration, Password and Security</h4>
+                <h5><i class="fa-solid fa-user"></i> User Registration, Password and Security</h5>
                 <br>
                 <p>Upon successful completion of Registration, user ID and password will be registered. You are responsible 
                     for maintaining the confidentiality of your username and password and you are held accountable for all 
@@ -43,7 +43,7 @@
                     from your failure to comply with the foregoing.</p>
                 <br>
                 <br>
-                <h4><i class="fa-solid fa-user"></i> User Conduct</h4>
+                <h5><i class="fa-solid fa-user"></i> User Conduct</h5>
                 <br>
                 <p>You agree that all information, data, text, software, photographs, graphics, messages or other materials 
                     whether publicly posted or privately transmitted, are the sole responsibility of the person from which 
@@ -51,7 +51,7 @@
                     post, e-mail or otherwise transmit via the PPA online system.</p>
                 <br>
                 <br>
-                <h4><i class="fa-solid fa-pencil"></i> Modification of Terms of Agreement</h4>
+                <h5><i class="fa-solid fa-pencil"></i> Modification of Terms of Agreement</h5>
                 <br>
                 <p>PPA reserves the right to add or to change/modify the terms of this Agreement. Changes could be made by 
                     us after the first posting to the Site and you will be deemed to have accepted any change if you continue 
@@ -61,13 +61,13 @@
                     or all of the content, products and services contained on the site without prior notice.</p>
                 <br>
                 <br>
-                <h4><i class="fa-solid fa-lock"></i> Security</h4>
+                <h5><i class="fa-solid fa-lock"></i> Security</h5>
                 <br>
                 <p>The Site has security measures in place to protect against the loss, misuse and alteration of information 
                     under our control.</p>
                 <br>
                 <br>
-                <h4>Goverment Law</h4>
+                <h5>Goverment Law</h5>
                 <br>
                 <p>PPA reserves the right to initiate any legal action against users violating all the above-mentioned terms 
                     of the CSMS agreement.</p>
