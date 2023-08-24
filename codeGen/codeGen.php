@@ -67,6 +67,16 @@
     </div>
 </div>
 <script>
+    $(document).ready(function() {
+        $('#reminder').on('change', function() {
+            let selectedDate = $(this).val();
+            let formattedDate = new Date(selectedDate).toISOString().split('T')[0];
+            $(this).val(formattedDate);
+        });
+    });
+</script>
+
+<script>
     function formatDate(input) {
         const selectedDate = new Date(input.value);
         const year = selectedDate.getFullYear();
