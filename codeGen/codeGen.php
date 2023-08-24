@@ -15,3 +15,50 @@
         $des = $_SESSION["designation"];
     }
 ?>
+
+<div class="container justify-content-center align-item-center custom-container">
+    <div class="row">
+        <div class="col">
+        <form action="/action_page.php">
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="email" placeholder="Enter Document Title" name="title">
+                <label for="title">Document Title</label>
+            </div>
+            <div class="form-floating mt-3 mb-3">
+                <input type="text" class="form-control" id="pwd" placeholder="Enter Sender Name" name="sender">
+                <label for="pwd">Sender</label>
+            </div>
+            <div class="form-floating">
+                <select class="form-select" id="doctype" name="doctype">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                <label for="doctype" class="form-label">Select Document Type (select one):</label>
+            </div>
+            <div class="form-floating">
+                <select class="form-select" id="urgentlvl" name="urgentlvl">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+                <label for="urgentlvl" class="form-label">Select Urgent Lvl (select one):</label>
+            </div>
+            <div class="form-floating mt-3 mb-3">
+                <input type="date" class="form-control" id="reminder" placeholder="Enter Date" name="reminder">
+                <label for="reminder">Sender</label>
+            </div>
+            <div class="form-floating mb-3 mt-3">
+                <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
+                <label for="comment">Comments</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate</button>
+        </form>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+</div>
