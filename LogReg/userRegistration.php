@@ -99,6 +99,9 @@ session_start();
         </div>
     </div>
 </div>
+<?php
+    include("agreeModal.php");
+?>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const agreeCheckbox = document.querySelector(".form-check-input");
@@ -113,6 +116,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-<?php
-    include("agreeModal.php");
-?>
+
