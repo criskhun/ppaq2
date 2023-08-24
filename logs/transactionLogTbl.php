@@ -5,22 +5,15 @@ $sql5 = "SELECT * FROM transactionLog_tbl ORDER BY date DESC";
     if (!$resultTransactionLog) {
         die("Invalid query: " . $conn->error);
     }
+
+    // Set default number of rows per page
+
 ?>
 <div class="input-group mb-3">
     <input type="text" id="searchInput" class="form-control" placeholder="Search...">
     <button class="btn btn-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Go</button>
 </div>
 
-<div class="pagination" style="display: flex; align-items: center; justify-content: space-between">
-    <div style="display: flex; align-items: center;">
-        <button class="btn btn-sm btn-primary" onclick="changePage(-1)"><i class="fa-solid fa-backward"></i> Prev</button>
-        <buttton class="btn btn-sm btn-primary" onclick="changePage(1)">Next <i class="fa-solid fa-forward"></i></buttton>
-        <select id="rowPerPage" onchange="changeRowsPerPage()" style="margin-left: 10px;">
-            <option value="10">10 rows</option>
-            <option value="50">50 rows</option>
-            <option value="100">100 rows</option>
-        </select>
-    </div>
     <div>
         <button class="btn btn-success" id="printButton"><i class="fa-solid fa-print"></i> Print</button>
         <button class="btn btn-success" id="exportButton"><i class="fa-solid fa-file-export"></i> Export</button>
@@ -33,7 +26,7 @@ $sql5 = "SELECT * FROM transactionLog_tbl ORDER BY date DESC";
                     <thead class="print-header">
                         <tr>
                             <th>Office</th>
-                            <th>Transaction</th>
+                            <th>Process</th>
                             <th>Service</th>
                             <th>Company</th>
                             <th>Port User</th>
