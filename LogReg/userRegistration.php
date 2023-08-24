@@ -99,7 +99,20 @@ session_start();
         </div>
     </div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const agreeCheckbox = document.querySelector(".form-check-input");
+    const modal = new bootstrap.Modal(document.getElementById("myModal"));
 
+    agreeCheckbox.addEventListener("change", function() {
+        if (this.checked) {
+            modal.show();
+        } else {
+            modal.hide();
+        }
+    });
+});
+</script>
 <?php
-    include("../designPage/footer.html");
+    include("agreeModal.php");
 ?>
