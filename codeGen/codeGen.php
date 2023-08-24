@@ -48,7 +48,7 @@
             </div>
             <div class="form-floating mt-3 mb-3">
                 <input type="date" class="form-control" id="reminder" placeholder="Enter Date" name="reminder" onchange="formatDate(this)">
-                <label for="reminder">Date (yyyy-mm-dd)</label>
+                <label for="reminder">Date</label>
             </div>
             <div class="form-floating mb-3 mt-3">
                 <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
