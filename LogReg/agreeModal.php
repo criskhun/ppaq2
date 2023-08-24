@@ -1,6 +1,6 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="modal-content modal-fullscreen">
+        <div class="modal-content modal-xl">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel">Terms and Condition</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
