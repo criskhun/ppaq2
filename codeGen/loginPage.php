@@ -3,7 +3,7 @@
 ?>
 
 <div class="container-fluid">
-    <div class="row justify-content-center align-item-center p-3 border rounded shadow">
+    <div class="row justify-content-center align-item-center custom-row">
         <div class="col-sm-3" style="background-image: url('../images/encoding.jpg'); background-size: cover; background-position: center; height: 100vh;">
 
         </div>
