@@ -47,7 +47,7 @@
                 <label for="urgentlvl" class="form-label">Select Urgent Lvl (select one):</label>
             </div>
             <div class="form-floating mt-3 mb-3">
-                <input type="date" class="form-control" id="reminder" placeholder="Enter Date" name="reminder" onchange="formatDate(this)">
+                <input type="date" class="form-control" id="reminder" placeholder="Enter Date" name="reminder" pattern="\d{4}-\d{2}-\d{2}">
                 <label for="reminder">Date (yyyy-mm-dd)</label>
             </div>
             <div class="form-floating mb-3 mt-3">
@@ -66,14 +66,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    function formatDate(input) {
-        const selectedDate = new Date(input.value);
-        const year = selectedDate.getFullYear();
-        const month = String(selectedDate.getMonth() + 1).padStart(2, '0');
-        const day = String(selectedDate.getDate()).padStart(2, '0');
-        const formattedDate = `${year}-${month}-${day}`;
-        input.value = formattedDate;
-    }
-</script>
