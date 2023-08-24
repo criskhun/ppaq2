@@ -17,7 +17,7 @@ if (isset($_POST['logout'])) {
     session_destroy();
 
     // Redirect to login page
-    echo '<script>window.location.href = "index.php";</script>';
+    echo '<script>window.location.href = "../index.php";</script>';
     exit;
 }
 ?>
