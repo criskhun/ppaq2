@@ -46,7 +46,7 @@
                         <div class="card-img-overlay">
                           <h4 class="card-title">Assessment</h4>
                           <p class="card-text">Assessment Description</p>
-                          <a href="#" class="btn btn-primary"><i class="fa-solid fa-square-arrow-up-right"></i> More Info</a>
+                          <a href="../codeGen/loginPage.php" class="btn btn-primary"><i class="fa-solid fa-square-arrow-up-right"></i> More Info</a>
                         </div>
                     </div>
                 </div>
