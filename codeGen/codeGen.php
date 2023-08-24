@@ -47,7 +47,7 @@
                 <label for="urgentlvl" class="form-label">Select Urgent Lvl (select one):</label>
             </div>
             <div class="form-floating mt-3 mb-3">
-                <input type="date" class="form-control" id="reminder" placeholder="Enter Date" name="reminder" onchange="formatDate(this)">
+                <input type="date" class="form-control" id="reminder" placeholder="Enter Date" name="reminder">
                 <label for="reminder">Date</label>
             </div>
             <div class="form-floating mb-3 mt-3">
