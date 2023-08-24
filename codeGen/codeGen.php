@@ -16,7 +16,7 @@
     }
 ?>
 
-<div class="container justify-content-center align-item-center custom-container">
+<div class="container justify-content-center align-item-center custom-container mt-3">
     <div class="row">
         <div class="col">
         <form action="/action_page.php">
@@ -28,7 +28,7 @@
                 <input type="text" class="form-control" id="pwd" placeholder="Enter Sender Name" name="sender">
                 <label for="pwd">Sender</label>
             </div>
-            <div class="form-floating">
+            <div class="form-floating mt-3 mb-3">
                 <select class="form-select" id="doctype" name="doctype">
                     <option>1</option>
                     <option>2</option>
@@ -37,7 +37,7 @@
                 </select>
                 <label for="doctype" class="form-label">Select Document Type (select one):</label>
             </div>
-            <div class="form-floating">
+            <div class="form-floating mt-3 mb-3">
                 <select class="form-select" id="urgentlvl" name="urgentlvl">
                     <option>1</option>
                     <option>2</option>
