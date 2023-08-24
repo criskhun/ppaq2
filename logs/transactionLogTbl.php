@@ -74,4 +74,8 @@ $sql5 = "SELECT * FROM transactionLog_tbl ORDER BY date DESC";
                         ?>
                     </tbody>
                 </table>
+<div>
+    <p>Total Time: <span id="totalTime">00 : 00 : 00</span></p>
+    <p>Average Time: <span id="averageTime">00 : 00 : 00</span></p>
+</div>
 

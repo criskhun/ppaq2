@@ -49,6 +49,53 @@
 
 <script>
     $(document).ready(function() {
+    function parseTime(timeString) {
+        const parts = timeString.split(" : ");
+        return {
+            hours: parseInt(parts[0]),
+            minutes: parseInt(parts[1]),
+            seconds: parseInt(parts[2])
+        };
+    }
+
+    function formatTime(timeObject) {
+        return `${timeObject.hours} : ${timeObject.minutes} : ${timeObject.seconds}`;
+    }
+
+    function calculateTotalAndAverageTime() {
+        let totalHours = 0;
+        let totalMinutes = 0;
+        let totalSeconds = 0;
+        const rowCount = $("#tableBody tr").length;
+
+        $("#tableBody tr").each(function() {
+            const timeString = $(this).find("td").text();
+            const time = parseTime(timeString);
+
+            totalHours += time.hours;
+            totalMinutes += time.minutes;
+            totalSeconds += time.seconds;
+        });
+
+        totalMinutes += Math.floor(totalSeconds / 60);
+        totalSeconds %= 60;
+        totalHours += Math.floor(totalMinutes / 60);
+        totalMinutes %= 60;
+
+        const averageHours = Math.floor(totalHours / rowCount);
+        const averageMinutes = Math.floor(totalMinutes / rowCount);
+        const averageSeconds = Math.floor(totalSeconds / rowCount);
+
+        $("#totalTime").text(formatTime({ hours: totalHours, minutes: totalMinutes, seconds: totalSeconds }));
+        $("#averageTime").text(formatTime({ hours: averageHours, minutes: averageMinutes, seconds: averageSeconds }));
+    }
+
+    calculateTotalAndAverageTime();
+});
+</script>
+
+<script>
+    $(document).ready(function() {
         function updateRowCount() {
             const visibleRowCount = $("#tableBody tr:visible").length;
             $("#rowCount").text(`Total rows: ${visibleRowCount}`);
