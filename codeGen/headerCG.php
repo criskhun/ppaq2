@@ -17,7 +17,7 @@ session_start();
     <title>Code Generator</title>
     <style>
         body {
-            background-image: url("../images/mainbkg.jpg");
+            background-image: url("");
             background-size: cover;
             background-position: center;
 
