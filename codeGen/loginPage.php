@@ -59,8 +59,8 @@
 ?>
 
 <div class="container-fluid">
-    <div class="container custom-container">
-        <div class="row justify-content-center align-item-center">
+    <div class="container">
+        <div class="row justify-content-center align-item-center custom-row">
             <div class="col-sm-3" style="background-image: url('../images/encoding.jpg'); background-size: cover; background-position: center; height: 100vh;">
 
             </div>
