@@ -86,7 +86,7 @@ session_start();
             </div>
             <div class="form-check mb-3">
                 <label for="form-check-label">
-                    <input class="form-check-input" type="checkbox" name="remember" required> Agree
+                    <input class="form-check-input" type="checkbox" name="remember" required>Terms and Condition
                 </label>
             </div>
             <input type="submit" class="btn btn-success" value="Register" name="submit">
