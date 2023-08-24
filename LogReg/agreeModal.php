@@ -3,7 +3,7 @@
         <div class="modal-content modal-xl">
             <div class="modal-header">
                 <h4 class="modal-title" id="myModalLabel">Terms and Condition</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
                 <h5><i class="fa-solid fa-triangle-exclamation"></i> Privacy Notice</h5>
@@ -67,13 +67,13 @@
                     under our control.</p>
                 <br>
                 <br>
-                <h5>Goverment Law</h5>
+                <h5><i class="fa-solid fa-house-chimney"></i> Goverment Law</h5>
                 <br>
                 <p>PPA reserves the right to initiate any legal action against users violating all the above-mentioned terms 
                     of the CSMS agreement.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Agree</button>
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal">Agree</button>
             </div>
         </div>
     </div>
