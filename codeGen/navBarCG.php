@@ -20,7 +20,7 @@
                 <div class="col-sm-8 bg-primary text-white d-flex align-items-center" style="padding: 20px;">
                     <img src="../images/white-logo.png" alt="logo" width="70" height="70" class="me-3">
                     <div>
-                        <h3>Docuement Code Generator</h3>
+                        <h3>Document Code Generator</h3>
                         <p>PPA PMO-SOCSARGEN Document Tracker</p>
                         <?php echo $errorMessage; ?>
                     </div>
