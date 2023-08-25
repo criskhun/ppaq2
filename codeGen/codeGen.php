@@ -62,7 +62,21 @@
         </form>
         </div>
         <div class="col">
+            <div class="wrapper">
+                <header>
+                    <h1>QR Code Generator</h1>
+                    <p>Paste a url or enter text to create QR code</p>
+                </header>
+                <div class="form">
+                    <input type="text" spellcheck="false" placeholder="Enter text or url">
+                    <button>Generate QR Code</button>
+                </div>
+                <div class="qr-code">
+                    <img src="" alt="qr-code">
+                </div>
+            </div>
 
+    <script src="script.js"></script>
         </div>
     </div>
 </div>
