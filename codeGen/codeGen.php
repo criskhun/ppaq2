@@ -15,29 +15,7 @@
         $des = $_SESSION["designation"];
     }
 
-    if ($conn) {
-        $sql = "SELECT COUNT(*) AS codeSeries FROM codeSeries_tbl";
-        $result = $conn->query($sql);
     
-        if ($result) {
-            $row = $result->fetch_assoc();
-            $codeSeries = $row["codeSeries"];
-    
-            if ($codeSeries < 1) {
-                $codeSeries = 1;
-            } else {
-                $codeSeries++;
-            }
-    
-            // Use $codeSeries for further processing or database insertion
-        } else {
-            echo "Error fetching data: " . $conn->error;
-        }
-    
-        $conn->close(); // Close the database connection
-    } else {
-        echo "Database connection failed: " . mysqli_connect_error();
-    }
     
 
     $year = date("Y");
