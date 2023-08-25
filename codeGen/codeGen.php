@@ -115,7 +115,6 @@
                 </div>
                 
             </div>
-    <script src="throwCode.js"></script>
     <script src="script.js"></script>
         </div>
     </div>
