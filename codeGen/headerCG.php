@@ -26,7 +26,7 @@ session_start();
         }
         .custom-row {
             padding: 15px; /* Adjust padding as needed */
-            border: 1px solid #ccc; /* Border style */
+            border: none; /* Border style */
             border-radius: 10px; /* Rounded corners */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow */
         }
