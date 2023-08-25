@@ -47,10 +47,10 @@
     <form id="documentFormCG"> 
     <div class="row">
         <div class="col">
-            <div hidden>
-            <span><h1><?php echo $codeSeries; ?></h1></span>
-            <h2>SSG</h2>
-            <h2><?php echo $year; ?></h2>
+            <div >
+            <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo $codeSeries; ?>">
+            <input type="text" class="form-control" id="port" name="port" value="SSG">
+            <input type="text" class="form-control" id="year" name="yesr" value="<?php echo $year; ?>">
             </div>
         
             <div class="form-floating mb-3 mt-3">
