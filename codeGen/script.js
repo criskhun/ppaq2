@@ -1,31 +1,25 @@
-document.getElementById("generateButton").addEventListener("click", async function () {
-    var qrValue = document.getElementById("codeHere").value.trim();
-    
-    if (!qrValue) {
-        alert("Please enter a value for QR code generation.");
-        return;
-    }
+const wrapper = document.querySelector(".wrapper"),
+qrInput = wrapper.querySelector(".form input"),
+generateBtn = wrapper.querySelector(".form button"),
+qrImg = wrapper.querySelector(".qr-code img");
+let preValue;
 
-    var qrImg = document.getElementById("qrImage");
-    var qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrValue)}`;
-    qrImg.src = qrImageUrl;
+generateBtn.addEventListener("click", () => {
+    let qrValue = qrInput.value.trim();
+    if(!qrValue || preValue === qrValue) return;
+    preValue = qrValue;
+    generateBtn.innerText = "Generating QR Code...";
+    qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
+    qrImg.addEventListener("load", () => {
+        wrapper.classList.add("active");
+        generateBtn.innerText = "Generate QR Code";
+    });
 });
 
-document.getElementById("downloadButton").addEventListener("click", async function () {
-    var qrValue = document.getElementById("codeHere").value.trim();
-    
-    if (!qrValue) {
-        alert("No QR code image available to download.");
-        return;
+qrInput.addEventListener("keyup", () => {
+    if(!qrInput.value.trim()) {
+        wrapper.classList.remove("active");
+        preValue = "";
     }
-
-    var qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrValue)}`;
-    
-    const response = await fetch(qrImageUrl);
-    const blob = await response.blob();
-    
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "qr-code.png";
-    a.click();
 });
+
