@@ -72,8 +72,6 @@
                 </div>
                 <div class="qr-code">
                     <img src="" alt="qr-code">
-                </div>
-                <div>
                     <button type="submit" class="btn btn-success">Download/Save</button>
                 </div>
             </div>
