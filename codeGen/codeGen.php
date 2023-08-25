@@ -14,13 +14,28 @@
         $role = $_SESSION["role"];
         $des = $_SESSION["designation"];
     }
+
+    $sql = "SELECT COUNT(*) AS codeSeries FROM codeSeries_tbl";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $codeSeries = $row["codeSeries"];
+
+    if($codeSeries < 1){
+        $codeSeries = 1;
+    } else {
+        $codeSeries ++;
+    }
+
+    $year = date("Y");
 ?>
 
 <div class="container justify-content-center align-item-center custom-container mt-3">
     <form id="documentFormCG"> 
     <div class="row">
         <div class="col">
-        
+        <span><h1><?php echo $codeSeries; ?></h1></span>
+        <h2>SSG</h2>
+        <h2><?php echo $year; ?></h2>
             <div class="form-floating mb-3 mt-3">
                 <input type="text" class="form-control" id="email" placeholder="Enter Document Title" name="title">
                 <label for="title">Document Title</label>
