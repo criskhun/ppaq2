@@ -19,7 +19,7 @@
 <div class="container justify-content-center align-item-center custom-container mt-3">
     <div class="row">
         <div class="col">
-        <form action="/action_page.php">
+        <form action="/action_page.php" id="documentFormCG">
             <div class="form-floating mb-3 mt-3">
                 <input type="text" class="form-control" id="email" placeholder="Enter Document Title" name="title">
                 <label for="title">Document Title</label>
@@ -39,10 +39,9 @@
             </div>
             <div class="form-floating mt-3 mb-3">
                 <select class="form-select" id="urgentlvl" name="urgentlvl">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
+                    <option>Impact</option>
+                    <option>Urgent</option>
+                    <option>Priority</option>
                 </select>
                 <label for="urgentlvl" class="form-label">Select Urgent Lvl (select one):</label>
             </div>
@@ -68,14 +67,14 @@
                     <p>Paste a url or enter text to create QR code</p>
                 </header>
                 <div class="form">
-                    <input type="text" spellcheck="false" placeholder="Enter text or url">
+                    <input type="text" spellcheck="false" id="codeHere" name="codeHere" placeholder="Enter text or url">
                     <button>Generate QR Code</button>
                 </div>
                 <div class="qr-code">
                     <img src="" alt="qr-code">
                 </div>
             </div>
-
+    <script src="throwCode.js"></script>
     <script src="script.js"></script>
         </div>
     </div>

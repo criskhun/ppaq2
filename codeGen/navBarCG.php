@@ -14,7 +14,7 @@
     }
 ?>
 
-<div class="header">
+<div class="header1">
         <div class="container-fluid mt-3">
             <div class="row">
                 <div class="col-sm-8 bg-primary text-white d-flex align-items-center" style="padding: 20px;">
