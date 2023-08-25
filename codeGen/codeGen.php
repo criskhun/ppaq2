@@ -47,9 +47,12 @@
     <form id="documentFormCG"> 
     <div class="row">
         <div class="col">
-        <span><h1><?php echo $codeSeries; ?></h1></span>
-        <h2>SSG</h2>
-        <h2><?php echo $year; ?></h2>
+            <div hidden>
+            <span><h1><?php echo $codeSeries; ?></h1></span>
+            <h2>SSG</h2>
+            <h2><?php echo $year; ?></h2>
+            </div>
+        
             <div class="form-floating mb-3 mt-3">
                 <input type="text" class="form-control" id="email" placeholder="Enter Document Title" name="title">
                 <label for="title">Document Title</label>
