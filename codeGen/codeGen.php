@@ -15,18 +15,7 @@
         $des = $_SESSION["designation"];
     }
 
-    $sql = "SELECT COUNT(*) AS codeSeries FROM codeSeries_tbl";
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-    $codeSeries = $row["codeSeries"];
 
-    if($codeSeries < 1){
-        $codeSeries = 1;
-    } else {
-        $codeSeries ++;
-    }
-
-    $year = date("Y");
 ?>
 
 <div class="container justify-content-center align-item-center custom-container mt-3">
