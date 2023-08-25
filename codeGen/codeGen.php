@@ -108,12 +108,11 @@
                 <div class="form">
                     <input type="text" spellcheck="false" id="codeHere" name="codeHere" placeholder="Enter text or url" value="SSG-<?php echo $formattedCodeSeries; ?>-<?php echo $year; ?>">
                     <button>Generate QR Code</button>
-                    <button type="submit" class="btn btn-success">Download/Save</button>
+                    <button type="button" class="btn btn-success" id="downloadButton">Download/Save</button>
                 </div>
                 <div class="qr-code">
-                    <img src="" alt="qr-code">
+                    <img src="" alt="qr-code" id="qrImage">
                 </div>
-                
             </div>
     <script src="script.js"></script>
         </div>
