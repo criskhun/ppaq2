@@ -57,9 +57,8 @@
                 <input type="file" class="form-control" id="file" name="file">
                 <label for="file">Select a File</label>
             </div>
-            <button type="submit" class="btn btn-primary">Generate</button>
-        </form>
-        </div>
+            <button type="button" class="btn btn-primary">Generate</button>
+        
         <div class="col">
             <div class="wrapper">
                 <header>
@@ -73,9 +72,14 @@
                 <div class="qr-code">
                     <img src="" alt="qr-code">
                 </div>
+                <div>
+                    <button type="submit" class="btn btn-success">Download/Save</button>
+                </div>
             </div>
     <script src="throwCode.js"></script>
     <script src="script.js"></script>
+        </div>
+        </form>
         </div>
     </div>
 </div>
