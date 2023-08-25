@@ -18,8 +18,9 @@
 
 <div class="container justify-content-center align-item-center custom-container mt-3">
     <div class="row">
+    <form id="documentFormCG">
         <div class="col">
-        <form id="documentFormCG">
+        
             <div class="form-floating mb-3 mt-3">
                 <input type="text" class="form-control" id="email" placeholder="Enter Document Title" name="title">
                 <label for="title">Document Title</label>
@@ -58,7 +59,7 @@
                 <label for="file">Select a File</label>
             </div>
             <button type="button" class="btn btn-primary">Generate</button>
-            </form>
+           
         </div>
         <div class="col">
             <div class="wrapper">
@@ -79,7 +80,7 @@
     <script src="throwCode.js"></script>
     <script src="script.js"></script>
         </div>
-        
+        </form>
     </div>
 </div>
 
