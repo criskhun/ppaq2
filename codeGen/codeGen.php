@@ -72,8 +72,8 @@
                 </div>
                 <div class="qr-code">
                     <img src="" alt="qr-code">
-                    <button type="submit" class="btn btn-success">Download/Save</button>
                 </div>
+                <button type="submit" class="btn btn-success">Download/Save</button>
             </div>
     <script src="throwCode.js"></script>
     <script src="script.js"></script>
