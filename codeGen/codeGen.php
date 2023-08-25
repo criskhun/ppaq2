@@ -51,10 +51,11 @@
 ?>
 
 <div class="container justify-content-center align-item-center custom-container mt-3">
-    <form id="documentFormCG"> 
+    
     <div class="row">
+    <form id="documentFormCG"> 
         <div class="col">
-            <div >
+            <div hidden>
             <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo $formattedCodeSeries; ?>">
             <input type="text" class="form-control" id="port" name="port" value="SSG">
             <input type="text" class="form-control" id="year" name="yesr" value="<?php echo $year; ?>">
@@ -98,7 +99,7 @@
                 <label for="file">Select a File</label>
             </div>
             <button type="button" class="btn btn-primary">Generate</button>
-           
+            </form>
         </div>
         <div class="col">
             <div class="wrapper">
@@ -120,7 +121,7 @@
     <script src="script.js"></script>
         </div>
     </div>
-    </form>
+    
 </div>
 
 

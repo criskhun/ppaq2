@@ -12,6 +12,6 @@
         echo "You could not connect! <br>";
     }
     if($conn){
-        echo "You are connected!";
+        //echo "You are connected!";
     }
     ?>
