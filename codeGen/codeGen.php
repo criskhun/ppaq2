@@ -69,11 +69,12 @@
                 <div class="form">
                     <input type="text" spellcheck="false" id="codeHere" name="codeHere" placeholder="Enter text or url">
                     <button>Generate QR Code</button>
+                    <button type="submit" class="btn btn-success">Download/Save</button>
                 </div>
                 <div class="qr-code">
                     <img src="" alt="qr-code">
                 </div>
-                <button type="submit" class="btn btn-success">Download/Save</button>
+                
             </div>
     <script src="throwCode.js"></script>
     <script src="script.js"></script>
