@@ -50,7 +50,7 @@ session_start();
   background: #3498DB;
 }
 .wrapper{
-  height: 265px;
+  height: 285px;
   max-width: 410px;
   background: #fff;
   border-radius: 7px;
@@ -59,7 +59,7 @@ session_start();
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 .wrapper.active{
-  height: 530px;
+  height: 550px;
 }
 header h1{
   font-size: 21px;
