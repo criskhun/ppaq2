@@ -44,14 +44,7 @@ session_start();
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
-  display: flex;
-  padding: 0 10px;
-  min-height: 100vh;
-  align-items: center;
-  background: #3498DB;
-  justify-content: center;
-}
+
 ::selection{
   color: #fff;
   background: #3498DB;
