@@ -1,24 +1,12 @@
-document.getElementById('generateQR').addEventListener('click', function() {
-    // Generate the desired text format
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const formattedText = `SSG000${year}`;
+// Get references to the elements
+const generateButton = document.querySelector('.btn.btn-primary');
+const codeHereInput = document.getElementById('codeHere');
 
-    // Set the value of the input field
-    document.getElementById('codeHere').value = formattedText;
-});
+// Add an event listener to the "Generate" button
+generateButton.addEventListener('click', function() {
+    // Create the desired text
+    const generatedText = 'SSG - filename - 2023'; // You can modify this as needed
 
-// You can use an actual QR code generation library to generate the QR code image
-// For example, you can use the qrcode.min.js library
-// This example assumes you're using this library
-document.getElementById('documentFormCG').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    // Generate QR code using the text from the input field
-    const qrText = document.getElementById('codeHere').value;
-    const qrCode = new QRCode(document.getElementById('qrImage'), {
-        text: qrText,
-        width: 128,
-        height: 128
-    });
+    // Set the generated text as the value of the input field
+    codeHereInput.value = generatedText;
 });
