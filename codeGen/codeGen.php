@@ -17,8 +17,8 @@
 ?>
 
 <div class="container justify-content-center align-item-center custom-container mt-3">
+    <form id="documentFormCG"> 
     <div class="row">
-    <form id="documentFormCG">
         <div class="col">
         
             <div class="form-floating mb-3 mt-3">
@@ -80,8 +80,8 @@
     <script src="throwCode.js"></script>
     <script src="script.js"></script>
         </div>
-        </form>
     </div>
+    </form>
 </div>
 
 
