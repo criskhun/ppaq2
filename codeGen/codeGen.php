@@ -29,6 +29,13 @@
                 $codeSeries++;
             }
     
+            if ($codeSeries < 10) {
+                $formattedCodeSeries = sprintf("00%d", $codeSeries);
+            } elseif ($codeSeries < 100) {
+                $formattedCodeSeries = sprintf("0%d", $codeSeries);
+            } else {
+                $formattedCodeSeries = (string)$codeSeries;
+            }
             // Use $codeSeries for further processing or database insertion
         } else {
             echo "Error fetching data: " . $conn->error;
@@ -48,7 +55,7 @@
     <div class="row">
         <div class="col">
             <div >
-            <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo $codeSeries; ?>">
+            <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo $formattedCodeSeries; ?>">
             <input type="text" class="form-control" id="port" name="port" value="SSG">
             <input type="text" class="form-control" id="year" name="yesr" value="<?php echo $year; ?>">
             </div>
