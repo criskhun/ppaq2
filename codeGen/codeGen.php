@@ -58,7 +58,8 @@
                 <label for="file">Select a File</label>
             </div>
             <button type="button" class="btn btn-primary">Generate</button>
-        
+            </form>
+        </div>
         <div class="col">
             <div class="wrapper">
                 <header>
@@ -79,8 +80,7 @@
     <script src="throwCode.js"></script>
     <script src="script.js"></script>
         </div>
-        </form>
-        </div>
+        
     </div>
 </div>
 
