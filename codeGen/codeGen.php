@@ -51,9 +51,8 @@
 ?>
 
 <div class="container justify-content-center align-item-center custom-container mt-3">
-    
-    <div class="row">
     <form id="documentFormCG"> 
+    <div class="row">
         <div class="col">
             <div hidden>
             <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo $formattedCodeSeries; ?>">
@@ -99,7 +98,7 @@
                 <label for="file">Select a File</label>
             </div>
             <button type="button" class="btn btn-primary">Generate</button>
-            </form>
+           
         </div>
         <div class="col">
             <div class="wrapper">
@@ -121,7 +120,7 @@
     <script src="script.js"></script>
         </div>
     </div>
-    
+    </form>
 </div>
 
 
