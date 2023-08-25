@@ -19,7 +19,7 @@
 <div class="container justify-content-center align-item-center custom-container mt-3">
     <div class="row">
         <div class="col">
-        <form action="/action_page.php" id="documentFormCG">
+        <form id="documentFormCG">
             <div class="form-floating mb-3 mt-3">
                 <input type="text" class="form-control" id="email" placeholder="Enter Document Title" name="title">
                 <label for="title">Document Title</label>
