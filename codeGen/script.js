@@ -1,4 +1,4 @@
-document.getElementById("generateButton").addEventListener("click", function () {
+document.getElementById("generateButton").addEventListener("click", async function () {
     var qrValue = document.getElementById("codeHere").value.trim();
     
     if (!qrValue) {
@@ -7,20 +7,25 @@ document.getElementById("generateButton").addEventListener("click", function () 
     }
 
     var qrImg = document.getElementById("qrImage");
-    qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
+    var qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrValue)}`;
+    qrImg.src = qrImageUrl;
 });
 
-document.getElementById("downloadButton").addEventListener("click", function () {
-    var qrImg = document.getElementById("qrImage");
+document.getElementById("downloadButton").addEventListener("click", async function () {
     var qrValue = document.getElementById("codeHere").value.trim();
-
+    
     if (!qrValue) {
         alert("No QR code image available to download.");
         return;
     }
 
+    var qrImageUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrValue)}`;
+    
+    const response = await fetch(qrImageUrl);
+    const blob = await response.blob();
+    
     var a = document.createElement("a");
-    a.href = qrImg.src;
+    a.href = URL.createObjectURL(blob);
     a.download = "qr-code.png";
     a.click();
 });
