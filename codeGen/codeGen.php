@@ -96,7 +96,7 @@
                 <input type="file" class="form-control" id="file" name="file">
                 <label for="file">Select a File</label>
             </div>
-            <button type="button" class="btn btn-primary">Generate</button>
+            <button type="button" class="btn btn-primary" id="generateButton">Generate</button>
            
         </div>
         <div class="col">
@@ -115,7 +115,7 @@
                 </div>
                 
             </div>
-    
+    <script src="throwCode.js"></script>
     <script src="script.js"></script>
         </div>
     </div>
@@ -123,4 +123,3 @@
 </div>
 
 
-<script src="throwCode.js"></script>
