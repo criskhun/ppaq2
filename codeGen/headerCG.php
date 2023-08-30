@@ -142,5 +142,5 @@ header p{
 
 
 </head>
-<body>
+<body onload="autoclick();">
 

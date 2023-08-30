@@ -128,7 +128,7 @@
         $("#download").click();
     }
     $(document).ready(function(){
-        var element = $("#qrImage");
+        var element = $("#canvas_id");
 
         $("#download").on('click', function(){
             html2canvas(element, {
