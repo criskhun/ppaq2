@@ -145,8 +145,20 @@ header p{
 <script src="html2canvas.js"></script>
 <script>
   function doCapture() {
+    window.scrollTo(0, 0);
+
     html2canvas(document.getElementsById("canvas_id")).then(function (canvas) {
-      console.log(canvas.toDataURL("image/jpeg", 0.9));
+
+      var ajax = new XMLHttpRequest();
+      ajax.open("POST", "save-capture.php", true);
+      ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      ajax.send("image=" + canvas.toDataURL("image/jpeg", 0.9));
+
+      ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(this.responseText);
+        }
+      }
     });
   }
 </script>
