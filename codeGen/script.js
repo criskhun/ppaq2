@@ -1,4 +1,6 @@
 
+
+
 const wrapper = document.querySelector(".wrapper"),
 qrInput = wrapper.querySelector(".form input"),
 generateBtn = wrapper.querySelector(".form button"),
@@ -14,6 +16,8 @@ generateBtn.addEventListener("click", () => {
     qrImg.addEventListener("load", () => {
         wrapper.classList.add("active");
         generateBtn.innerText = "Generate QR Code";
+
+    window.open(document.getElementById('canvas_id').toDataURL('image/png'));
     });
 });
 

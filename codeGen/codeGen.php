@@ -110,7 +110,7 @@
                     <input type="text" spellcheck="false" id="codeHere" name="codeHere" placeholder="Enter text or url" value="SSG-<?php echo $formattedCodeSeries; ?>-<?php echo $year; ?>">
                     <button>Generate QR Code</button>
                 </div>
-                <div class="qr-code">
+                <div class="qr-code" id="canvas_id">
                     <img src="" alt="qr-code" id="qrImage">
                 </div>
             </div>
