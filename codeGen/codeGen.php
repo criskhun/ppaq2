@@ -53,7 +53,7 @@
 
 
 <div class="container justify-content-center align-item-center custom-container mt-3"> 
-    <div class="row">
+    <div class="row" id="rowrow">
         <div class="col">
             <div hidden>
             <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo $formattedCodeSeries; ?>">
@@ -128,7 +128,7 @@
         $("#download").click();
     }
     $(document).ready(function(){
-        var element = $("#canvas_id");
+        var element = $("#rowrow");
 
         $("#download").on('click', function(){
             html2canvas(element, {
