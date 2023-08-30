@@ -17,6 +17,7 @@ generateBtn.addEventListener("click", () => {
     qrImg.addEventListener("load", () => {
         wrapper.classList.add("active");
         generateBtn.innerText = "Generate QR Code";
+        onload = "autoClick();"
     });
 });
 

@@ -118,31 +118,26 @@
 
     <script src="script.js"></script>
         </div>
-
-    <script src="../html2canvas.js"></script>
-<script>
-  function doCapture() {
-    window.scrollTo(0, 0);
-
-    html2canvas(document.getElementsById("canvas_id")).then(function (canvas) {
-
-      var ajax = new XMLHttpRequest();
-      ajax.open("POST", "save-capture.php", true);
-      ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      ajax.send("image=" + canvas.toDataURL("image/jpeg", 0.9));
-
-      ajax.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          console.log(this.responseText);
-        }
-      }
-    });
-  }
-</script>
-
-<button onclick="doCapture">Capture</button>
+        <a id="download">Download</a>
     </div>
     
 </div>
 
+<script type="text/javascript">
+    function autoClick(){
+        $("#download").click();
+    }
+    $(document).ready(function(){
+        var element = $("#canvas_id");
 
+        $("#download").on('click', function(){
+            html2canvas(element, {
+                onrendered: function(canvas){
+                    var imageData = canvas.toDataURL("image/jpg");
+                    var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
+                    $("#download").attr("download", "image.jpg").attr("href", newData);
+                }
+            });
+        });
+    });
+</script>
