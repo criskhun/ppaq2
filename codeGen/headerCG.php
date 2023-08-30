@@ -142,4 +142,13 @@ header p{
 </head>
 <body>
 
+<script src="html2canvas.js"></script>
+<script>
+  function doCapture() {
+    html2canvas(document.getElementsById("canvas_id")).then(function (canvas) {
+      console.log(canvas.toDataURL("image/jpeg", 0.9));
+    });
+  }
+</script>
 
+<button onclick="doCapture">Capture</button>

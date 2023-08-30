@@ -14,6 +14,7 @@
         $role = $_SESSION["role"];
         $des = $_SESSION["designation"];
     }
+    
 
     if ($conn) {
         $sql = "SELECT COUNT(*) AS codeSeries FROM codeSeriesCG_tbl";
