@@ -118,7 +118,7 @@
 
     <script src="script.js"></script>
         </div>
-        
+
     <script src="html2canvas.js"></script>
 <script>
   function doCapture() {
