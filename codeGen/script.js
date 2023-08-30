@@ -15,20 +15,10 @@ generateBtn.addEventListener("click", () => {
         wrapper.classList.add("active");
         generateBtn.innerText = "Generate QR Code";
 
-        // Convert the image to a Blob
-        const canvas = document.createElement("canvas");
-        const context = canvas.getContext("2d");
-        canvas.width = qrImg.naturalWidth;
-        canvas.height = qrImg.naturalHeight;
-        context.drawImage(qrImg, 0, 0);
-        canvas.toBlob(blob => {
-            // Create a download link for the Blob
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = "qr-code.png";
-            link.click();
-            URL.revokeObjectURL(link.href); // Clean up
-        });
+        // Show the download link
+        const downloadLink = document.getElementById("downloadLink");
+        downloadLink.href = qrImg.src;
+        downloadLink.style.display = "block";
     });
 });
 
