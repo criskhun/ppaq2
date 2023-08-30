@@ -107,9 +107,9 @@
                     <p>Paste a url or enter text to create QR code</p>
                 </header>
                 <div class="form">
-                    <input type="text" spellcheck="false" id="codeHere" name="codeHere" placeholder="Enter text or url" value="SSG-<?php echo $formattedCodeSeries; ?>-<?php echo $year; ?>">
+                    <input type="text" spellcheck="false" id="codeHere" name="codeHere" placeholder="Enter text or url" value="SSG123-<?php echo $formattedCodeSeries; ?>-<?php echo $year; ?>">
                     <button>Generate QR Code</button>
-                    <button type="button" class="btn btn-success" id="downloadButton">Download/Save</button>
+                    <button type="button" class="btn btn-success" id="downloadButton">Download/Save1</button>
                 </div>
                 <div class="qr-code">
                     <img src="" alt="qr-code" id="qrImage">
