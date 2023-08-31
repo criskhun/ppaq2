@@ -144,14 +144,14 @@ generateBtn.addEventListener("click", () => {
   if (!qrValue || preValue === qrValue) return;
   preValue = qrValue;
   generateBtn.innerText = "Generating QR Code...";
-  qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
+  
+  // Update the QR code URL to include response-content-disposition parameter
+  qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}&response-content-disposition=attachment%3B+filename%3Dqr_code.png`;
 
   qrImg.addEventListener("load", () => {
     console.log("QR code image loaded.");
     wrapper.classList.add("active");
     generateBtn.innerText = "Generate QR Code";
-    // Automatically trigger the download
-    downloadQRImage();
   });
 });
 
@@ -162,12 +162,4 @@ qrInput.addEventListener("keyup", () => {
   }
 });
 
-function downloadQRImage() {
-  const a = document.createElement("a");
-  a.href = qrImg.src;
-  a.download = "qr_code.png";
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-}
 </script>
