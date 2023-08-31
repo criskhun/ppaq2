@@ -134,7 +134,7 @@ header("Access-Control-Allow-Headers: Content-Type");
 <script type="text/javascript">
     $(document).ready(function(){
         $("#download").on('click', function(){
-            var qrImg = $("#trytry")[0]; // Get the raw image element
+            var qrImg = $("#canvas_id")[0]; // Get the raw image element
             html2canvas(qrImg, {
                 onrendered: function(canvas){
                     var imageData = canvas.toDataURL("image/png"); // Use 'image/png'
