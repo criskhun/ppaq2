@@ -122,23 +122,31 @@
     </div>
     
 </div>
-
+<script src="script.js"></script>
 <script type="text/javascript">
-    function autoClick(){
-        $("#download").click();
-    }
-    $(document).ready(function(){
-        var element = $("#rowrow");
+        $(document).ready(function(){
+            var generateQRButton = $("#generateQR");
+            var qrImage = $("#qrImage");
+            var element = $("#canvas_id");
 
-        $("#download").on('click', function(){
-            html2canvas(element, {
-                onrendered: function(canvas){
-                    var imageData = canvas.toDataURL("image/jpg");
-                    var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
-                    $("#download").attr("download", "image.jpg").attr("href", newData);
-                }
+            generateQRButton.on('click', function(){
+                var inputValue = $("#codeHere").val(); // Get the input value for generating QR code
+
+                // Use inputValue to generate QR code (implementation needed)
+
+                // For now, just set a placeholder src for the img
+                qrImage.attr("src", "placeholder.jpg");
+
+                // Generate the QR code image and handle download
+                html2canvas(element, {
+                    onrendered: function(canvas){
+                        var imageData = canvas.toDataURL("image/jpg");
+                        var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
+                        generateQRButton.attr("download", "image.jpg").attr("href", newData);
+                    }
+                });
             });
         });
-    });
-</script>
-<script src="script.js"></script>
+    </script>
+
+
