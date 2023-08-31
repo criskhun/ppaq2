@@ -1,4 +1,9 @@
 <?php 
+
+header("Access-Control-Allow-Origin: https://ppaq2.pmosocsargen.com");
+header("Access-Control-Allow-Methods: GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+
     session_start();
     include("headerCG.php");
     include("navBarCG.php");
@@ -112,7 +117,7 @@
                     <button>Generate QR Code</button>
                 </div>
                 <div class="qr-code" id="canvas_id">
-                    <img src="" alt="qr-code" id="qrImage">
+                    <img src="path_to_generated_qr_image.png" alt="qr-code" id="qrImage">
                 </div>
                 <div id="trytry">
                     <img src="../images/example.png" alt="">

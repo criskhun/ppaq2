@@ -12,8 +12,8 @@ generateBtn.addEventListener("click", () => {
     if(!qrValue || preValue === qrValue) return;
     preValue = qrValue;
     generateBtn.innerText = "Generating QR Code...";
-    qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
-
+    qrImg.src = `https://ppaq2.pmosocsargen.com/codeGen/codeGen.php?data=${encodeURIComponent(qrValue)}`;
+    
     qrImg.addEventListener("load", () => {
         console.log("QR code image loaded.");
         wrapper.classList.add("active");
