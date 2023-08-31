@@ -114,6 +114,9 @@
                 <div class="qr-code" id="canvas_id">
                     <img src="" alt="qr-code" id="qrImage">
                 </div>
+                <div id="trytry">
+                    <img src="../images/example.png" alt="">
+                </div>
             </div>
 
     
@@ -126,7 +129,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $("#download").on('click', function(){
-            var qrImg = $("#qrImage")[0]; // Get the raw image element
+            var qrImg = $("#trytry")[0]; // Get the raw image element
             html2canvas(qrImg, {
                 onrendered: function(canvas){
                     var imageData = canvas.toDataURL("image/png"); // Use 'image/png'
