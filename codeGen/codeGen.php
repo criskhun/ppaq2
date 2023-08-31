@@ -120,9 +120,6 @@ header("Access-Control-Allow-Headers: Content-Type");
                 <div class="qr-code" id="canvas_id">
                     <img src="../images/example.png" alt="qr-code" id="qrImage">
                 </div>
-                <div id="trytry">
-                    <img src="../images/example.png" alt="">
-                </div>
             </div>
 
     
@@ -154,7 +151,7 @@ generateBtn.addEventListener("click", () => {
     generateBtn.innerText = "Generate QR Code";
 
     // Automatically trigger the download
-    downloadQRImage();
+    downloadQRImage(qrImg.src);
   });
 });
 
@@ -165,20 +162,14 @@ qrInput.addEventListener("keyup", () => {
   }
 });
 
-function downloadQRImage() {
-  // Open the QR code image in a new window
-  const newWindow = window.open("");
-  newWindow.document.write(`<img src="${qrImg.src}" alt="QR Code">`);
-  newWindow.document.close();
-
-  // Delay the download to ensure the image has loaded in the new window
-  setTimeout(() => {
-    newWindow.document.querySelector("img").addEventListener("load", () => {
-      newWindow.document.querySelector("img").style.display = "none"; // Hide the image
-      newWindow.print(); // Trigger the browser's print functionality
-      newWindow.close(); // Close the new window
-    });
-  }, 1000); // Adjust the delay if needed
+function downloadQRImage(imageSrc) {
+  const link = document.createElement("a");
+  link.href = imageSrc;
+  link.download = "qr_code.png";
+  link.style.display = "none";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 
