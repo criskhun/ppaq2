@@ -130,9 +130,7 @@ header("Access-Control-Allow-Headers: Content-Type");
     </div>
     
 </div>
-<script src="script.js"></script>
-<script type="text/javascript">
-    
-</script>
+<script type="text/javascript" src="script.js"></script>
+
 
 
