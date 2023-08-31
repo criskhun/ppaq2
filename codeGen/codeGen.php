@@ -151,7 +151,7 @@ generateBtn.addEventListener("click", () => {
     wrapper.classList.add("active");
     generateBtn.innerText = "Generate QR Code";
     // Automatically trigger the download
-    downloadQRImage();
+    openQRImageInNewTab();
   });
 });
 
@@ -169,6 +169,11 @@ function downloadQRImage() {
   document.body.appendChild(downloadLink);
   downloadLink.click();
   document.body.removeChild(downloadLink);
+}
+
+function openQRImageInNewTab() {
+  const newTab = window.open("", "_blank");
+  newTab.document.write(`<img src="${qrImg.src}" alt="QR Code">`);
 }
 </script>
 
