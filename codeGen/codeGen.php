@@ -130,7 +130,20 @@ header("Access-Control-Allow-Headers: Content-Type");
     </div>
     
 </div>
-<script type="text/javascript" src="script.js"></script>
-
+<script src="script.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+    $("#download").on('click', function(){
+        var qrImgElement = $("#trytry")[0]; // Get the raw image element
+        html2canvas(qrImgElement, {
+            onrendered: function(canvas){
+                var imageData = canvas.toDataURL("image/png");
+                var newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream");
+                $("#download").attr("download", "qr-code.png").attr("href", newData);
+            }
+        });
+    });
+});
+</script>
 
 
