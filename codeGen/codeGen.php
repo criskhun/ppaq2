@@ -117,7 +117,7 @@ header("Access-Control-Allow-Headers: Content-Type");
                     <button>Generate QR Code</button>
                 </div>
                 <div class="qr-code" id="canvas_id">
-                    <img src="path_to_generated_qr_image.png" alt="qr-code" id="qrImage">
+                    <img src="../images/example.png" alt="qr-code" id="qrImage">
                 </div>
                 <div id="trytry">
                     <img src="../images/example.png" alt="">
