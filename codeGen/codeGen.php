@@ -135,12 +135,10 @@ header("Access-Control-Allow-Headers: Content-Type");
     $(document).ready(function(){
     $("#download").on('click', function(){
         var qrImgElement = $("#qrImage")[0]; // Get the raw image element
-        html2canvas(qrImgElement, {
-            onrendered: function(canvas){
-                var imageData = canvas.toDataURL("image/png");
-                var newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream");
-                $("#download").attr("download", "qr-code.png").attr("href", newData);
-            }
+        html2canvas(qrImgElement).then(function(canvas){
+            var imageData = canvas.toDataURL("image/png");
+            var newData = imageData.replace(/^data:image\/png/, "data:application/octet-stream");
+            $("#download").attr("download", "qr-code.png").attr("href", newData);
         });
     });
 });
