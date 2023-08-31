@@ -15,6 +15,7 @@ generateBtn.addEventListener("click", () => {
     qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
 
     qrImg.addEventListener("load", () => {
+        console.log("QR code image loaded.");
         wrapper.classList.add("active");
         generateBtn.innerText = "Generate QR Code";
 
