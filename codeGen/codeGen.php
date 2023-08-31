@@ -151,7 +151,7 @@ generateBtn.addEventListener("click", () => {
     wrapper.classList.add("active");
     generateBtn.innerText = "Generate QR Code";
     // Automatically trigger the download
-    openQRImageInNewTab();
+    downloadQRImage();
   });
 });
 
@@ -163,17 +163,11 @@ qrInput.addEventListener("keyup", () => {
 });
 
 function downloadQRImage() {
-  const downloadLink = document.createElement("a");
-  downloadLink.href = qrImg.src;
-  downloadLink.download = "qr_code.png";
-  document.body.appendChild(downloadLink);
-  downloadLink.click();
-  document.body.removeChild(downloadLink);
-}
-
-function openQRImageInNewTab() {
-  const newTab = window.open("", "_blank");
-  newTab.document.write(`<img src="${qrImg.src}" alt="QR Code">`);
+  const a = document.createElement("a");
+  a.href = qrImg.src;
+  a.download = "qr_code.png";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
 </script>
-
