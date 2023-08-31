@@ -147,13 +147,13 @@ generateBtn.addEventListener("click", () => {
   
   qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
 
-  qrImg.addEventListener("load", async () => {
+  qrImg.addEventListener("load", () => {
     console.log("QR code image loaded.");
     wrapper.classList.add("active");
     generateBtn.innerText = "Generate QR Code";
 
     // Automatically trigger the download
-    await downloadQRImage();
+    downloadQRImage();
   });
 });
 
@@ -164,26 +164,22 @@ qrInput.addEventListener("keyup", () => {
   }
 });
 
-async function downloadQRImage() {
-  const canvas = document.createElement("canvas");
-  const context = canvas.getContext("2d");
-  canvas.width = qrImg.width;
-  canvas.height = qrImg.height;
-  context.drawImage(qrImg, 0, 0, qrImg.width, qrImg.height);
+function downloadQRImage() {
+  // Open the QR code image in a new window
+  const newWindow = window.open("");
+  newWindow.document.write(`<img src="${qrImg.src}" alt="QR Code">`);
+  newWindow.document.close();
 
-  try {
-    canvas.toBlob(blob => {
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "qr_code.png";
-      a.click();
-      URL.revokeObjectURL(url);
-    }, "image/png");
-  } catch (error) {
-    console.error("Error creating QR code image blob:", error);
-  }
+  // Delay the download to ensure the image has loaded in the new window
+  setTimeout(() => {
+    newWindow.document.querySelector("img").addEventListener("load", () => {
+      newWindow.document.querySelector("img").style.display = "none"; // Hide the image
+      newWindow.print(); // Trigger the browser's print functionality
+      newWindow.close(); // Close the new window
+    });
+  }, 1000); // Adjust the delay if needed
 }
+
 
 
 </script>
