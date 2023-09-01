@@ -5,6 +5,7 @@
 
     include("headerCG.php");
     include("navBarCG.php");
+    include("navBarMen.php");
     if (isset($_SESSION["email"])) {
         $email = $_SESSION["email"];
         $id = $_SESSION["id"];
