@@ -63,20 +63,26 @@ if(isset($_POST['submit'])) {
     $date = $_POST['reminder'];
     $comment = $_POST['comment'];
 
+    $uploads_dir = $_SERVER['DOCUMENT_ROOT'] . '/codes';
+
+    if (!file_exists($uploads_dir)) {
+        mkdir($uploads_dir, 0777, true);
+    }
+
     $fname = rand(1000,1000). "-" .$_FILES["file"]["name"];
     $tname = $_FILES["file"]["tmp_name"];
-    $uploads_dir = '../codes';
-    move_uploaded_file($tname, $uploads_dir.'/'.$fname);
+    $destination_path = $uploads_dir . '/' . $fname;
 
-    $sql = "INSERT INTO documentCG_tbl (docCode, title, sender, doctype, urgent, docdate, comment, docfile) VALUES ('$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$fname')";
-
-    if(mysqli_query($conn,$sql)){
-        
-        header('Location: codeGen.php');
-    exit;
-    }
-    else {
-        echo "Error";
+    if(move_uploaded_file($tname, $destination_path)) {
+        $sql = "INSERT INTO documentCG_tbl (docCode, title, sender, doctype, urgent, docdate, comment, docfile) VALUES ('$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$fname')";
+        if(mysqli_query($conn, $sql)){
+            echo "Successfully uploaded";
+            exit;
+        } else {
+            echo "Error";
+        }
+    } else {
+        echo "File upload failed";
     }
 
 }
