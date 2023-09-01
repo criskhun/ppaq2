@@ -60,6 +60,7 @@ header("Access-Control-Allow-Headers: Content-Type");
 <div class="container justify-content-center align-item-center custom-container mt-3"> 
     <div class="row" id="rowrow">
         <div class="col">
+            <form action="">
             <div hidden>
             <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo $formattedCodeSeries; ?>">
             <input type="text" class="form-control" id="port" name="port" value="SSG">
@@ -76,10 +77,20 @@ header("Access-Control-Allow-Headers: Content-Type");
             </div>
             <div class="form-floating mt-3 mb-3">
                 <select class="form-select" id="doctype" name="doctype">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
+                    <?php
+                    
+                    $sql = "SELECT transaction FROM document_type_tbl";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            $transactionName = $row["doc"];
+                            $selected = ($transactionName === $defaultTransaction) ? "selected" : "";
+                            echo "<option $selected>$transactionName</option>";
+                        }
+                    }
+                    $conn->close();
+                    ?>
                 </select>
                 <label for="doctype" class="form-label">Select Document Type (select one):</label>
             </div>
@@ -103,14 +114,14 @@ header("Access-Control-Allow-Headers: Content-Type");
                 <input type="file" class="form-control" id="file" name="file">
                 <label for="file">Select a File</label>
             </div>
-            <button type="button" class="btn btn-primary" id="generateButton">Generate</button>
-           
+            <button type="submit" class="btn btn-primary" id="generateButton">Save</button>
+            </form>
         </div>
         <div class="col">
             <div class="wrapper">
                 <header>
                     <h1>QR Code Generator</h1>
-                    <p>Paste a url or enter text to create QR code</p>
+                    <p>This is the code for this document. Please Press Generate to get the QR Code</p>
                 </header>
                 <div class="form">
                     <input type="text" spellcheck="false" id="codeHere" name="codeHere" placeholder="Enter text or url" value="SSG-<?php echo $formattedCodeSeries; ?>-<?php echo $year; ?>" readonly>
@@ -121,11 +132,6 @@ header("Access-Control-Allow-Headers: Content-Type");
                     <img src="../images/example.png" alt="qr-code" id="qrImage">
                 </div>
             </div>
-
-    
-        </div>
-        <a id="download">Download</a>
-    </div>
     
 </div>
 
