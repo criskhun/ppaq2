@@ -144,3 +144,7 @@ header p{
 </head>
 <body>
 
+<?php
+include("navBarCG.php");
+
+?>
