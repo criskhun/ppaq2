@@ -73,3 +73,35 @@ $sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
     <p>Average Time: <span id="averageTime">00 : 00 : 00</span></p>
 </div>
 
+<script>
+    $(document).ready(function() {
+        function updateRowCount() {
+            const visibleRowCount = $("#tableBody tr:visible").length;
+            $("#rowCount").text(`Total rows: ${visibleRowCount}`);
+        }
+
+        function filterTableRows(searchValue) {
+            searchValue = searchValue.toLowerCase();
+
+            $("#tableBody tr").each(function () {
+                const rowText = $(this).text().toLowerCase();
+
+                if (rowText.includes(searchValue)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+
+            updateRowCount();
+        }
+
+        $("#searchInput").on("input", function() {
+            const searchValue = $(this).val();
+            filterTableRows(searchValue);
+        });
+
+        // Initial row count display
+        updateRowCount();
+    });
+</script>
