@@ -1,7 +1,7 @@
 
 <div class="offcanvas offcanvas-start" id="CGdemo">
   <div class="offcanvas-header">
-    <h1 class="offcanvas-title">CSMS</h1>
+    <h1 class="offcanvas-title">Code Generator</h1>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
   </div>
   <div class="offcanvas-body">
@@ -10,35 +10,15 @@
         <a href="../dashboard/dashboard.php" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
             <i class="fa-solid fa-gauge ms-2 me-2"></i>
-            Dashboard
+            Code Generator
             </div></a>
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#queSubMenu">
+        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
             <i class="fa-solid fa-desktop ms-2 me-2"></i>
-            Queuing
+            Report
         </div>
         <i class="fa-solid fa-list"></i>
         </a>
-        <div class="collapse" id="queSubMenu">
-            <a href="../queuing/pacd.php" class="list-group-item list-group-item-action">
-            <div class="d-flex align-item-center">
-            <i class="fa-solid fa-circle ms-4 me-2"></i>
-            Queuing System
-            </div>    
-            </a>
-            <a href="../transaction/transaction.php" class="list-group-item list-group-item-action">
-            <div class="d-flex align-item-center">
-            <i class="fa-solid fa-circle ms-4 me-2"></i>
-            Transaction
-            </div>    
-            </a>
-            <a href="../monitoring/monitoring.php" class="list-group-item list-group-item-action">
-            <div class="d-flex align-item-center">
-            <i class="fa-solid fa-circle ms-4 me-2"></i>
-            Que Monitoring
-            </div>    
-            </a>
-        </div>
         
         <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#usersSubMenu">
             <div class="d-flex align-item-center">
