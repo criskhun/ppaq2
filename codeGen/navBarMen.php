@@ -12,7 +12,7 @@
             <i class="fa-solid fa-gauge ms-2 me-2"></i>
             Code Generator
             </div></a>
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+        <a href="../codeGen/reportCG.php" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
         <div class="d-flex align-items-center">
             <i class="fa-solid fa-desktop ms-2 me-2"></i>
             Report
