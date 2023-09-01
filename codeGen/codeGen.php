@@ -4,7 +4,6 @@ header("Access-Control-Allow-Origin: https://ppaq2.pmosocsargen.com");
 header("Access-Control-Allow-Methods: GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 
-    session_start();
     include("headerCG.php");
     include("navBarCG.php");
     if (isset($_SESSION["email"])) {
