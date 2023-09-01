@@ -50,11 +50,41 @@
     $year = date("Y");
 ?>
 
+<?php
+if(isset($_POST['submit'])) {
+    $docCode = 'SSG-'. $formattedCodeSeries ."-". $year;
+    $docTitle = $_POST['title'];
+    $sender = $_POST['sender'];
+    $docType = $_POST['doctype'];
+    $urgent = $_POST['urgentlvl'];
+    $date = $_POST['reminder'];
+    $comment = $_POST['comment'];
+
+    $fname = rand(1000,1000). "-" .$_FILES["file"]["name"];
+    $tname = $_FILES["files"]["tmp_name"];
+    $uploads_dir = '/codes';
+    move_uploaded_file($tname, $uploads_dir.'/'.$fname);
+
+    $sql = "INSERT INTO documentCG_tbl (docCode, title, sender, doctype, urgent, docdate, comment, docfile) VALUES ('$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$fname')";
+
+    if(mysqli_query($conn,$sql)){
+        echo "File Successfully uploaded";
+    }
+    else {
+        echo "Error";
+    }
+
+    $chars = "";
+    $errorMessage = "";
+    $successMessage = "";
+
+}
+?>
 
 <div class="container justify-content-center align-item-center custom-container mt-3"> 
     <div class="row" id="rowrow">
         <div class="col">
-            <form action="">
+            <form action="post" enctype="multipart/form-data">
             <div hidden>
             <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo $formattedCodeSeries; ?>">
             <input type="text" class="form-control" id="port" name="port" value="SSG">
@@ -62,12 +92,12 @@
             </div>
         
             <div class="form-floating mb-3 mt-3">
-                <input type="text" class="form-control" id="email" placeholder="Enter Document Title" name="title">
+                <input type="text" class="form-control" id="tile" placeholder="Enter Document Title" name="title">
                 <label for="title">Document Title</label>
             </div>
             <div class="form-floating mt-3 mb-3">
-                <input type="text" class="form-control" id="pwd" placeholder="Enter Sender Name" name="sender">
-                <label for="pwd">Sender</label>
+                <input type="text" class="form-control" id="sender" placeholder="Enter Sender Name" name="sender">
+                <label for="sender">Sender</label>
             </div>
             <div class="form-floating mt-3 mb-3">
                 <select class="form-select" id="doctype" name="doctype">
@@ -101,7 +131,7 @@
                 <label for="reminder">Date</label>
             </div>
             <div class="form-floating mb-3 mt-3">
-                <textarea class="form-control" id="comment" name="text" placeholder="Comment goes here"></textarea>
+                <textarea class="form-control" id="comment" name="comment" placeholder="Comment goes here"></textarea>
                 <label for="comment">Comments</label>
             </div>
             <div class="form-floating mb-3 mt-3">
