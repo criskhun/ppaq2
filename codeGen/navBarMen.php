@@ -43,7 +43,7 @@
         <a href="../logs/logs.php" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
             <div class="d-flex align-item-center">
             <i class="fa-solid fa-clipboard-list ms-2 me-2"></i>
-            Logs
+            Scanner
             </div>
             </a>
 
