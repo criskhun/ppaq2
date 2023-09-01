@@ -61,7 +61,7 @@ if(isset($_POST['submit'])) {
     $comment = $_POST['comment'];
 
     $fname = rand(1000,1000). "-" .$_FILES["file"]["name"];
-    $tname = $_FILES["files"]["tmp_name"];
+    $tname = $_FILES["file"]["tmp_name"];
     $uploads_dir = '/codes';
     move_uploaded_file($tname, $uploads_dir.'/'.$fname);
 
@@ -80,7 +80,7 @@ if(isset($_POST['submit'])) {
 <div class="container justify-content-center align-item-center custom-container mt-3"> 
     <div class="row" id="rowrow">
         <div class="col">
-            <form action="post" enctype="multipart/form-data">
+            <form method="post" enctype="multipart/form-data">
             <div hidden>
             <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo $formattedCodeSeries; ?>">
             <input type="text" class="form-control" id="port" name="port" value="SSG">
