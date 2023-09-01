@@ -76,8 +76,7 @@ if(isset($_POST['submit'])) {
     if(move_uploaded_file($tname, $destination_path)) {
         $sql = "INSERT INTO documentCG_tbl (docCode, title, sender, doctype, urgent, docdate, comment, docfile) VALUES ('$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$fname')";
         if(mysqli_query($conn, $sql)){
-            echo "Successfully uploaded";
-            header("location: codeGen.php");
+            echo '<script>alert("File Successfully uploaded"); window.location.href = "codeGen.php";</script>';
             exit;
         } else {
             echo "Error";
