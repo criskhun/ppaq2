@@ -17,6 +17,8 @@ if(isset($_POST['submit'])) {
 
     if(mysqli_query($conn,$sql)){
         echo "File Successfully uploaded";
+        header('Location: codeGen.php');
+    exit;
     }
     else {
         echo "Error";
