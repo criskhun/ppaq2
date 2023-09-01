@@ -69,7 +69,7 @@
             Profile
             </div>
             </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center logout" data-bs-toggle="modal" data-bs-target="#myModal">
+        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center logout" data-bs-toggle="modal" data-bs-target="#myModalCG">
             <div class="d-flex align-item-center">
             <i class="fa-solid fa-right-from-bracket ms-2 me-2"></i>
             Logout
