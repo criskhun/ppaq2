@@ -1,9 +1,5 @@
 <?php 
 
-header("Access-Control-Allow-Origin: https://ppaq2.pmosocsargen.com");
-header("Access-Control-Allow-Methods: GET, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type");
-
     include("headerCG.php");
     include("navBarCG.php");
     if (isset($_SESSION["email"])) {
@@ -46,7 +42,6 @@ header("Access-Control-Allow-Headers: Content-Type");
             echo "Error fetching data: " . $conn->error;
         }
     
-        $conn->close(); // Close the database connection
     } else {
         echo "Database connection failed: " . mysqli_connect_error();
     }
@@ -78,7 +73,7 @@ header("Access-Control-Allow-Headers: Content-Type");
                 <select class="form-select" id="doctype" name="doctype">
                     <?php
                     
-                    $sql = "SELECT transaction FROM document_type_tbl";
+                    $sql = "SELECT doc FROM document_type_tbl";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -88,7 +83,7 @@ header("Access-Control-Allow-Headers: Content-Type");
                             echo "<option $selected>$transactionName</option>";
                         }
                     }
-                    $conn->close();
+                    //$conn->close();
                     ?>
                 </select>
                 <label for="doctype" class="form-label">Select Document Type (select one):</label>
