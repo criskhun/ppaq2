@@ -34,7 +34,7 @@
             <!-- Your content for Option 1 here -->
             <div>
               <?php
-                include("../logs/transactionLogTbl.php");
+                include("../codeGen/report/reportDoc.php");
               ?>
             </div>
           </div>
