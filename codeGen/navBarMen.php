@@ -17,7 +17,6 @@
             <i class="fa-solid fa-desktop ms-2 me-2"></i>
             Report
         </div>
-        <i class="fa-solid fa-list"></i>
         </a>
         
         <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#usersSubMenu">
@@ -47,33 +46,7 @@
             Logs
             </div>
             </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#artaSubMenu">
-            <div class="d-flex align-item-center">
-            <i class="fa-solid fa-file-lines ms-2 me-2"></i>
-            Reports
-            </div>
-            <i class="fa-solid fa-list"></i>
-            </a>
-            <div class="collapse" id="artaSubMenu">
-            <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex align-item-center">
-            <i class="fa-solid fa-circle ms-4 me-2"></i>
-            ARTA
-            </div>    
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex align-item-center">
-            <i class="fa-solid fa-circle ms-4 me-2"></i>
-            Daily Transaction
-            </div>    
-            </a>
-            <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex align-item-center">
-            <i class="fa-solid fa-circle ms-4 me-2"></i>
-            Other
-            </div>    
-            </a>
-            </div>
+
     </div>
     <hr>
     <h3>Others</h3>
