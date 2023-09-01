@@ -51,7 +51,7 @@
                             <li><a class="dropdown-item" href="#">Profile</a></li>
                             <li><a class="dropdown-item" href="#">Settings</a></li>
                             <li><a class="dropdown-item" href="../queuing/pacd.php">PACD Menu</a></li>
-                            <li><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">Logout</button></li>
+                            <!--<li><button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#myModal">Logout</button></li>-->
                         </ul>
                     </div>
                 </div>
