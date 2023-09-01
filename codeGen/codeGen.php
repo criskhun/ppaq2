@@ -62,7 +62,7 @@ if(isset($_POST['submit'])) {
 
     $fname = rand(1000,1000). "-" .$_FILES["file"]["name"];
     $tname = $_FILES["file"]["tmp_name"];
-    $uploads_dir = '/codes';
+    $uploads_dir = '../codes';
     move_uploaded_file($tname, $uploads_dir.'/'.$fname);
 
     $sql = "INSERT INTO documentCG_tbl (docCode, title, sender, doctype, urgent, docdate, comment, docfile) VALUES ('$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$fname')";
@@ -80,7 +80,7 @@ if(isset($_POST['submit'])) {
 <div class="container justify-content-center align-item-center custom-container mt-3"> 
     <div class="row" id="rowrow">
         <div class="col">
-            <form method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
             <div hidden>
             <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo $formattedCodeSeries; ?>">
             <input type="text" class="form-control" id="port" name="port" value="SSG">
@@ -135,7 +135,7 @@ if(isset($_POST['submit'])) {
                 <label for="file">Select a File</label>
             </div>
             <button type="submit" class="btn btn-primary" id="generateButton">Save</button>
-            </form>
+        </form>
         </div>
         <div class="col">
             <div class="wrapper">
