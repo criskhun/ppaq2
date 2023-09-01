@@ -9,12 +9,14 @@ generateBtn.addEventListener("click", () => {
   if (!qrValue || preValue === qrValue) return;
   preValue = qrValue;
   generateBtn.innerText = "Generating QR Code...";
+  
   qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${qrValue}`;
 
   qrImg.addEventListener("load", () => {
     console.log("QR code image loaded.");
     wrapper.classList.add("active");
     generateBtn.innerText = "Generate QR Code";
+
     // Automatically trigger the download
     downloadQRImage();
   });
@@ -28,10 +30,17 @@ qrInput.addEventListener("keyup", () => {
 });
 
 function downloadQRImage() {
-  const downloadLink = document.createElement("a");
-  downloadLink.href = qrImg.src;
-  downloadLink.download = "qr_code.png";
-  document.body.appendChild(downloadLink);
-  downloadLink.click();
-  document.body.removeChild(downloadLink);
+  // Open the QR code image in a new window
+  const newWindow = window.open("");
+  newWindow.document.write(`<img src="${qrImg.src}" alt="QR Code">`);
+  newWindow.document.close();
+
+  // Delay the download to ensure the image has loaded in the new window
+  setTimeout(() => {
+    newWindow.document.querySelector("img").addEventListener("load", () => {
+      newWindow.document.querySelector("img").style.display = "none"; // Hide the image
+      newWindow.print(); // Trigger the browser's print functionality
+      newWindow.close(); // Close the new window
+    });
+  }, 1000); // Adjust the delay if needed
 }
