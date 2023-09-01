@@ -1,7 +1,7 @@
 <?php 
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+//error_reporting(E_ALL);
+//ini_set('display_errors', 1);
 
     include("headerCG.php");
     include("navBarCG.php");
@@ -77,6 +77,7 @@ if(isset($_POST['submit'])) {
         $sql = "INSERT INTO documentCG_tbl (docCode, title, sender, doctype, urgent, docdate, comment, docfile) VALUES ('$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$fname')";
         if(mysqli_query($conn, $sql)){
             echo "Successfully uploaded";
+            header("location: codeGen.php");
             exit;
         } else {
             echo "Error";
