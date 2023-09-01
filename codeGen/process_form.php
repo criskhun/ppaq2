@@ -16,7 +16,7 @@ if(isset($_POST['submit'])) {
     $sql = "INSERT INTO documentCG_tbl (docCode, title, sender, doctype, urgent, docdate, comment, docfile) VALUES ('$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$fname')";
 
     if(mysqli_query($conn,$sql)){
-        echo "File Successfully uploaded";
+        
         header('Location: codeGen.php');
     exit;
     }

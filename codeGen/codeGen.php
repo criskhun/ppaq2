@@ -112,7 +112,7 @@ ini_set('display_errors', 1);
                 <input type="file" class="form-control" id="file" name="file">
                 <label for="file">Select a File</label>
             </div>
-            <button type="submit" class="btn btn-primary" id="generateButton">Save</button>
+            <button type="submit" name="submit" class="btn btn-primary" id="generateButton">Save</button>
         </form>
         </div>
         <div class="col">
