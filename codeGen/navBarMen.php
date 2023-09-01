@@ -129,6 +129,6 @@
 </div>
 
 <?php
-    include("../designPage/modalLogout.php");
+    include("modalLogout.php");
 ?>
 

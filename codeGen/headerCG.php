@@ -1,6 +1,16 @@
 <?php
 include("../database.php");
 
+if (isset($_POST['logout'])) {
+  // Clear the session
+  session_unset();
+  session_destroy();
+
+  // Redirect to login page
+  echo '<script>window.location.href = "loginPage.php";</script>';
+  exit;
+}
+
 ?>
 
 <!DOCTYPE html>
