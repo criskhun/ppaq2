@@ -16,7 +16,7 @@
     }
 ?>
 
-<div class="row">
+<div class="row" style="margin-left: 20px; margin-right: 20px;">
   <div class="col">
     <div class="form-floating mb-3 mt-3">
         <input type="text" class="form-control" id="tile" placeholder="Enter Document Title" name="title">
