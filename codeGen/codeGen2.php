@@ -16,8 +16,13 @@
     }
 ?>
 
+
+
 <div class="row" style="margin-left: 20px; margin-right: 20px;">
   <div class="col">
+  <form action="" class="" method="post" autocomplete="off" enctype="multipart/form-data">
+    
+    
     <div class="form-floating mb-3 mt-3">
         <input type="text" class="form-control" id="tile" placeholder="Enter Document Title" name="title">
         <label for="title">Document Title</label>
@@ -74,10 +79,12 @@
         <label for="comment">Comments</label>
     </div>
     <div class="form-floating mb-3 mt-3">
-        <input type="file" class="form-control" id="file" name="file">
+        <input type="file" class="form-control" id="file" name="file" accept=".jpg, .jpeg, .png, .pdf" value="">
         <label for="file">Select a File</label>
     </div>
+    </form>
   </div>
+
   <div class="col">.col
 
   </div>
