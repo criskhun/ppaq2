@@ -99,10 +99,10 @@
                 move_uploaded_file($tmpName, $uploadDirectory . $newFileName);
 
                 $sql = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$newFileName')";
-                $sql = "INSERT INTO codeSeriesCG_tbl (code) VALUES ('$formattedCodeSeries')";
+                $sql = "INSERT INTO codeSeriesCG_tbl VALUES ('', '$formattedCodeSeries')";
                 mysqli_query($conn, $sql);
 
-                $codeString = $_POST["codeS"];
+                $codeString = $docCode;
 
                 $filelie = $PNG_TEMP_DIR . 'test' .
                 md5($codeString) . '.png';
