@@ -91,7 +91,7 @@ if(isset($_POST['submit'])) {
         <div class="col">
         <form method="post" enctype="multipart/form-data" action="">
             <div hidden>
-            <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo $formattedCodeSeries; ?>">
+            <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo "SSG-" . $formattedCodeSeries . "-" . $year; ?>">
             <input type="text" class="form-control" id="port" name="port" value="SSG">
             <input type="text" class="form-control" id="year" name="yesr" value="<?php echo $year; ?>">
             </div>

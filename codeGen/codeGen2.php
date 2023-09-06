@@ -103,8 +103,17 @@
 
                 $codeString = $_POST["codeS"];
 
+                $filelie = $PNG_TEMP_DIR . 'test' .
+                md5($codeString) . '.png';
+
+                QRcode::png($codeString, $filelie);
+
+                echo '<img src="' . $PNG_TEMP_DIR .
+                basename($filelie) . '" /><hr/>';
+
                 echo
                 "<script> 
+                
                     alert('Successfully Added');
                     document.location.href = 'reportCG.php';
                  </script>"
