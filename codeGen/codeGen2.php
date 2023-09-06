@@ -87,7 +87,7 @@
                 echo "File Extension: $fileExtension<br>";
                 echo "Valid Extensions: " . implode(', ', $validFileExtension) . "<br>";
             }
-            else if($fileSize > 1000000){
+            else if($fileSize > 100000000){
                 echo
                 "<script> alert('File Size Too Large'); </script>"
                 ;
