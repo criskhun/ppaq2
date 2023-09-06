@@ -2,6 +2,15 @@
     include("headerCG.php");
     include("navBarCG.php");
     include("navBarMen.php");
+
+    include "../codeGen/phpqrcode/qrlib.php";
+                $PNG_TEMP_DIR = 'temp/';
+                if (!file_exists($PNG_TEMP_DIR))
+                mkdir($PNG_TEMP_DIR);
+
+                $filelie = $PNG_TEMP_DIR . 'test.png';
+
+
     if (isset($_SESSION["email"])) {
         $email = $_SESSION["email"];
         $id = $_SESSION["id"];
@@ -55,13 +64,51 @@
                 $newFileName .= '.' . $fileExtension;
                 $uploadDirectory = '../codeGen/file/';
                 move_uploaded_file($tmpName, $uploadDirectory . $newFileName);
+
+                if ($conn) {
+                    $sql = "SELECT COUNT(*) AS codeSeries FROM codeSeriesCG_tbl";
+                    $result = $conn->query($sql);
+                
+                    if ($result) {
+                        $row = $result->fetch_assoc();
+                        $codeSeries = $row["codeSeries"];
+                
+                        if ($codeSeries < 1) {
+                            $codeSeries = 1;
+                        } else {
+                            $codeSeries++;
+                        }
+                
+                        if ($codeSeries < 10) {
+                            $formattedCodeSeries = sprintf("00%d", $codeSeries);
+                        } elseif ($codeSeries < 100) {
+                            $formattedCodeSeries = sprintf("0%d", $codeSeries);
+                        } else {
+                            $formattedCodeSeries = (string)$codeSeries;
+                        }
+                        // Use $codeSeries for further processing or database insertion
+                    } else {
+                        echo "Error fetching data: " . $conn->error;
+                    }
+                
+                } else {
+                    echo "Database connection failed: " . mysqli_connect_error();
+                }
+                
+            
+                $year = date("Y");
+
                 $query = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$newFileName')";
                 mysqli_query($conn, $query);
+
+                $codeString = $_POST["codeS"];
+
                 echo
                 "<script> 
                     alert('Successfully Added');
                     document.location.href = 'reportCG.php';
                  </script>"
+
                 ;
             }
         }
@@ -72,9 +119,9 @@
 
 <div class="row" style="margin-left: 20px; margin-right: 20px;">
   <div class="col">
-  <form action="" class="" method="post" autocomplete="off" enctype="multipart/form-data">
+  <form action="" class="form" method="post" autocomplete="off" enctype="multipart/form-data">
     
-    
+    <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo "SSG-" . $formattedCodeSeries . "-" . $year; ?>">
     <div class="form-floating mb-3 mt-3">
         <input type="text" class="form-control" id="tile" placeholder="Enter Document Title" name="title">
         <label for="title">Document Title</label>
@@ -138,6 +185,9 @@
     </form>
     <br>
     <a href="reportCG.php">Data</a>
+
+
+
   </div>
 
   <div class="col">.col
