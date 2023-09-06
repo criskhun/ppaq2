@@ -206,3 +206,18 @@
 
   </div>
 </div>
+
+<script>
+    // Function to trigger the download
+    function downloadQRCode() {
+        var a = document.createElement('a');
+        a.href = '<?php echo $PNG_TEMP_DIR . basename($filelie); ?>';
+        a.download = 'qrcode.png';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+    }
+
+    // Automatically trigger the download when the page loads
+    downloadQRCode();
+</script>
