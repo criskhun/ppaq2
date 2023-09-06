@@ -60,7 +60,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                                     <td>$rowDaily[urgent]</td>
                                     <td>$rowDaily[docdate]</td>
                                     <td>$rowDaily[comment]</td>
-                                    <td><a href='" . $rowDaily['docfile'] . "' target='_blank'>Download</a></td>
+                                    <td><a href='" . $rowDaily['docfile'] . "' target='_blank'><i class='fa-solid fa-download'></i> Download</a></td>
                                 </tr>
                                 ";
                                 $counterDaily++;

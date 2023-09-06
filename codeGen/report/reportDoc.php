@@ -60,7 +60,7 @@ $sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                                     <td>$rowTransaction[urgent]</td>
                                     <td>$rowTransaction[docdate]</td>
                                     <td>$rowTransaction[comment]</td>
-                                    <td><a href='" . $rowTransaction['docfile'] . "' target='_blank'>Download</a></td>
+                                    <td><a href='" . $rowTransaction['docfile'] . "' target='_blank'><i class='fa-solid fa-download'></i> Download</a></td>
                                 </tr>
                                 ";
                                 $counter++;
