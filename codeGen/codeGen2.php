@@ -37,10 +37,13 @@
             $validFileExtension = ['jpg', 'jpeg', 'png', 'pdf'];
             $fileExtension = explode('.', $fileName);
             $fileExtension = strtolower(end($fileExtension));
+           
             if(!in_array($fileExtension, $validFileExtension)){
                 echo
                 "<script> alert('Invalid File Extension'); </script>"
                 ;
+                echo "File Extension: $fileExtension<br>";
+                echo "Valid Extensions: " . implode(', ', $validFileExtension) . "<br>";
             }
             else if($fileSize > 1000000){
                 echo
