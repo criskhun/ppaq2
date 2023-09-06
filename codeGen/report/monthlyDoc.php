@@ -22,6 +22,11 @@ $sqlMonthly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
         <div id="rowCountMonthly">
 
         </div>
+        <!-- Include moment.js library (CDN) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+<!-- Add an input element for selecting the month -->
+<input type="month" id="monthPicker">
     </div>
                 <table class="table table-striped table-borderless table-hover">
                     <thead class="print-header">
@@ -62,11 +67,7 @@ $sqlMonthly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                     </tbody>
                 </table>
 
-<!-- Include moment.js library (CDN) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
-<!-- Add an input element for selecting the month -->
-<input type="month" id="monthPicker">
 
 <!-- Rest of your HTML code -->
 
