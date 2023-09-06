@@ -23,14 +23,11 @@ $sqlYearly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
             <div class="col">
                 <div id="rowCountYearly"></div>
             </div>
-            <div class="col ">
-                
-                <div class="form-floating mb-3 mt-3">
-                    <input type="number" id="yearPicker" placeholder="Please enter a year" min="1900" max="2099">
-                    <label for="title">Yearly Report</label>
+            <div class="col">
+                <div class="form-group">
+                    <label for="yearPicker">Yearly Report</label>
+                    <input type="number" class="form-control" id="yearPicker" placeholder="Please enter a year" min="1900" max="2099">
                 </div>
-                <!-- Add an input element for selecting the month -->
-
             </div>
         </div>
         
