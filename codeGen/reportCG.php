@@ -113,3 +113,19 @@
 
     </div>
   </div>
+
+  <script>
+    $(document).ready(function() {
+        // Function to update row count for a specific table
+        function updateRowCount(tableId) {
+            const visibleRowCount = $(`#${tableId} tbody tr:visible`).length;
+            $(`#${tableId}-rowCount`).text(`Total rows: ${visibleRowCount}`);
+        }
+
+        // Example: Update row count for table1
+        updateRowCount("tableBody");
+
+        // Example: Update row count for table2
+        updateRowCount("tableBodyDaily");
+    });
+</script>

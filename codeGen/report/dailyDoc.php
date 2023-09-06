@@ -24,10 +24,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 <div class="table-responsive">  
     <div class="table-responsive">
         <div id="rowCountDaily">
-            <?php
-                $rowCountDaily = $resultDaily->num_rows;
-                echo "Total rows: $rowCountDaily";
-            ?>
+
         </div>
     </div>
                 <table class="table table-striped table-borderless table-hover">
