@@ -215,7 +215,7 @@
 
   </div>
 
-  <div class="col">.col
+  <div class="col">.I dont know what should i put here
 
   </div>
 </div>
