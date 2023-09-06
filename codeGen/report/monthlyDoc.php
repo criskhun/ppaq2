@@ -19,14 +19,20 @@ $sqlMonthly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <div class="table-responsive">  
     <div class="table-responsive">
-        <div id="rowCountMonthly">
+        <div class="row">
+            <div class="col">
+                <div id="rowCountMonthly"></div>
+            </div>
+            <div class="col">
+                <!-- Include moment.js library (CDN) -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
+                <!-- Add an input element for selecting the month -->
+                <input type="month" id="monthPicker">
+            </div>
         </div>
-        <!-- Include moment.js library (CDN) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+        
 
-<!-- Add an input element for selecting the month -->
-<input type="month" id="monthPicker">
     </div>
                 <table class="table table-striped table-borderless table-hover">
                     <thead class="print-header">
