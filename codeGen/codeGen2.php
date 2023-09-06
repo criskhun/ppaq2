@@ -53,7 +53,7 @@
             else {
                 $newFileName = uniqid();
                 $newFileName .= '.' . $fileExtension;
-                $uploadDirectory = 'ppaq2/codeGen/file/';
+                $uploadDirectory = '../codeGen/file/';
                 move_uploaded_file($tmpName, $uploadDirectory . $newFileName);
                 $query = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$newFileName')";
                 mysqli_query($conn, $query);
