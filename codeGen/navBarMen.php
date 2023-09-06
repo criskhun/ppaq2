@@ -7,11 +7,11 @@
   <div class="offcanvas-body">
     <h3>Core</h3>
   <div class="list-group list-group-flush">
-        <a href="../codeGen/codeGen.php" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+        <!--<a href="../codeGen/codeGen.php" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
             <i class="fa-solid fa-gauge ms-2 me-2"></i>
             Code Generator
-            </div></a>
+            </div></a>-->
         <a href="../codeGen/codeGen2.php" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center">
             <i class="fa-solid fa-gauge ms-2 me-2"></i>

@@ -49,7 +49,7 @@
                 $_SESSION["date"] = $user["date"];
                 $_SESSION["role"] = $user["role"];
                 $_SESSION["designation"] = $user["designation"];
-                header("Location: ../codeGen/codeGen.php"); //Redirect to the page
+                header("Location: ../codeGen/codeGen2.php"); //Redirect to the page
                 exit();
             } else {
                 $message = "Invalid email or password.";
