@@ -104,7 +104,7 @@
                 mysqli_query($conn, $query);
                 mysqli_query($conn, $sql);
 
-                $codeString = $docCode;
+                $codeString = "https://ppaq2.pmosocsargen.com/" . $fileFullPath;
 
                 $filelie = $PNG_TEMP_DIR . 'test' .
                 md5($codeString) . '.png';
