@@ -98,8 +98,9 @@
                 $uploadDirectory = '../codeGen/file/';
                 move_uploaded_file($tmpName, $uploadDirectory . $newFileName);
 
-                $sql = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$newFileName')";
+                $query = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$newFileName')";
                 $sql = "INSERT INTO codeSeriesCG_tbl VALUES ('', '$formattedCodeSeries')";
+                mysqli_query($conn, $query);
                 mysqli_query($conn, $sql);
 
                 $codeString = $docCode;
