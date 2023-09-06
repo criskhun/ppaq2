@@ -96,9 +96,10 @@
                 $newFileName = uniqid();
                 $newFileName .= '.' . $fileExtension;
                 $uploadDirectory = '../codeGen/file/';
+                $fileFullPath = $uploadDirectory . $newFileName;
                 move_uploaded_file($tmpName, $uploadDirectory . $newFileName);
 
-                $query = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$newFileName')";
+                $query = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$fileFullPath')";
                 $sql = "INSERT INTO codeSeriesCG_tbl VALUES ('', '$formattedCodeSeries')";
                 mysqli_query($conn, $query);
                 mysqli_query($conn, $sql);
