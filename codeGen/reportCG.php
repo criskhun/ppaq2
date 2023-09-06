@@ -90,7 +90,9 @@
           <div class="accordion-body">
             <!-- Your content for Option 3 here -->
             <div>
-              
+              <?php
+                include("../codeGen/report/yearlyDoc.php");
+              ?>
             </div>
           </div>
         </div>

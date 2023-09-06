@@ -24,8 +24,7 @@ $sqlMonthly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                 <div id="rowCountMonthly"></div>
             </div>
             <div class="col ">
-                <!-- Include moment.js library (CDN) -->
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+                
                 <div class="form-floating mb-3 mt-3">
                     <input type="month" class="form-control" id="monthPicker" placeholder="Please pick a month" name="monthly">
                     <label for="title">Monthly Report</label>
