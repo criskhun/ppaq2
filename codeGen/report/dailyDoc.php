@@ -71,7 +71,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <script>
      $(document).ready(function() {
-        function updateRowCountDaily() {
+        function updateRowCount() {
             const visibleRowCount = $("#tableBodyDaily tr:visible").length;
             $("#rowCountDaily").text(`Total rows: ${visibleRowCount}`);
         }
@@ -89,7 +89,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                 }
             });
 
-            updateRowCountDaily(); // Corrected function name
+            updateRowCount();
         }
 
         // Initial filter by current date
@@ -108,15 +108,22 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                 }
             });
 
-            updateRowCountDaily(); // Corrected function name
+            updateRowCount();
         }
 
-        $("#searchInputDaily").on("input", function() {
+        $("#searchInput").on("input", function() {
             const searchValue = $(this).val();
             filterTableRows(searchValue);
+
+            // If the search input is empty, show all rows
+            if (searchValue === "") {
+                $("#tableBodyDaily tr").show();
+                updateRowCount();
+            }
         });
 
         // Initial row count display
-        updateRowCountDaily(); // Corrected function name
+        updateRowCount();
     });
+
 </script>
