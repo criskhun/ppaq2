@@ -1,8 +1,8 @@
 <?php
-$sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
-    $resultTransactionLog= $conn->query($sql5);
+$sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
+    $resultDaily= $conn->query($sqldaily);
 
-    if (!$resultTransactionLog) {
+    if (!$resultDaily) {
         die("Invalid query: " . $conn->error);
     }
 
@@ -23,10 +23,10 @@ $sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <div class="table-responsive">  
     <div class="table-responsive">
-        <div id="rowCount">
+        <div id="rowCountDaily">
             <?php
-                $rowCount = $resultTransactionLog->num_rows;
-                echo "Total rows: $rowCount";
+                $rowCountDaily = $resultDaily->num_rows;
+                echo "Total rows: $rowCountDaily";
             ?>
         </div>
     </div>
@@ -45,51 +45,52 @@ $sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
                         </tr>
                     </thead>
-                    <tbody id="tableBody">
+                    <tbody id="tableBodyDaily">
                         <?php
-                        $counter = 1;
-                            while ($rowTransaction = $resultTransactionLog->fetch_assoc()) {
-                                $transactionId = $rowTransaction['id'];
+                        $counterDaily = 1;
+                            while ($rowDaily = $resultDaily->fetch_assoc()) {
+                                $transactionId = $rowDaily['id'];
                                 echo "
                                 <tr>
                                     <td>$counter</td>
-                                    <td>$rowTransaction[docCode]</td>
-                                    <td>$rowTransaction[title]</td>
-                                    <td>$rowTransaction[sender]</td>
-                                    <td>$rowTransaction[doctype]</td>
-                                    <td>$rowTransaction[urgent]</td>
-                                    <td>$rowTransaction[docdate]</td>
-                                    <td>$rowTransaction[comment]</td>
-                                    <td><a href='" . $rowTransaction['docfile'] . "' target='_blank'>Download</a></td>
+                                    <td>$rowDaily[docCode]</td>
+                                    <td>$rowDaily[title]</td>
+                                    <td>$rowDaily[sender]</td>
+                                    <td>$rowDaily[doctype]</td>
+                                    <td>$rowDaily[urgent]</td>
+                                    <td>$rowDaily[docdate]</td>
+                                    <td>$rowDaily[comment]</td>
+                                    <td><a href='" . $rowDaily['docfile'] . "' target='_blank'>Download</a></td>
                                 </tr>
                                 ";
-                                $counter++;
+                                $counterDaily++;
                             }
                         ?>
                     </tbody>
                 </table>
 
 <script>
-    $(document).ready(function() {
-        function updateRowCount() {
-            const visibleRowCount = $("#tableBody tr:visible").length;
-            $("#rowCount").text(`Total rows: ${visibleRowCount}`);
+     $(document).ready(function() {
+        function updateRowCountDaily() {
+            const visibleRowCount = $("#tableBodyDaily tr:visible").length;
+            $("#rowCountDaily").text(`Total rows: ${visibleRowCount}`);
         }
 
         function filterTableRows(searchValue) {
             searchValue = searchValue.toLowerCase();
 
-            $("#tableBody tr").each(function () {
+            $("#tableBodyDaily tr").each(function () {
                 const rowText = $(this).text().toLowerCase();
 
-                if (rowText.includes(searchValue)) {
+                // Check if the row text contains the search value and the date matches the current date
+                if (rowText.includes(searchValue) && $(this).find("td:eq(6)").text() === "<?= date('Y-m-d'); ?>") {
                     $(this).show();
                 } else {
                     $(this).hide();
                 }
             });
 
-            updateRowCount();
+            updateRowCountDaily();
         }
 
         $("#searchInput").on("input", function() {
@@ -98,6 +99,6 @@ $sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
         });
 
         // Initial row count display
-        updateRowCount();
+        updateRowCountDaily();
     });
 </script>
