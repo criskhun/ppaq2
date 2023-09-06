@@ -71,7 +71,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <script>
      $(document).ready(function() {
-        function updateRowCount() {
+        function updateRowCountDaily() {
             const visibleRowCount = $("#tableBodyDaily tr:visible").length;
             $("#rowCountDaily").text(`Total rows: ${visibleRowCount}`);
         }
@@ -79,7 +79,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
         function filterTableRowsByCurrentDate() {
             const currentDate = "<?= date('Y-m-d'); ?>";
 
-            $("#tableBody tr").each(function () {
+            $("#tableBodyDaily tr").each(function () {
                 const rowDate = $(this).find("td:eq(6)").text(); // Assuming date is in the 6th column
 
                 if (rowDate === currentDate) {
@@ -89,7 +89,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                 }
             });
 
-            updateRowCountDaily();
+            updateRowCountDaily(); // Corrected function name
         }
 
         // Initial filter by current date
@@ -108,15 +108,15 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                 }
             });
 
-            updateRowCountDaily();
+            updateRowCountDaily(); // Corrected function name
         }
 
-        $("#searchInput").on("input", function() {
+        $("#searchInputDaily").on("input", function() {
             const searchValue = $(this).val();
             filterTableRows(searchValue);
         });
 
         // Initial row count display
-        updateRowCountDaily();
+        updateRowCountDaily(); // Corrected function name
     });
 </script>
