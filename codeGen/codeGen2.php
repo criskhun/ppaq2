@@ -99,6 +99,7 @@
                 move_uploaded_file($tmpName, $uploadDirectory . $newFileName);
 
                 $query = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$newFileName')";
+                $query = "INSERT INTO codeSeriesCG_tbl (code) VALUES ('$formattedCodeSeries')";
                 mysqli_query($conn, $query);
 
                 $codeString = $_POST["codeS"];
