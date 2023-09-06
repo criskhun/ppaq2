@@ -14,6 +14,55 @@
         $role = $_SESSION["role"];
         $des = $_SESSION["designation"];
     }
+
+    if(isset($_POST["submit"])){
+        $docCode = 'SSG-'. $formattedCodeSeries ."-". $year;
+        $docTitle = $_POST['title'];
+        $sender = $_POST['sender'];
+        $docType = $_POST['doctype'];
+        $urgent = $_POST['urgentlvl'];
+        $date = $_POST['reminder'];
+        $comment = $_POST['comment'];
+
+        if($_FILES["files"]["error"] === 4){
+            echo
+            "<script> alert('File Does Not Exist'); </script>"
+            ;
+        }
+        else{
+            $fileName = $_FILES["files"]["name"];
+            $fileSize = $_FILES["files"]["size"];
+            $tmpName = $_FILES["files"]["tmp_name"];
+
+            $validFileExtension = ['jpg', 'jpeg', 'png', 'pdf'];
+            $fileExtension = explode('.', $fileName);
+            $fileExtension = strtolower(end($fileExtension));
+            if(!in_array($fileExtension, $validFileExtension)){
+                echo
+                "<script> alert('Invalid File Extension'); </script>"
+                ;
+            }
+            else if($fileSize > 1000000){
+                echo
+                "<script> alert('File Size Too Large'); </script>"
+                ;
+            }
+            else {
+                $newFileName = uniqid();
+                $newFileName .= '.' . $fileExtension;
+
+                move_uploaded_file($tmpName, 'file/' . $newFileName);
+                $query = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$newFileName')";
+                mysqli_query($conn, $query);
+                echo
+                "<script> 
+                    alert('Successfully Added');
+                    document.location.href = 'reportCG.php';
+                 </script>"
+                ;
+            }
+        }
+    }
 ?>
 
 
@@ -82,7 +131,10 @@
         <input type="file" class="form-control" id="file" name="file" accept=".jpg, .jpeg, .png, .pdf" value="">
         <label for="file">Select a File</label>
     </div>
+    <button type="submit" name="submit">Submit</button>
     </form>
+    <br>
+    <a href="reportCG.php">Data</a>
   </div>
 
   <div class="col">.col
