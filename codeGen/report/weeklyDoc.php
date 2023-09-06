@@ -1,8 +1,8 @@
 <?php
-$sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
-    $resultDaily= $conn->query($sqldaily);
+$sqlWeekly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
+    $resultWeekly= $conn->query($sqlWeekly);
 
-    if (!$resultDaily) {
+    if (!$resultWeekly) {
         die("Invalid query: " . $conn->error);
     }
 
@@ -10,7 +10,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 ?>
 <div class="input-group mb-3" hidden>
-    <input type="text" id="searchInputDaily" class="form-control" placeholder="Search...">
+    <input type="text" id="searchInputWeekly" class="form-control" placeholder="Search...">
     <button class="btn btn-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Go</button>
 </div>
 
@@ -23,7 +23,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <div class="table-responsive">  
     <div class="table-responsive">
-        <div id="rowCountDaily">
+        <div id="rowCountWeekly">
 
         </div>
     </div>
@@ -42,25 +42,25 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
                         </tr>
                     </thead>
-                    <tbody id="tableBodyDaily">
+                    <tbody id="tableBodyWeekly">
                         <?php
-                        $counterDaily = 1;
-                            while ($rowDaily = $resultDaily->fetch_assoc()) {
-                                $transactionId = $rowDaily['id'];
+                        $counterWeekly = 1;
+                            while ($rowWeekly = $resultWeekly->fetch_assoc()) {
+                                $transactionId = $rowWeekly['id'];
                                 echo "
                                 <tr>
-                                    <td>$counterDaily</td>
-                                    <td>$rowDaily[docCode]</td>
-                                    <td>$rowDaily[title]</td>
-                                    <td>$rowDaily[sender]</td>
-                                    <td>$rowDaily[doctype]</td>
-                                    <td>$rowDaily[urgent]</td>
-                                    <td>$rowDaily[docdate]</td>
-                                    <td>$rowDaily[comment]</td>
-                                    <td><a href='" . $rowDaily['docfile'] . "' target='_blank'><i class='fa-solid fa-download'></i> Download</a></td>
+                                    <td>$counterWeekly</td>
+                                    <td>$rowWeekly[docCode]</td>
+                                    <td>$rowWeekly[title]</td>
+                                    <td>$rowWeekly[sender]</td>
+                                    <td>$rowWeekly[doctype]</td>
+                                    <td>$rowWeekly[urgent]</td>
+                                    <td>$rowWeekly[docdate]</td>
+                                    <td>$rowWeekly[comment]</td>
+                                    <td><a href='" . $rowWeekly['docfile'] . "' target='_blank'><i class='fa-solid fa-download'></i> Download</a></td>
                                 </tr>
                                 ";
-                                $counterDaily++;
+                                $counterWeekly++;
                             }
                         ?>
                     </tbody>
@@ -68,61 +68,69 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <script>
      $(document).ready(function() {
-        function updateRowCountDaily() {
-            const visibleRowCount = $("#tableBodyDaily tr:visible").length;
-            $("#rowCountDaily").text(`Total rows: ${visibleRowCount}`);
+        function updateRowCountWeekly() {
+            const visibleRowCount = $("#tableBodyWeekly tr:visible").length;
+            $("#rowCountWeekly").text(`Total rows: ${visibleRowCount}`);
         }
 
-        function filterTableRowsByCurrentDate() {
-            const currentDate = "<?= date('Y-m-d'); ?>";
+        function filterTableRowsByCurrentWeek() {
+            const currentDate = new Date();
+            const currentWeek = currentDate.getDate() - currentDate.getDay();
 
-            $("#tableBodyDaily tr").each(function () {
+            const startOfWeek = new Date(currentDate.setDate(currentWeek));
+            const endOfWeek = new Date(currentDate.setDate(currentWeek + 6));
+
+            // Format the start and end dates as strings in "YYYY-MM-DD" format
+            const startDateString = startOfWeek.toISOString().slice(0, 10);
+            const endDateString = endOfWeek.toISOString().slice(0, 10);
+
+            $("#tableBodyWeekly tr").each(function () {
                 const rowDate = $(this).find("td:eq(6)").text(); // Assuming date is in the 6th column
 
-                if (rowDate === currentDate) {
+                if (rowDate >= startDateString && rowDate <= endDateString) {
                     $(this).show();
                 } else {
                     $(this).hide();
                 }
             });
 
-            updateRowCountDaily();
+            updateRowCountWeekly();
         }
 
-        // Initial filter by current date
-        filterTableRowsByCurrentDate();
+        // Initial filter by current week
+        filterTableRowsByCurrentWeek();
 
         function filterTableRows(searchValue) {
             searchValue = searchValue.toLowerCase();
 
-            $("#tableBodyDaily tr").each(function () {
+            $("#tableBodyWeekly tr").each(function () {
                 const rowText = $(this).text().toLowerCase();
                 const rowDate = $(this).find("td:eq(6)").text(); // Assuming date is in the 6th column
 
-                if (rowDate === currentDate && rowText.includes(searchValue)) {
+                if (rowDate >= startDateString && rowDate <= endDateString && rowText.includes(searchValue)) {
                     $(this).show();
                 } else {
                     $(this).hide();
                 }
             });
 
-            updateRowCountDaily();
+            updateRowCountWeekly();
         }
 
-        $("#searchInputDaily").on("input", function() {
+        $("#searchInputWeekly").on("input", function() {
             const searchValue = $(this).val();
             filterTableRows(searchValue);
         });
 
-        // When clearing the filter input, show only the current date data
-        $("#searchInputDaily").on("keyup", function() {
+        // When clearing the filter input, show only the current week data
+        $("#searchInputWeekly").on("keyup", function() {
             if ($(this).val() === "") {
-                filterTableRowsByCurrentDate();
+                filterTableRowsByCurrentWeek();
             }
         });
 
         // Initial row count display
-        updateRowCountDaily();
+        updateRowCountWeekly();
     });
 
 </script>
