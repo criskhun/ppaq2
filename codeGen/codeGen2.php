@@ -153,10 +153,6 @@
         <label for="title">Document Title</label>
     </div>
     <div class="form-floating mt-3 mb-3">
-        <input type="text" class="form-control" id="sender" placeholder="Enter Sender Name" name="sender">
-        <label for="sender">Sender</label>
-    </div>
-    <div class="form-floating mt-3 mb-3">
         <select class="form-select" id="sender" name="sender">
             <option>Administrative Division</option>
             <option>Engineering Services Division</option>
