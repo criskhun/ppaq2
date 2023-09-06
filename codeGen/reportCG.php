@@ -52,7 +52,9 @@
           <div class="accordion-body">
             <!-- Your content for Option 2 here -->
             <div>
-              
+              <?php
+                include("../codeGen/report/weeklyDoc.php");
+              ?>
             </div>
           </div>
         </div>
