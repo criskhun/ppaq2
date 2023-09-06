@@ -1,0 +1,144 @@
+<?php
+$sqlYearly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
+    $resultYearly= $conn->query($sqlYearly);
+
+    if (!$resultYearly) {
+        die("Invalid query: " . $conn->error);
+    }
+
+    // Set default number of rows per page
+
+?>
+
+    <div>
+        <button class="btn btn-success" id="printButton"><i class="fa-solid fa-print"></i> Print</button>
+        <button class="btn btn-success" id="exportButton"><i class="fa-solid fa-file-export"></i> Export</button>
+    </div>
+</div>
+<br>
+
+<div class="table-responsive">  
+    <div class="table-responsive">
+        <div class="row">
+            <div class="col">
+                <div id="rowCountYearly"></div>
+            </div>
+            <div class="col ">
+                
+                <div class="form-floating mb-3 mt-3">
+                    <input type="number" id="yearPicker" placeholder="Please enter a year" min="1900" max="2099">
+                    <label for="title">Yearly Report</label>
+                </div>
+                <!-- Add an input element for selecting the month -->
+
+            </div>
+        </div>
+        
+
+    </div>
+                <table class="table table-striped table-borderless table-hover">
+                    <thead class="print-header">
+                        <tr>
+                            <th>#</th>
+                            <th>Document Code</th>
+                            <th>Title</th>
+                            <th>Sender</th>
+                            <th>Document Type</th>
+                            <th>Urgent</th>
+                            <th>Date</th>
+                            <th>Comment</th>
+                            <th>Document File</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="tableBodyYearly">
+                        <?php
+                        $counterYearly = 1;
+                            while ($rowYearly = $resultYearly->fetch_assoc()) {
+                                $transactionId = $rowYearly['id'];
+                                echo "
+                                <tr>
+                                    <td>$counterYearly</td>
+                                    <td>$rowYearly[docCode]</td>
+                                    <td>$rowYearly[title]</td>
+                                    <td>$rowYearly[sender]</td>
+                                    <td>$rowYearly[doctype]</td>
+                                    <td>$rowYearly[urgent]</td>
+                                    <td>$rowYearly[docdate]</td>
+                                    <td>$rowYearly[comment]</td>
+                                    <td><a href='" . $rowYearly['docfile'] . "' target='_blank'><i class='fa-solid fa-download'></i> Download</a></td>
+                                </tr>
+                                ";
+                                $counterYearly++;
+                            }
+                        ?>
+                    </tbody>
+                </table>
+
+
+
+<!-- Rest of your HTML code -->
+
+<script>
+     $(document).ready(function() {
+        function updateRowCountYearly() {
+            const visibleRowCount = $("#tableBodyYearly tr:visible").length;
+            $("#rowCountYearly").text(`Total rows: ${visibleRowCount}`);
+        }
+
+        function filterTableRowsByYear(selectedYear) {
+            $("#tableBodyYearly tr").each(function () {
+                const rowDate = moment($(this).find("td:eq(6)").text()); // Assuming date is in the 6th column
+                const rowYear = rowDate.year(); // Extract the year from the date
+
+                if (rowYear === selectedYear) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+
+            updateRowCountYearly();
+        }
+
+        // Handle changes in the year picker
+        $("#yearPicker").on("input", function() {
+            const selectedYear = parseInt($(this).val());
+            filterTableRowsByYear(selectedYear);
+        });
+
+        function filterTableRows(searchValue) {
+            searchValue = searchValue.toLowerCase();
+
+            $("#tableBodyYearly tr").each(function () {
+                const rowText = $(this).text().toLowerCase();
+                const rowDate = moment($(this).find("td:eq(6)").text()); // Assuming date is in the 6th column
+                const rowYear = rowDate.year(); // Extract the year from the date
+
+                if (rowYear === selectedYear && rowText.includes(searchValue)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+
+            updateRowCountYearly();
+        }
+
+        $("#searchInputYearly").on("input", function() {
+            const searchValue = $(this).val();
+            filterTableRows(searchValue);
+        });
+
+        // When clearing the filter input, show all data for the selected year
+        $("#searchInputYearly").on("keyup", function() {
+            if ($(this).val() === "") {
+                filterTableRowsByYear(selectedYear);
+            }
+        });
+
+        // Initial row count display
+        updateRowCountYearly();
+    });
+
+</script>
