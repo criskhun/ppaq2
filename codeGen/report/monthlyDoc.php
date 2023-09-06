@@ -23,12 +23,12 @@ $sqlMonthly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
             <div class="col">
                 <div id="rowCountMonthly"></div>
             </div>
-            <div class="col justify-content-end">
+            <div class="col ">
                 <!-- Include moment.js library (CDN) -->
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
 
                 <!-- Add an input element for selecting the month -->
-                <input type="month" id="monthPicker">
+                <input type="month" id="monthPicker" class="justify-content-end">
             </div>
         </div>
         
