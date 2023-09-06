@@ -10,7 +10,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 ?>
 <div class="input-group mb-3">
-    <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+    <input type="text" id="searchInputDaily" class="form-control" placeholder="Search...">
     <button class="btn btn-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Go</button>
 </div>
 
@@ -52,7 +52,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                                 $transactionId = $rowDaily['id'];
                                 echo "
                                 <tr>
-                                    <td>$counter</td>
+                                    <td>$counterDaily</td>
                                     <td>$rowDaily[docCode]</td>
                                     <td>$rowDaily[title]</td>
                                     <td>$rowDaily[sender]</td>
@@ -71,10 +71,29 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <script>
      $(document).ready(function() {
-        function updateRowCountDaily() {
+        function updateRowCount() {
             const visibleRowCount = $("#tableBodyDaily tr:visible").length;
             $("#rowCountDaily").text(`Total rows: ${visibleRowCount}`);
         }
+
+        function filterTableRowsByCurrentDate() {
+            const currentDate = "<?= date('Y-m-d'); ?>";
+
+            $("#tableBody tr").each(function () {
+                const rowDate = $(this).find("td:eq(6)").text(); // Assuming date is in the 6th column
+
+                if (rowDate === currentDate) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+
+            updateRowCountDaily();
+        }
+
+        // Initial filter by current date
+        filterTableRowsByCurrentDate();
 
         function filterTableRows(searchValue) {
             searchValue = searchValue.toLowerCase();
@@ -82,8 +101,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
             $("#tableBodyDaily tr").each(function () {
                 const rowText = $(this).text().toLowerCase();
 
-                // Check if the row text contains the search value and the date matches the current date
-                if (rowText.includes(searchValue) && $(this).find("td:eq(6)").text() === "<?= date('Y-m-d'); ?>") {
+                if (rowText.includes(searchValue)) {
                     $(this).show();
                 } else {
                     $(this).hide();
