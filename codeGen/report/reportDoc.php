@@ -1,8 +1,8 @@
 <?php
-$sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
-    $resultTransactionLog= $conn->query($sql5);
+$sqlAll = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
+    $resultAll= $conn->query($sqlAll);
 
-    if (!$resultTransactionLog) {
+    if (!$resultAll) {
         die("Invalid query: " . $conn->error);
     }
 
@@ -10,7 +10,7 @@ $sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 ?>
 <div class="input-group mb-3">
-    <input type="text" id="searchInput" class="form-control" placeholder="Search...">
+    <input type="text" id="searchInputAll" class="form-control" placeholder="Search...">
     <button class="btn btn-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Go</button>
 </div>
 
@@ -23,10 +23,10 @@ $sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <div class="table-responsive">  
     <div class="table-responsive">
-        <div id="rowCount">
+        <div id="rowCountAll">
             <?php
-                $rowCount = $resultTransactionLog->num_rows;
-                echo "Total rows: $rowCount";
+                $rowCountAll = $resultAll->num_rows;
+                echo "Total rows: $rowCountAll";
             ?>
         </div>
     </div>
@@ -47,23 +47,23 @@ $sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                     </thead>
                     <tbody id="tableBody">
                         <?php
-                        $counter = 1;
-                            while ($rowTransaction = $resultTransactionLog->fetch_assoc()) {
-                                $transactionId = $rowTransaction['id'];
+                        $counterAll = 1;
+                            while ($rowAll = $resultAll->fetch_assoc()) {
+                                $transactionId = $rowAll['id'];
                                 echo "
                                 <tr>
-                                    <td>$counter</td>
-                                    <td>$rowTransaction[docCode]</td>
-                                    <td>$rowTransaction[title]</td>
-                                    <td>$rowTransaction[sender]</td>
-                                    <td>$rowTransaction[doctype]</td>
-                                    <td>$rowTransaction[urgent]</td>
-                                    <td>$rowTransaction[docdate]</td>
-                                    <td>$rowTransaction[comment]</td>
-                                    <td><a href='" . $rowTransaction['docfile'] . "' target='_blank'><i class='fa-solid fa-download'></i> Download</a></td>
+                                    <td>$counterAll</td>
+                                    <td>$rowAll[docCode]</td>
+                                    <td>$rowAll[title]</td>
+                                    <td>$rowAll[sender]</td>
+                                    <td>$rowAll[doctype]</td>
+                                    <td>$rowAll[urgent]</td>
+                                    <td>$rowAll[docdate]</td>
+                                    <td>$rowAll[comment]</td>
+                                    <td><a href='" . $rowAll['docfile'] . "' target='_blank'><i class='fa-solid fa-download'></i> Download</a></td>
                                 </tr>
                                 ";
-                                $counter++;
+                                $counterAll++;
                             }
                         ?>
                     </tbody>
@@ -71,9 +71,9 @@ $sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <script>
     $(document).ready(function() {
-        function updateRowCount() {
-            const visibleRowCount = $("#tableBody tr:visible").length;
-            $("#rowCount").text(`Total rows: ${visibleRowCount}`);
+        function updaterowCountAll() {
+            const visiblerowCountAll = $("#tableBody tr:visible").length;
+            $("#rowCountAll").text(`Total rows: ${visiblerowCountAll}`);
         }
 
         function filterTableRows(searchValue) {
@@ -89,15 +89,15 @@ $sql5 = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                 }
             });
 
-            updateRowCount();
+            updaterowCountAll();
         }
 
-        $("#searchInput").on("input", function() {
+        $("#searchInputAll").on("input", function() {
             const searchValue = $(this).val();
             filterTableRows(searchValue);
         });
 
         // Initial row count display
-        updateRowCount();
+        updaterowCountAll();
     });
 </script>

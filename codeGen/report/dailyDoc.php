@@ -9,7 +9,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
     // Set default number of rows per page
 
 ?>
-<div class="input-group mb-3">
+<div class="input-group mb-3" hidden>
     <input type="text" id="searchInputDaily" class="form-control" placeholder="Search...">
     <button class="btn btn-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Go</button>
 </div>
