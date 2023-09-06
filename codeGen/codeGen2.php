@@ -25,6 +25,39 @@
     }
 
     if(isset($_POST["submit"])){
+        if ($conn) {
+            $sql = "SELECT COUNT(*) AS codeSeries FROM codeSeriesCG_tbl";
+            $result = $conn->query($sql);
+        
+            if ($result) {
+                $row = $result->fetch_assoc();
+                $codeSeries = $row["codeSeries"];
+        
+                if ($codeSeries < 1) {
+                    $codeSeries = 1;
+                } else {
+                    $codeSeries++;
+                }
+        
+                if ($codeSeries < 10) {
+                    $formattedCodeSeries = sprintf("00%d", $codeSeries);
+                } elseif ($codeSeries < 100) {
+                    $formattedCodeSeries = sprintf("0%d", $codeSeries);
+                } else {
+                    $formattedCodeSeries = (string)$codeSeries;
+                }
+                // Use $codeSeries for further processing or database insertion
+            } else {
+                echo "Error fetching data: " . $conn->error;
+            }
+        
+        } else {
+            echo "Database connection failed: " . mysqli_connect_error();
+        }
+        
+    
+        $year = date("Y");
+
         $docCode = 'SSG-'. $formattedCodeSeries ."-". $year;
         $docTitle = $_POST['title'];
         $sender = $_POST['sender'];
@@ -65,39 +98,6 @@
                 $uploadDirectory = '../codeGen/file/';
                 move_uploaded_file($tmpName, $uploadDirectory . $newFileName);
 
-                if ($conn) {
-                    $sql = "SELECT COUNT(*) AS codeSeries FROM codeSeriesCG_tbl";
-                    $result = $conn->query($sql);
-                
-                    if ($result) {
-                        $row = $result->fetch_assoc();
-                        $codeSeries = $row["codeSeries"];
-                
-                        if ($codeSeries < 1) {
-                            $codeSeries = 1;
-                        } else {
-                            $codeSeries++;
-                        }
-                
-                        if ($codeSeries < 10) {
-                            $formattedCodeSeries = sprintf("00%d", $codeSeries);
-                        } elseif ($codeSeries < 100) {
-                            $formattedCodeSeries = sprintf("0%d", $codeSeries);
-                        } else {
-                            $formattedCodeSeries = (string)$codeSeries;
-                        }
-                        // Use $codeSeries for further processing or database insertion
-                    } else {
-                        echo "Error fetching data: " . $conn->error;
-                    }
-                
-                } else {
-                    echo "Database connection failed: " . mysqli_connect_error();
-                }
-                
-            
-                $year = date("Y");
-
                 $query = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$newFileName')";
                 mysqli_query($conn, $query);
 
@@ -119,9 +119,12 @@
 
 <div class="row" style="margin-left: 20px; margin-right: 20px;">
   <div class="col">
+
   <form action="" class="form" method="post" autocomplete="off" enctype="multipart/form-data">
-    
+    <div hidden>
     <input type="text" class="form-control" id="codeS" name="codeS" value="<?php echo "SSG-" . $formattedCodeSeries . "-" . $year; ?>">
+    </div>
+    
     <div class="form-floating mb-3 mt-3">
         <input type="text" class="form-control" id="tile" placeholder="Enter Document Title" name="title">
         <label for="title">Document Title</label>
