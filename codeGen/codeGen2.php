@@ -131,8 +131,8 @@
         <label for="comment">Comments</label>
     </div>
     <div class="form-floating mb-3 mt-3">
-        <input type="file" class="form-control" id="file" name="file" accept=".jpg, .jpeg, .png, .pdf" value="">
-        <label for="file">Select a File</label>
+        <input type="file" class="form-control" id="files" name="files" accept=".jpg, .jpeg, .png, .pdf" value="">
+        <label for="files">Select a File</label>
     </div>
     <button type="submit" name="submit">Submit</button>
     </form>
