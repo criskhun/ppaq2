@@ -93,14 +93,14 @@
                 ;
             }
             else {
-                $newFileName = $fileName;
-                //$newFileName .= '.' . $fileExtension;
+                $newFileName = uniqid();
+                $newFileName .= '.' . $fileExtension;
                 $uploadDirectory = '../codeGen/file/';
                 move_uploaded_file($tmpName, $uploadDirectory . $newFileName);
 
-                $query = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$newFileName')";
-                $query = "INSERT INTO codeSeriesCG_tbl (code) VALUES ('$formattedCodeSeries')";
-                mysqli_query($conn, $query);
+                $sql = "INSERT INTO documentCG_tbl VALUES ('', '$docCode', '$docTitle', '$sender', '$docType', '$urgent', '$date', '$comment', '$newFileName')";
+                $sql = "INSERT INTO codeSeriesCG_tbl (code) VALUES ('$formattedCodeSeries')";
+                mysqli_query($conn, $sql);
 
                 $codeString = $_POST["codeS"];
 
@@ -114,19 +114,20 @@
 
                 echo
                 "<script> 
-                
+                var qrCodeImageUrl = '" . $PNG_TEMP_DIR . basename($filelie) . "';
+
                 alert('Successfully Added');
 
                 // Trigger the download after the alert is displayed
                 window.onload = function() {
                     var a = document.createElement('a');
-                    a.href = '<?php echo $PNG_TEMP_DIR . basename($filelie); ?>';
+                    a.href = qrCodeImageUrl;
                     a.download = 'qrcode.png';
                     document.body.appendChild(a);
                     a.click();
                     document.body.removeChild(a);
                 };
-        
+
                 // Redirect to 'reportCG.php'
                 setTimeout(function() {
                     document.location.href = 'reportCG.php';
