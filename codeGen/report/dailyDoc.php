@@ -100,8 +100,9 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
             $("#tableBodyDaily tr").each(function () {
                 const rowText = $(this).text().toLowerCase();
+                const rowDate = $(this).find("td:eq(6)").text(); // Assuming date is in the 6th column
 
-                if (rowText.includes(searchValue)) {
+                if (rowDate === currentDate && rowText.includes(searchValue)) {
                     $(this).show();
                 } else {
                     $(this).hide();
@@ -114,11 +115,12 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
         $("#searchInputDaily").on("input", function() {
             const searchValue = $(this).val();
             filterTableRows(searchValue);
+        });
 
-            // If the search input is empty, show all rows
-            if (searchValue === "") {
-                $("#tableBodyDaily tr").show();
-                updateRowCountDaily();
+        // When clearing the filter input, show only the current date data
+        $("#searchInputDaily").on("keyup", function() {
+            if ($(this).val() === "") {
+                filterTableRowsByCurrentDate();
             }
         });
 
