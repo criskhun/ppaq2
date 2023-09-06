@@ -93,8 +93,8 @@
                 ;
             }
             else {
-                $newFileName = uniqid();
-                $newFileName .= '.' . $fileExtension;
+                $newFileName = $fileName;
+                //$newFileName .= '.' . $fileExtension;
                 $uploadDirectory = '../codeGen/file/';
                 move_uploaded_file($tmpName, $uploadDirectory . $newFileName);
 
