@@ -1,10 +1,12 @@
 <?php
 // Get the filtered table data from the query parameter
 $tableData = json_decode($_GET['tableData'], true);
-?>
 
+require_once '../ppaq2/vendor/autoload.php';
 
-<!DOCTYPE html>
+use Dompdf\Dompdf;
+
+$html = '<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -68,33 +70,40 @@ $tableData = json_decode($_GET['tableData'], true);
                 <th>Date</th>
                 <th>Comment</th>
                 <th>Document File</th>
-            </tr>
+            </tr>';
 
-            <!-- i want to replace the table content-->
-            <?php
+$html .= '<?php
                 
-                foreach ($tableData as $rowData) {
-                echo "<tr>";
-                
-                foreach ($rowData as $cellData) {
-                echo "<td>" . $cellData . "</td>";
-                }
-                echo "</tr>";
-                
-                }
-            ?>
-        </table>
+foreach ($tableData as $rowData) {
+echo "<tr>";
+
+foreach ($rowData as $cellData) {
+echo "<td>" . $cellData . "</td>";
+}
+echo "</tr>";
+
+}
+?>';
+
+$html .= ' </table>
+</div>
+<div class="bottom-section">
+    <div class="status-content">
+        <h4> CodeGen </h4>
+        <p> Division: <span> Office of the Port Manager</span></p>
+        <p class="tnx"> This document was published on September 7, 2023 </p>
     </div>
-    <div class="bottom-section">
-        <div class="status-content">
-            <h4> Code Generation </h4>
-            <p class="status paid"></p>
-            <p> Division: <span> Office of the Port Manager</span></p>
-            <p class="tnx"> This document was published on September 7, 2023 </p>
-        </div>
-    </div>
-    </div>
-    </div>
+</div>
+</div>
+</div>
 
 </body>
-</html>
+</html>';
+
+$dompdf = new Dompdf;
+$dompdf->loadHtml($html);
+$dompdf->setPaper('A4', 'portrait');
+$dompdf->render();
+$dompdf->stream('documentreport.pdf');
+
+?>
