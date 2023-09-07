@@ -87,9 +87,9 @@ $tableData = json_decode($_GET['tableData'], true);
     </div>
     <div class="bottom-section">
         <div class="status-content">
-            <h4> Payment Status </h4>
-            <p class="status free"></p>
-            <p> Payment Method: <span> SSL Commerz</span></p>
+            <h4> Code Generation </h4>
+            <p class="status paid"></p>
+            <p> Division: <span> Office of the Port Manager</span></p>
             <p class="tnx"> This document was published on September 7, 2023 </p>
         </div>
     </div>
