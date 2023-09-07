@@ -187,11 +187,13 @@ h2, h4, p {
 }
 
 .bottom-section .status.paid::before {
-    content: "Paid";
+    content: "2023";
     background-color: #212adb;
 }
 
 .bottom-section .tnx {
+    font-size: 8px;
+    font-weight: 300;
     text-align: center;
     margin-top: 10px;
 }
