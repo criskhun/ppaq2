@@ -71,15 +71,15 @@ $tableData = json_decode($_GET['tableData'], true);
 
             <!-- i want to replace the table content-->
             <?php
-                $counter = 1;
+                
                 foreach ($tableData as $rowData) {
                 echo "<tr>";
-                echo "<td>" . $counter . "</td>";
+                
                 foreach ($rowData as $cellData) {
                 echo "<td>" . $cellData . "</td>";
                 }
                 echo "</tr>";
-                $counter++;
+                
                 }
             ?>
         </table>
