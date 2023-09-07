@@ -70,7 +70,7 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
         // Add a click event listener to the button
         button.addEventListener("click", function () {
             // Redirect to the other page in the same folder
-            window.location.href = "printDesign.php";
+            window.location.href = "report/printDesign.php";
         });
     </script>
 
