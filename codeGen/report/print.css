@@ -172,25 +172,6 @@ h2, h4, p {
     margin-bottom: 10px;
 }
 
-.bottom-section .status.free::before,
-.bottom-section .status.paid::before {
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin-bottom: 8px;
-    display: inline-block;
-    text-transform: uppercase;
-}
-
-.bottom-section .status.free::before {
-    content: "Unpaid";
-    background-color: #ef7c94;
-}
-
-.bottom-section .status.paid::before {
-    content: "2023";
-    background-color: #212adb;
-}
-
 .bottom-section .tnx {
     font-size: 10px;
     font-weight: 300;
