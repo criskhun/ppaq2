@@ -11,7 +11,7 @@
         <div class="top-section">
             <div class="address">
                 <div class="address-content">
-                    <h2>Philippine Ports Authority - PMO SOCSARGEN</h2>
+                    <h2>PPA - PMO SOCSARGEN</h2>
                     <p>Sarangani, Region XII, PH</p>
                 </div>
             </div>

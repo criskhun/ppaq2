@@ -51,3 +51,9 @@ h2, h4, p {
 .top-section .address-content {
     max-width: 275px;
 }
+
+.contact .contact-content {
+    max-width: 220px;
+    float: right;
+    margin-top: 32px;
+}
