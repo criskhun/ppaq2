@@ -67,5 +67,74 @@ h2, h4, p {
 .contact-content .number span {
     float: right;
     margin-left: 30px;
+}
 
+.billing-invoice {
+    padding: 20px;
+    font-size: 20px;
+    margin-bottom: 15px;   
+}
+
+.billing-invoice title {
+    font-weight: 400;
+    float: left;
+}
+
+.billing-invoice des {
+    font-weight: 400;
+    float: right;
+}
+
+.billing-invoice .code {
+    font-weight: 700;
+    text-align: right;
+}
+
+.billing-invoice .issue {
+    text-align: right;
+    font-size: 15px;   
+}
+
+.billing-to {
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.billing-to .title {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.billing-to .billed-sec {
+    width: 50%;
+    float: left;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.billing-to .sub-title,
+.billing-to .name {
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.billing-to .ship-add {
+    max-width: 300px;
+}
+
+.table {
+    padding: 0 20px;
+}
+
+.table table {
+    width: 100%;
+}
+
+.table table, th, td {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #616161;
+    border-collapse: collapse;
 }
