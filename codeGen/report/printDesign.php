@@ -48,9 +48,7 @@
                 <div class="ship-add"> Address to </div>
             </div>
         </div>
-    </div>
-
-    <div class="table">
+        <div class="table">
         <table>
             <tr>
                 <th> # </th>
@@ -118,5 +116,8 @@
 
         </table>
     </div>
+    </div>
+
+
 </body>
 </html>
