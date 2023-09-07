@@ -66,13 +66,13 @@ h2, h4, p {
 .contact-content .email span,
 .contact-content .number span {
     float: right;
-    margin-left: 30px;
+    margin-left: 20px;
 }
 
 .billing-invoice {
     padding: 20px;
     font-size: 20px;
-    margin-bottom: 15px;   
+  
 }
 
 .billing-invoice title {
@@ -97,7 +97,7 @@ h2, h4, p {
 
 .billing-to {
     padding: 20px;
-    margin-top: 40px;
+
 }
 
 .billing-to .title {
