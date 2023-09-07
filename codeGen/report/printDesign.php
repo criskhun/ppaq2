@@ -17,8 +17,8 @@
             </div>
             <div class="contact">
                 <div class="contact-content">
-                    <div class="email"><span class="span">pmosocasrgen@ppa.com.ph</span></div>
-                    <div class="number"><span class="span">5522-6656</span></div>
+                    <div class="email"> Email: <span class="span">pmosocasrgen@ppa.com.ph</span></div>
+                    <div class="number"> Number: <span class="span">5522-6656</span></div>
                 </div>
             </div>
         </div>

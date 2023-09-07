@@ -53,7 +53,19 @@ h2, h4, p {
 }
 
 .contact .contact-content {
-    max-width: 220px;
+    max-width: 240px;
     float: right;
     margin-top: 32px;
+}
+
+.contact-content .email,
+.contact-content .number {
+    display: block;
+}
+
+.contact-content .email span,
+.contact-content .number span {
+    float: right;
+    margin-left: 30px;
+
 }
