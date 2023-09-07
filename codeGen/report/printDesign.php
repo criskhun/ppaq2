@@ -96,7 +96,5 @@ $tableData = json_decode($_GET['tableData'], true);
     </div>
     </div>
 
-
-
 </body>
 </html>
