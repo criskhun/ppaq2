@@ -77,7 +77,7 @@ printButton.addEventListener("click", function () {
 
     // Redirect to the other page with the query parameter
     //window.location.href = "report/printDesign.php?tableData=" + queryParams;
-    window.location.href = "report/pdf.php?tableData=" + queryParams;
+    window.location.href = "report/printDesign.php?tableData=" + queryParams;
 });
 
 // Function to get the filtered table data
