@@ -14,6 +14,7 @@ $tableData = json_decode($_GET['tableData'], true);
 </head>
 <body>
     <div class="page" size="A4">
+        <div class="content">
         <div class="top-section">
             <div class="address">
                 <div class="address-content">
@@ -93,7 +94,38 @@ $tableData = json_decode($_GET['tableData'], true);
         </div>
     </div>
     </div>
+    </div>
 
+    <script>
+        function createPages() {
+    const contentContainer = document.getElementById("content");
+    const pageHeight = 29.7 * 37.795; // A4 page height in pixels (29.7cm * 37.795 pixels/cm)
+    const contentElements = Array.from(contentContainer.children);
+    let currentPage = document.createElement("div");
+    let currentPageHeight = 0;
+
+    for (const element of contentElements) {
+        const elementHeight = element.offsetHeight;
+        if (currentPageHeight + elementHeight > pageHeight) {
+            // Current page is full, create a new page
+            contentContainer.appendChild(currentPage);
+            currentPage = document.createElement("div");
+            currentPageHeight = 0;
+        }
+        currentPage.appendChild(element);
+        currentPageHeight += elementHeight;
+    }
+
+    // Add the last page if there's content remaining
+    if (currentPage.children.length > 0) {
+        contentContainer.appendChild(currentPage);
+    }
+}
+
+// Call the function to create pages when the document is ready
+document.addEventListener("DOMContentLoaded", createPages);
+
+    </script>
 
 </body>
 </html>
