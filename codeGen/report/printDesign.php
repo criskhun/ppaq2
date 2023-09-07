@@ -107,7 +107,7 @@ $currentDate = date('Y-m-d');
         <div class="status-content">
             <h4> CodeGen </h4>
             <p> Division: <span> Office of the Port Manager</span></p>
-            <p class="tnx"> This document was published on <?php $currentDate ?> </p>
+            <p class="tnx"> This document was published on <?php echo $currentDate; ?> </p>
         </div>
     </div>
     </div>
