@@ -22,13 +22,17 @@ h2, h4, p {
     box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
 }
 
+.content {
+    column-count: 1;
+    column-gap: 0;
+}
+
 .page[size="A4"] {
     width: 21cm;
     height: 28.7cm;
     margin: 0 auto;
-    padding: 2cm;
     box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
-    page-break-after: always;
+    break-inside: avoid;
 }
 
 .page[size="A4"]:last-of-type {
