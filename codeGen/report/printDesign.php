@@ -1,6 +1,22 @@
 <?php
+
+session_start();
+    if (isset($_SESSION["email"])) {
+        $email = $_SESSION["email"];
+        $id = $_SESSION["id"];
+        $fn = $_SESSION["first_name"];
+        $mn = $_SESSION["midle_name"];
+        $sn = $_SESSION["surname"];
+        $bd = $_SESSION["birthdate"];
+        $pn = $_SESSION["phone"];
+        $date = $_SESSION["date"];
+        $role = $_SESSION["role"];
+        $des = $_SESSION["designation"];
+    }
 // Get the filtered table data from the query parameter
 $tableData = json_decode($_GET['tableData'], true);
+
+$currentDate = date('Y-m-d'); 
 
 ?>
 
@@ -47,15 +63,15 @@ $tableData = json_decode($_GET['tableData'], true);
             <div class="title"> Prepared by: </div>
             <div class="billed-sec">
                 <div class="name">
-                    Account name
+                    <?php echo "{$sn}, {$fn} {$mn}";  ?>
                 </div>
-                <p> account.email@gmail.com</p>
-                <p> account.number </p>
+                <p> <?php echo $email; ?></p>
+                <p> <?php echo $pn; ?> </p>
             </div>
     
             <div class="billed-sec">
                 <div class="sub-title"> Role </div>
-                <div class="ship-add"> Admin </div>
+                <div class="ship-add"> <?php echo $role; ?> </div>
             </div>
         </div>
         <div class="table">
@@ -91,7 +107,7 @@ $tableData = json_decode($_GET['tableData'], true);
         <div class="status-content">
             <h4> CodeGen </h4>
             <p> Division: <span> Office of the Port Manager</span></p>
-            <p class="tnx"> This document was published on September 7, 2023 </p>
+            <p class="tnx"> This document was published on <?php $currentDate ?> </p>
         </div>
     </div>
     </div>

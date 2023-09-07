@@ -75,16 +75,9 @@ printButton.addEventListener("click", function () {
     // Encode the filtered data as a query parameter
     var queryParams = encodeURIComponent(JSON.stringify(filteredTableData));
 
-    // Open the report in a new tab or window
-    var newTab = window.open("report/printDesign.php?tableData=" + queryParams, "_blank");
-
-    // Check if the new tab was successfully opened
-    if (newTab) {
-        newTab.focus(); // Set focus on the new tab/window
-    } else {
-        // Handle cases where pop-up blocking prevents opening a new tab
-        alert("Please allow pop-ups to view the report.");
-    }
+    // Redirect to the other page with the query parameter
+    //window.location.href = "report/printDesign.php?tableData=" + queryParams;
+    window.location.href = "report/printDesign.php?tableData=" + queryParams;
 });
 
 // Function to get the filtered table data
@@ -101,7 +94,6 @@ function getFilteredTableData() {
     });
 
     return filteredData;
-
 }
 
 </script>
