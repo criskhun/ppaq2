@@ -56,7 +56,7 @@ $currentDate = date('Y-m-d');
                 <p class="code">
                     document code
                 </p>
-                <p class="issue"> Issued: <span> Date </span></p>
+                <p class="issue"> Issued: <span> <?php echo $currentDate; ?> </span></p>
             </div>
         </div>
         <div class="billing-to">
