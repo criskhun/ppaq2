@@ -97,8 +97,8 @@ $tableData = json_decode($_GET['tableData'], true);
     </div>
 
     <script>
-       function createPages() {
-    const contentContainer = document.querySelector(".content");
+        function createPages() {
+    const contentContainer = document.getElementById("content");
     const pageHeight = 29.7 * 37.795; // A4 page height in pixels (29.7cm * 37.795 pixels/cm)
     const contentElements = Array.from(contentContainer.children);
     let currentPage = document.createElement("div");
@@ -124,7 +124,6 @@ $tableData = json_decode($_GET['tableData'], true);
 
 // Call the function to create pages when the document is ready
 document.addEventListener("DOMContentLoaded", createPages);
-
 
     </script>
 
