@@ -27,3 +27,27 @@ h2, h4, p {
     height: 28.7cm;
     overflow: hidden;
 }
+
+.top-section {
+    color: #fff;
+    padding: 20px;
+    height: 115px;
+    background-color: #212adb;
+}
+
+.top-section h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.top-section .contact,
+.top-section .address {
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+.top-section .address-content {
+    max-width: 275px;
+}
