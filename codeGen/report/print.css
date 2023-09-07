@@ -59,12 +59,14 @@ h2, h4, p {
 }
 
 .contact-content .email,
-.contact-content .number {
+.contact-content .number,
+.contact-content .fax {
     display: block;
 }
 
 .contact-content .email span,
-.contact-content .number span {
+.contact-content .number span,
+.contact-content .fax span {
     float: right;
     margin-left: 20px;
 }
@@ -138,4 +140,54 @@ h2, h4, p {
     text-align: center;
     border: 1px solid #616161;
     border-collapse: collapse;
+}
+
+.table tr th {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.table table tr:first-child {
+    color: #fff;
+    background-color: #212adb;
+}
+
+.table table th:nth-child(2),
+.table table th:nth-child(2) {
+    text-align: left;
+    width: 230px;
+}
+
+.bottom-section {
+    margin-top: 15px;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.bottom-section .status-content h4 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.bottom-section .status.free::before,
+.bottom-section .status.paid::before {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.bottom-section .status.free::before {
+    content: "Unpaid";
+    background-color: #ef7c94;
+}
+
+.bottom-section .status.paid::before {
+    content: "Paid";
+    background-color: #212adb;
 }
