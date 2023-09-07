@@ -1,3 +1,9 @@
+<?php
+// Get the filtered table data from the query parameter
+$tableData = json_decode($_GET['tableData'], true);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +23,7 @@
             </div>
             <div class="contact">
                 <div class="contact-content">
-                    <div class="email"> Email: <span class="span">pmosocasrgen@ppa.com.ph</span></div>
+                    <div class="email"> Email: <span class="span">pmosocsargen@ppa.com.ph</span></div>
                     <div class="number"> Number: <span class="span">(083) 552.4484</span></div>
                     <div class="fax"> Fax No.: <span class="span">(083) 552.4446</span></div>
                 </div>
@@ -53,68 +59,28 @@
         <table>
             <tr>
                 <th> # </th>
-                <th> Product Name </th>
-                <th> Qty </th>
-                <th> Unit Price </th>
-                <th> Subtotal</th>
-                <th> Shipping </th>
-                <th> Total </th>
-            </tr>
-            <tr>
-                <td> 1 </td>
-                <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias nihil facere atque tempora quaerat totam, </td>
-                <td> 2pc </td>
-                <td> 250 php </td>
-                <td> 250 php </td>
-                <td> 0 php </td>
-                <td> 0 php</td>
-            </tr>
-            <tr>
-                <td> 2 </td>
-                <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias nihil facere atque tempora quaerat totam, </td>
-                <td> 2pc </td>
-                <td> 250 php </td>
-                <td> 250 php </td>
-                <td> 0 php </td>
-                <td> 0 php</td>
-            </tr>
-            <tr>
-                <td> 3 </td>
-                <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias nihil facere atque tempora quaerat totam, </td>
-                <td> 2pc </td>
-                <td> 250 php </td>
-                <td> 250 php </td>
-                <td> 0 php </td>
-                <td> 0 php</td>
-            </tr>
-            <tr>
-                <td> 4 </td>
-                <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias nihil facere atque tempora quaerat totam, </td>
-                <td> 2pc </td>
-                <td> 250 php </td>
-                <td> 250 php </td>
-                <td> 0 php </td>
-                <td> 0 php</td>
-            </tr>
-            <tr>
-                <td> 5 </td>
-                <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias nihil facere atque tempora quaerat totam, </td>
-                <td> 2pc </td>
-                <td> 250 php </td>
-                <td> 250 php </td>
-                <td> 0 php </td>
-                <td> 0 php</td>
-            </tr>
-            <tr>
-                <td> 6 </td>
-                <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias nihil facere atque tempora quaerat totam, </td>
-                <td> 2pc </td>
-                <td> 250 php </td>
-                <td> 250 php </td>
-                <td> 0 php </td>
-                <td> 0 php</td>
+                <th> Document Code </th>
+                <th> Title </th>
+                <th> Sender </th>
+                <th> Document Type</th>
+                <th> Urgent </th>
+                <th> Date </th>
+                <th> Comment </th>
             </tr>
 
+            <!-- i want to replace the table content-->
+            <?php
+                $counter = 1;
+                foreach ($tableData as $rowData) {
+                echo "<tr>";
+                echo "<td>" . $counter . "</td>";
+                foreach ($rowData as $cellData) {
+                echo "<td>" . $cellData . "</td>";
+                }
+                echo "</tr>";
+                $counter++;
+                }
+            ?>
         </table>
     </div>
     <div class="bottom-section">
@@ -122,7 +88,7 @@
             <h4> Payment Status </h4>
             <p class="status free"></p>
             <p> Payment Method: <span> SSL Commerz</span></p>
-            <p class="tnx">  </p>
+            <p class="tnx"> This document was published on September 7, 2023 </p>
         </div>
     </div>
     </div>
