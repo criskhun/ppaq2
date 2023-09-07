@@ -1,12 +1,13 @@
 <?php
 
-require_once 'vendor/autoload.php';
-use Dompdf\Dompdf;
-
-include("../ppaq2/database.php");
 
 // Get the filtered table data from the query parameter
 $tableData = json_decode($_GET['tableData'], true);
+
+require_once 'vendor/autoload.php';
+use Dompdf\Dompdf;
+
+
 
 $html = '';
 
