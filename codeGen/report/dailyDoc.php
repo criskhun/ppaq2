@@ -5,9 +5,6 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
     if (!$resultDaily) {
         die("Invalid query: " . $conn->error);
     }
-
-    // Set default number of rows per page
-
 ?>
 <div class="input-group mb-3" hidden>
     <input type="text" id="searchInputDaily" class="form-control" placeholder="Search...">
@@ -65,6 +62,17 @@ $sqldaily = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                         ?>
                     </tbody>
                 </table>
+
+    <script>
+        // Get a reference to the button element
+        var button = document.getElementById("printButton");
+
+        // Add a click event listener to the button
+        button.addEventListener("click", function () {
+            // Redirect to the other page in the same folder
+            window.location.href = "printDesign.php";
+        });
+    </script>
 
 <script>
      $(document).ready(function() {
