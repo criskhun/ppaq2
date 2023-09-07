@@ -58,14 +58,15 @@ $tableData = json_decode($_GET['tableData'], true);
         <div class="table">
         <table>
             <tr>
-                <th> # </th>
-                <th> Document Code </th>
-                <th> Title </th>
-                <th> Sender </th>
-                <th> Document Type</th>
-                <th> Urgent </th>
-                <th> Date </th>
-                <th> Comment </th>
+            <th>#</th>
+                <th>Document Code</th>
+                <th>Title</th>
+                <th>Sender</th>
+                <th>Document Type</th>
+                <th>Urgent</th>
+                <th>Date</th>
+                <th>Comment</th>
+                <th>Document File</th>
             </tr>
 
             <!-- i want to replace the table content-->
