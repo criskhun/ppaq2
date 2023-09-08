@@ -116,7 +116,7 @@ $currentDate = date('Y-m-d');
     // Function to handle the onafterprint event
     function afterPrint() {
         // Redirect to the desired page after printing
-        window.location.href = "../codeGen/reportCG.php"; // Replace with your desired URL
+        window.location.href = "../reportCG.php"; // Replace with your desired URL
     }
 
     // Add an event listener for the onafterprint event
