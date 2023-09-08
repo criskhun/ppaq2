@@ -15,7 +15,7 @@ $sqlAll = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 </div>
 
     <div>
-        <button class="btn btn-success" id="printButton"><i class="fa-solid fa-print"></i> Print</button>
+        <button class="btn btn-success" id="printButtonAll"><i class="fa-solid fa-print"></i> Print</button>
         <button class="btn btn-success" id="exportButton"><i class="fa-solid fa-file-export"></i> Export</button>
     </div>
 </div>
@@ -67,7 +67,7 @@ $sqlAll = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                 </table>
 <script>
 // Get a reference to the "Print" button element
-var printButton = document.getElementById("printButton");
+var printButton = document.getElementById("printButtonAll");
 
 // Add a click event listener to the "Print" button
 printButton.addEventListener("click", function () {
