@@ -40,6 +40,10 @@ h2, h4, p {
     }
 }
 
+.top-section, .billing-invoice, .billing-to {
+    page-break-after: avoid; /* Prevent page breaks after these sections */
+}
+
 .top-section {
     color: #fff;
     padding: 20px;
@@ -141,7 +145,7 @@ h2, h4, p {
 
 .table {
     padding: 0 20px;
-    page-break-before: always;
+    page-break-before: auto;
 }
 
 .table table {
