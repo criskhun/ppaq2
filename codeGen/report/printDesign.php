@@ -113,10 +113,31 @@ $currentDate = date('Y-m-d');
     </div>
     </div>
     <script>
-        // Trigger the print functionality when the page loads
-        window.onload = function() {
-            window.print();
-        };
-    </script>
+    // Function to handle the onafterprint event
+    function afterPrint() {
+        // Redirect to the desired page after printing
+        window.location.href = "ppaq2/codeGen/reportCG.php"; // Replace with your desired URL
+    }
+
+    // Add an event listener for the onafterprint event
+    if (window.matchMedia) {
+        // Modern browsers (including Chrome, Firefox, Edge, and Safari)
+        window.matchMedia('print').addEventListener('change', function(e) {
+            if (!e.matches) {
+                // The print dialog has closed (printing is complete or canceled)
+                afterPrint();
+            }
+        });
+    } else {
+        // Legacy browsers (e.g., IE)
+        window.onafterprint = afterPrint;
+    }
+
+    // Trigger the print functionality when the page loads
+    window.onload = function() {
+        window.print();
+    };
+</script>
+
 </body>
 </html>
