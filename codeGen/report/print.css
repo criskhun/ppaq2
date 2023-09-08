@@ -26,6 +26,45 @@ h2, h4, p {
     width: 21cm;
 }
 
+/* Define print styles */
+@media print {
+    body {
+        background: none;
+    }
+
+    .page {
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .top-section,
+    .billing-invoice,
+    .billing-to,
+    .bottom-section {
+        display: none;
+    }
+
+    .table {
+        padding: 0;
+    }
+
+    .table table, th, td {
+        text-align: center;
+        border: 1px solid #000; /* Change border color for better printing */
+    }
+
+    .table tr th {
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .table table th:nth-child(2),
+    .table table th:nth-child(2) {
+        text-align: left;
+        width: auto;
+    }
+}
+
 .top-section {
     color: #fff;
     padding: 20px;

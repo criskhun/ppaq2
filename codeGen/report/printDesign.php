@@ -112,6 +112,11 @@ $currentDate = date('Y-m-d');
     </div>
     </div>
     </div>
-
+    <script>
+        // Trigger the print functionality when the page loads
+        window.onload = function() {
+            window.print();
+        };
+    </script>
 </body>
 </html>
