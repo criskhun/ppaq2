@@ -65,7 +65,40 @@ $sqlAll = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                         ?>
                     </tbody>
                 </table>
+<script>
+// Get a reference to the "Print" button element
+var printButton = document.getElementById("printButton");
 
+// Add a click event listener to the "Print" button
+printButton.addEventListener("click", function () {
+    // Get the filtered table data
+    var filteredTableData = getFilteredTableData();
+
+    // Encode the filtered data as a query parameter
+    var queryParams = encodeURIComponent(JSON.stringify(filteredTableData));
+
+    // Redirect to the other page with the query parameter
+    //window.location.href = "report/printDesign.php?tableData=" + queryParams;
+    window.location.href = "report/printDesign.php?tableData=" + queryParams;
+});
+
+// Function to get the filtered table data
+function getFilteredTableData() {
+    var filteredData = [];
+
+    // Iterate through the visible table rows and collect the data
+    $("#tableBody tr:visible").each(function () {
+        var rowData = [];
+        $(this).find("td").each(function () {
+            rowData.push($(this).text().trim());
+        });
+        filteredData.push(rowData);
+    });
+
+    return filteredData;
+}
+
+</script>
 <script>
     $(document).ready(function() {
         function updaterowCountAll() {
