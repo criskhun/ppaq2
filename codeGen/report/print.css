@@ -37,13 +37,6 @@ h2, h4, p {
         box-shadow: none;
     }
 
-    .top-section,
-    .billing-invoice,
-    .billing-to,
-    .bottom-section {
-        display: none;
-    }
-
     .table {
         padding: 0;
     }
