@@ -88,7 +88,7 @@ function getFilteredTableData() {
     var filteredData = [];
 
     // Iterate through the visible table rows and collect the data
-    $("#tableBody tr:visible").each(function () {
+    $("#tableBodyWeekly tr:visible").each(function () {
         var rowData = [];
         $(this).find("td").each(function () {
             rowData.push($(this).text().trim());
