@@ -29,7 +29,8 @@ h2, h4, p {
 /* Define print styles */
 @media print {
     body {
-        background: none;
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact;
     }
 
     .page {
