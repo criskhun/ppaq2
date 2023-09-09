@@ -96,10 +96,10 @@ function exportToExcel() {
     var worksheet = XLSX.utils.aoa_to_sheet(tableData);
 
     // Add the worksheet to the workbook
-    XLSX.utils.book_append_sheet(workbook, worksheet, "All Data");
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
 
     // Save the workbook as an XLSX file
-    XLSX.writeFile(workbook, "CodeGenerator.xlsx");
+    XLSX.writeFile(workbook, "table_data.xlsx");
 }
 
 // Add a click event listener to the export button
