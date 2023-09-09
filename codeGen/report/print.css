@@ -41,7 +41,7 @@ h2, h4, p {
 }
 
 .top-section, .billing-invoice, .billing-to {
-    page-break-after: avoid; /* Prevent page breaks after these sections */
+    page-break-after: auto; /* Prevent page breaks after these sections */
 }
 
 .top-section {
