@@ -31,6 +31,8 @@ h2, h4, p {
     body {
         -webkit-print-color-adjust: exact;
         color-adjust: exact;
+        margin: 0;
+        padding: 0;
     }
 
     .page {
@@ -42,6 +44,8 @@ h2, h4, p {
 
 .top-section, .billing-invoice, .billing-to {
     page-break-after: auto; /* Prevent page breaks after these sections */
+    margin: 0; 
+    width: 100%;
 }
 
 .top-section {
