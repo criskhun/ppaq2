@@ -112,7 +112,8 @@ function exportToExcel() {
     worksheet["A1"].s = { font: { bold: true } };
 
     // Add the worksheet to the workbook
-    XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+    var currentYear = new Date().getFullYear();
+    XLSX.utils.book_append_sheet(workbook, worksheet, currentYear.toString());
 
     // Save the workbook as an XLSX file
     XLSX.writeFile(workbook, "YearProcessCG.xlsx");

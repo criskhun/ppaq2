@@ -95,7 +95,7 @@ function exportToExcel() {
     }
 
     // Add the custom title as the first row
-    tableData.unshift(["Title/Project Header"]);
+    tableData.unshift(["All Transaction"]);
 
     // Create a worksheet and add data to it
     var worksheet = XLSX.utils.aoa_to_sheet(tableData);
@@ -104,7 +104,7 @@ function exportToExcel() {
     worksheet["A1"].s = { font: { bold: true } };
 
     // Add the worksheet to the workbook
-    XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+    XLSX.utils.book_append_sheet(workbook, worksheet, "All Transaction");
 
     // Save the workbook as an XLSX file
     XLSX.writeFile(workbook, "AllProcessCG.xlsx");
