@@ -67,7 +67,8 @@ $sqlAll = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                 </table>
 
 <script>
-    // Function to export table data to Excel
+
+// Function to export table data to Excel
 function exportToExcel() {
     // Create a new workbook
     var workbook = XLSX.utils.book_new();
@@ -84,6 +85,9 @@ function exportToExcel() {
     // Create an array to store the table data
     var tableData = [headers];
 
+    // Add the custom header row
+    tableData.unshift([{ v: "Document List", s: { font: { bold: true } } }]);
+
     // Iterate through the table rows and collect data
     for (var i = 1; i < table.rows.length; i++) {
         var rowData = [];
@@ -96,15 +100,13 @@ function exportToExcel() {
     // Create a worksheet and add data to it
     var worksheet = XLSX.utils.aoa_to_sheet(tableData);
 
-    // Add the custom header above the data
-    worksheet["A1"] = { t: "s", v: "Document List", s: { font: { bold: true } } };
-
     // Add the worksheet to the workbook
     XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
 
     // Save the workbook as an XLSX file
     XLSX.writeFile(workbook, "AllProcessCG.xlsx");
 }
+
 
 
     // Add a click event listener to the export button
