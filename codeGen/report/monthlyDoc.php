@@ -104,8 +104,12 @@ $sqlMonthly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
         tableData.push(rowData);
     }
 
+    var currentDate = new Date();
+    var currentMonth = currentDate.getMonth() + 1; // Adding 1 because getMonth() returns 0-based months
+    var currentYear = currentDate.getFullYear();
+
     // Add the custom title as the first row
-    tableData.unshift(["Monthly Transaction"]);
+    tableData.unshift(["Monthly Transaction - " + currentMonth + "-" + currentYear]);
 
     // Create a worksheet and add data to it
     var worksheet = XLSX.utils.aoa_to_sheet(tableData);
@@ -114,10 +118,8 @@ $sqlMonthly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
     worksheet["A1"].s = { font: { bold: true } };
 
     // Add the worksheet to the workbook
-    var currentYear = currentDate.getFullYear();
-    var currentMonth = currentDate.getMonth() + 1;
-    var formattedDate = `${currentYear}-${currentMonth}`;
-    XLSX.utils.book_append_sheet(workbook, worksheet, formattedDate);
+    var currentYear = new Date().getFullYear();
+    XLSX.utils.book_append_sheet(workbook, worksheet, currentMonth + "-" + currentYear);
 
     // Save the workbook as an XLSX file
     XLSX.writeFile(workbook, "MonthProcessCG.xlsx");
