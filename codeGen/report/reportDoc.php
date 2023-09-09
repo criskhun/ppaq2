@@ -68,42 +68,44 @@ $sqlAll = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <script>
     // Function to export table data to Excel
-    function exportToExcel() {
-        // Create a new workbook
-        var workbook = XLSX.utils.book_new();
+function exportToExcel() {
+    // Create a new workbook
+    var workbook = XLSX.utils.book_new();
 
-        // Get the table element
-        var table = document.getElementById("allTable");
+    // Get the table element
+    var table = document.getElementById("allTable");
 
-        // Get the table headers
-        var headers = [];
-        for (var i = 0; i < table.rows[0].cells.length; i++) {
-            headers.push({ wch: 20, s: { font: { bold: true } }, v: table.rows[0].cells[i].textContent });
-        }
-
-        // Create an array to store the table data
-        var tableData = [headers];
-
-        // Iterate through the table rows and collect data
-        for (var i = 1; i < table.rows.length; i++) {
-            var rowData = [];
-            for (var j = 0; j < table.rows[i].cells.length; j++) {
-                rowData.push(table.rows[i].cells[j].textContent);
-            }
-            tableData.push(rowData);
-        }
-
-        // Create a worksheet and add data to it
-        var worksheet = XLSX.utils.json_to_sheet(tableData, { skipHeader: true });
-
-        worksheet.A1 = { t: "s", v: "Document List", s: { font: { bold: true } } };
-
-        // Add the worksheet to the workbook
-        XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
-
-        // Save the workbook as an XLSX file
-        XLSX.writeFile(workbook, "AllProcessCG.xlsx");
+    // Get the table headers
+    var headers = [];
+    for (var i = 0; i < table.rows[0].cells.length; i++) {
+        headers.push({ wch: 20, s: { font: { bold: true } }, v: table.rows[0].cells[i].textContent });
     }
+
+    // Create an array to store the table data
+    var tableData = [headers];
+
+    // Iterate through the table rows and collect data
+    for (var i = 1; i < table.rows.length; i++) {
+        var rowData = [];
+        for (var j = 0; j < table.rows[i].cells.length; j++) {
+            rowData.push(table.rows[i].cells[j].textContent);
+        }
+        tableData.push(rowData);
+    }
+
+    // Create a worksheet and add data to it
+    var worksheet = XLSX.utils.aoa_to_sheet(tableData);
+
+    // Add the custom header above the data
+    worksheet["A1"] = { t: "s", v: "Document List", s: { font: { bold: true } } };
+
+    // Add the worksheet to the workbook
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+
+    // Save the workbook as an XLSX file
+    XLSX.writeFile(workbook, "AllProcessCG.xlsx");
+}
+
 
     // Add a click event listener to the export button
     document.getElementById("exportButtonAll").addEventListener("click", exportToExcel);
