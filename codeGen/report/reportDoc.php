@@ -79,14 +79,11 @@ function exportToExcel() {
     // Get the table headers
     var headers = [];
     for (var i = 0; i < table.rows[0].cells.length; i++) {
-        headers.push({ wch: 20, s: { font: { bold: true } }, v: table.rows[0].cells[i].textContent });
+        headers.push(table.rows[0].cells[i].textContent);
     }
 
     // Create an array to store the table data
     var tableData = [headers];
-
-    // Add the custom header row
-    tableData.unshift([{ v: "Document List", s: { font: { bold: true } } }]);
 
     // Iterate through the table rows and collect data
     for (var i = 1; i < table.rows.length; i++) {
@@ -97,8 +94,15 @@ function exportToExcel() {
         tableData.push(rowData);
     }
 
+    // Add the custom title
+    var customTitle = [{ bold: true }];
+    tableData.unshift(customTitle);
+
     // Create a worksheet and add data to it
     var worksheet = XLSX.utils.aoa_to_sheet(tableData);
+
+    // Style the custom title
+    worksheet["A1"].s = { font: { bold: true } };
 
     // Add the worksheet to the workbook
     XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
@@ -106,8 +110,6 @@ function exportToExcel() {
     // Save the workbook as an XLSX file
     XLSX.writeFile(workbook, "AllProcessCG.xlsx");
 }
-
-
 
     // Add a click event listener to the export button
     document.getElementById("exportButtonAll").addEventListener("click", exportToExcel);
