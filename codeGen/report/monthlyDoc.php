@@ -79,27 +79,26 @@ $sqlMonthly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <!-- Rest of your HTML code -->
 <script>
-// Get a reference to the "Print" button element
-var printButton = document.getElementById("printButtonMonth");
+    // Get a reference to the second button element
+var printButtonMonth = document.getElementById("printButtonMonth");
 
-// Add a click event listener to the "Print" button
-printButton.addEventListener("click", function () {
-    // Get the filtered table data
-    var filteredTableData = getFilteredTableData();
+// Add a click event listener to the second button
+printButtonMonth.addEventListener("click", function () {
+    // Get the filtered table data for the second table (modify as needed)
+    var filteredTableData = getFilteredTableDataForMonth();
 
     // Encode the filtered data as a query parameter
     var queryParams = encodeURIComponent(JSON.stringify(filteredTableData));
 
     // Redirect to the other page with the query parameter
-    //window.location.href = "report/printDesign.php?tableData=" + queryParams;
     window.location.href = "report/printDesign.php?tableData=" + queryParams;
 });
 
-// Function to get the filtered table data
-function getFilteredTableData() {
+// Function to get the filtered table data for the second table (modify as needed)
+function getFilteredTableDataForMonth() {
     var filteredData = [];
 
-    // Iterate through the visible table rows and collect the data
+    // Modify this selector to target the second table's rows
     $("#tableBodyMonthly tr:visible").each(function () {
         var rowData = [];
         $(this).find("td").each(function () {
