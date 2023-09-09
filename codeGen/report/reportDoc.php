@@ -94,14 +94,13 @@ function exportToExcel() {
         tableData.push(rowData);
     }
 
-    // Add the custom title
-    var customTitle = [{ bold: true }];
-    tableData.unshift(customTitle);
+    // Add the custom title as the first row
+    tableData.unshift(["Title/Project Header"]);
 
     // Create a worksheet and add data to it
     var worksheet = XLSX.utils.aoa_to_sheet(tableData);
 
-    // Style the custom title
+    // Style the custom title (make it bold)
     worksheet["A1"].s = { font: { bold: true } };
 
     // Add the worksheet to the workbook
