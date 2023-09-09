@@ -41,8 +41,8 @@ h2, h4, p {
         page-break-after: auto; /* Allow page breaks as needed */
     }
 
-    .table th:nth-child(7), .table td:nth-child(7) {
-        display: none; /* Hide the 7th column when printing */
+    .table th:nth-child(9), .table td:nth-child(9) {
+        display: none; /* Hide the 9th column when printing */
     }
 }
 
