@@ -12,7 +12,7 @@ $sqlYearly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
     <div>
         <button class="btn btn-success" id="printButtonYear"><i class="fa-solid fa-print"></i> Print</button>
-        <button class="btn btn-success" id="exportButton"><i class="fa-solid fa-file-export"></i> Export</button>
+        <button class="btn btn-success" id="exportButtonYear"><i class="fa-solid fa-file-export"></i> Export</button>
     </div>
 </div>
 <br>
@@ -33,7 +33,7 @@ $sqlYearly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
         
 
     </div>
-                <table class="table table-striped table-borderless table-hover">
+                <table id="Yearlytbl" class="table table-striped table-borderless table-hover">
                     <thead class="print-header">
                         <tr>
                             <th>#</th>
@@ -74,8 +74,53 @@ $sqlYearly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 
 
-<!-- Rest of your HTML code -->
+
 <script>
+    // Function to export table data to Excel
+function exportToExcel() {
+    // Create a new workbook
+    var workbook = XLSX.utils.book_new();
+
+    // Get the table element
+    var table = document.getElementById("Yearlytbl");
+
+    // Get the table headers
+    var headers = [];
+    for (var i = 0; i < table.rows[0].cells.length; i++) {
+        headers.push(table.rows[0].cells[i].textContent);
+    }
+
+    // Create an array to store the table data
+    var tableData = [headers];
+
+    // Iterate through the table rows and collect data
+    for (var i = 1; i < table.rows.length; i++) {
+        var rowData = [];
+        for (var j = 0; j < table.rows[i].cells.length; j++) {
+            rowData.push(table.rows[i].cells[j].textContent);
+        }
+        tableData.push(rowData);
+    }
+
+    // Add the custom title as the first row
+    tableData.unshift(["Yearly Transaction"]);
+
+    // Create a worksheet and add data to it
+    var worksheet = XLSX.utils.aoa_to_sheet(tableData);
+
+    // Style the custom title (make it bold)
+    worksheet["A1"].s = { font: { bold: true } };
+
+    // Add the worksheet to the workbook
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+
+    // Save the workbook as an XLSX file
+    XLSX.writeFile(workbook, "YearProcessCG.xlsx");
+}
+
+    // Add a click event listener to the export button
+    document.getElementById("exportButtonYear").addEventListener("click", exportToExcel);
+
     // Get a reference to the second button element
 var printButtonYear = document.getElementById("printButtonYear");
 
