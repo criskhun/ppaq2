@@ -16,7 +16,7 @@ $sqlAll = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
     <div>
         <button class="btn btn-success" id="printButtonAll"><i class="fa-solid fa-print"></i> Print</button>
-        <button class="btn btn-success" id="exportButton"><i class="fa-solid fa-file-export"></i> Export</button>
+        <button class="btn btn-success" id="exportButtonAll"><i class="fa-solid fa-file-export"></i> Export</button>
     </div>
 </div>
 <br>
@@ -65,81 +65,80 @@ $sqlAll = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                         ?>
                     </tbody>
                 </table>
+                
 <script>
     // Function to export table data to Excel
-function exportToExcel() {
-    // Create a new workbook
-    var workbook = XLSX.utils.book_new();
+    function exportToExcel() {
+        // Create a new workbook
+        var workbook = XLSX.utils.book_new();
 
-    // Get the table element
-    var table = document.getElementById("allTable");
+        // Get the table element
+        var table = document.getElementById("allTable");
 
-    // Get the table headers
-    var headers = [];
-    for (var i = 0; i < table.rows[0].cells.length; i++) {
-        headers.push(table.rows[0].cells[i].textContent);
-    }
-
-    // Create an array to store the table data
-    var tableData = [headers];
-
-    // Iterate through the table rows and collect data
-    for (var i = 1; i < table.rows.length; i++) {
-        var rowData = [];
-        for (var j = 0; j < table.rows[i].cells.length; j++) {
-            rowData.push(table.rows[i].cells[j].textContent);
+        // Get the table headers
+        var headers = [];
+        for (var i = 0; i < table.rows[0].cells.length; i++) {
+            headers.push(table.rows[0].cells[i].textContent);
         }
-        tableData.push(rowData);
+
+        // Create an array to store the table data
+        var tableData = [headers];
+
+        // Iterate through the table rows and collect data
+        for (var i = 1; i < table.rows.length; i++) {
+            var rowData = [];
+            for (var j = 0; j < table.rows[i].cells.length; j++) {
+                rowData.push(table.rows[i].cells[j].textContent);
+            }
+            tableData.push(rowData);
+        }
+
+        // Create a worksheet and add data to it
+        var worksheet = XLSX.utils.aoa_to_sheet(tableData);
+
+        // Add the worksheet to the workbook
+        XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+
+        // Save the workbook as an XLSX file
+        XLSX.writeFile(workbook, "table_data.xlsx");
     }
 
-    // Create a worksheet and add data to it
-    var worksheet = XLSX.utils.aoa_to_sheet(tableData);
+    // Add a click event listener to the export button
+    document.getElementById("exportButtonAll").addEventListener("click", exportToExcel);
 
-    // Add the worksheet to the workbook
-    XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+    // Get a reference to the "Print" button element
+    var printButton = document.getElementById("printButtonAll");
 
-    // Save the workbook as an XLSX file
-    XLSX.writeFile(workbook, "table_data.xlsx");
-}
+    // Add a click event listener to the "Print" button
+    printButton.addEventListener("click", function () {
+        // Get the filtered table data
+        var filteredTableData = getFilteredTableData();
 
-// Add a click event listener to the export button
-document.getElementById("exportButton").addEventListener("click", exportToExcel);
+        // Encode the filtered data as a query parameter
+        var queryParams = encodeURIComponent(JSON.stringify(filteredTableData));
 
-</script>
-<script>
-// Get a reference to the "Print" button element
-var printButton = document.getElementById("printButtonAll");
-
-// Add a click event listener to the "Print" button
-printButton.addEventListener("click", function () {
-    // Get the filtered table data
-    var filteredTableData = getFilteredTableData();
-
-    // Encode the filtered data as a query parameter
-    var queryParams = encodeURIComponent(JSON.stringify(filteredTableData));
-
-    // Redirect to the other page with the query parameter
-    //window.location.href = "report/printDesign.php?tableData=" + queryParams;
-    window.location.href = "report/printDesign.php?tableData=" + queryParams;
-});
-
-// Function to get the filtered table data
-function getFilteredTableData() {
-    var filteredData = [];
-
-    // Iterate through the visible table rows and collect the data
-    $("#tableBody tr:visible").each(function () {
-        var rowData = [];
-        $(this).find("td").each(function () {
-            rowData.push($(this).text().trim());
-        });
-        filteredData.push(rowData);
+        // Redirect to the other page with the query parameter
+        //window.location.href = "report/printDesign.php?tableData=" + queryParams;
+        window.location.href = "report/printDesign.php?tableData=" + queryParams;
     });
 
-    return filteredData;
-}
+    // Function to get the filtered table data
+    function getFilteredTableData() {
+        var filteredData = [];
 
+        // Iterate through the visible table rows and collect the data
+        $("#tableBody tr:visible").each(function () {
+            var rowData = [];
+            $(this).find("td").each(function () {
+                rowData.push($(this).text().trim());
+            });
+            filteredData.push(rowData);
+        });
+
+        return filteredData;
+    }
 </script>
+
 <script>
     $(document).ready(function() {
         function updaterowCountAll() {
