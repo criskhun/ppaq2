@@ -66,28 +66,28 @@ $sqlWeekly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                     </tbody>
                 </table>
 
-<script>
-// Get a reference to the "Print" button element
-var printButton = document.getElementById("printButtonWeek");
 
-// Add a click event listener to the "Print" button
-printButton.addEventListener("click", function () {
-    // Get the filtered table data
-    var filteredTableData = getFilteredTableData();
+<script>
+    // Get a reference to the second button element
+var printButtonWeek = document.getElementById("printButtonWeek");
+
+// Add a click event listener to the second button
+printButtonWeek.addEventListener("click", function () {
+    // Get the filtered table data for the second table (modify as needed)
+    var filteredTableData = getFilteredTableDataForWeek();
 
     // Encode the filtered data as a query parameter
     var queryParams = encodeURIComponent(JSON.stringify(filteredTableData));
 
     // Redirect to the other page with the query parameter
-    //window.location.href = "report/printDesign.php?tableData=" + queryParams;
     window.location.href = "report/printDesign.php?tableData=" + queryParams;
 });
 
-// Function to get the filtered table data
-function getFilteredTableData() {
+// Function to get the filtered table data for the second table (modify as needed)
+function getFilteredTableDataForWeek() {
     var filteredData = [];
 
-    // Iterate through the visible table rows and collect the data
+    // Modify this selector to target the second table's rows
     $("#tableBodyWeekly tr:visible").each(function () {
         var rowData = [];
         $(this).find("td").each(function () {
@@ -100,6 +100,7 @@ function getFilteredTableData() {
 }
 
 </script>
+
 <script>
      $(document).ready(function() {
         function updateRowCountWeekly() {
