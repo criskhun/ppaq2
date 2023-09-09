@@ -27,7 +27,7 @@ $sqlAll = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
         </div>
     </div>
-                <table class="table table-striped table-borderless table-hover">
+                <table id="allTable" class="table table-striped table-borderless table-hover">
                     <thead class="print-header">
                         <tr>
                             <th>#</th>
@@ -65,6 +65,47 @@ $sqlAll = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
                         ?>
                     </tbody>
                 </table>
+<script>
+    // Function to export table data to Excel
+function exportToExcel() {
+    // Create a new workbook
+    var workbook = XLSX.utils.book_new();
+
+    // Get the table element
+    var table = document.getElementById("allTable");
+
+    // Get the table headers
+    var headers = [];
+    for (var i = 0; i < table.rows[0].cells.length; i++) {
+        headers.push(table.rows[0].cells[i].textContent);
+    }
+
+    // Create an array to store the table data
+    var tableData = [headers];
+
+    // Iterate through the table rows and collect data
+    for (var i = 1; i < table.rows.length; i++) {
+        var rowData = [];
+        for (var j = 0; j < table.rows[i].cells.length; j++) {
+            rowData.push(table.rows[i].cells[j].textContent);
+        }
+        tableData.push(rowData);
+    }
+
+    // Create a worksheet and add data to it
+    var worksheet = XLSX.utils.aoa_to_sheet(tableData);
+
+    // Add the worksheet to the workbook
+    XLSX.utils.book_append_sheet(workbook, worksheet, "All Data");
+
+    // Save the workbook as an XLSX file
+    XLSX.writeFile(workbook, "CodeGenerator.xlsx");
+}
+
+// Add a click event listener to the export button
+document.getElementById("exportButton").addEventListener("click", exportToExcel);
+
+</script>
 <script>
 // Get a reference to the "Print" button element
 var printButton = document.getElementById("printButtonAll");
