@@ -40,6 +40,12 @@ h2, h4, p {
         box-shadow: none;
         page-break-after: auto; /* Allow page breaks as needed */
     }
+    
+    .top-section, .billing-invoice, .billing-to {
+        page-break-after: auto; /* Prevent page breaks after these sections */
+        margin: 0; 
+        width: 100%;
+    }
 }
 
 .top-section, .billing-invoice, .billing-to {
