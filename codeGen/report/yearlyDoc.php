@@ -76,27 +76,26 @@ $sqlYearly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 <!-- Rest of your HTML code -->
 <script>
-// Get a reference to the "Print" button element
-var printButton = document.getElementById("printButtonYear");
+    // Get a reference to the second button element
+var printButtonYear = document.getElementById("printButtonYear");
 
-// Add a click event listener to the "Print" button
-printButton.addEventListener("click", function () {
-    // Get the filtered table data
-    var filteredTableData = getFilteredTableData();
+// Add a click event listener to the second button
+printButtonYear.addEventListener("click", function () {
+    // Get the filtered table data for the second table (modify as needed)
+    var filteredTableData = getFilteredTableDataForYear();
 
     // Encode the filtered data as a query parameter
     var queryParams = encodeURIComponent(JSON.stringify(filteredTableData));
 
     // Redirect to the other page with the query parameter
-    //window.location.href = "report/printDesign.php?tableData=" + queryParams;
     window.location.href = "report/printDesign.php?tableData=" + queryParams;
 });
 
-// Function to get the filtered table data
-function getFilteredTableData() {
+// Function to get the filtered table data for the second table (modify as needed)
+function getFilteredTableDataForYear() {
     var filteredData = [];
 
-    // Iterate through the visible table rows and collect the data
+    // Modify this selector to target the second table's rows
     $("#tableBodyYearly tr:visible").each(function () {
         var rowData = [];
         $(this).find("td").each(function () {
