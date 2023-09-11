@@ -98,7 +98,7 @@ $sqlWeekly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
     var currentYear = currentDate.getFullYear();
 
     // Add the custom title as the first row
-    tableData.unshift(["Monthly Transaction - " + currentMonth + "-" + currentYear]);
+    tableData.unshift(["Weekly Transaction - " + currentMonth + "-" + currentYear]);
 
     // Create a worksheet and add data to it
     var worksheet = XLSX.utils.aoa_to_sheet(tableData);
