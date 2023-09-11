@@ -119,7 +119,7 @@ function getWeekNumber(date) {
     worksheet["A1"].s = { font: { bold: true } };
 
     // Add the worksheet to the workbook
-    XLSX.utils.book_append_sheet(workbook, worksheet, currentMonth + "-" + currentYear);
+    XLSX.utils.book_append_sheet(workbook, worksheet, currentWeek + "_" + currentMonth + "-" + currentYear);
 
     // Save the workbook as an XLSX file
     XLSX.writeFile(workbook, "WeekProcessCG.xlsx");

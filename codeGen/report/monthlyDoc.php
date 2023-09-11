@@ -105,7 +105,7 @@ $sqlMonthly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
     }
 
     var currentDate = new Date();
-    var currentMonth = currentDate.getMonth() + 1; // Adding 1 because getMonth() returns 0-based months
+    var currentMonth = currentDate.toLocaleString('default', { month: 'long' }); 
     var currentYear = currentDate.getFullYear();
 
     // Add the custom title as the first row
