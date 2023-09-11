@@ -96,11 +96,21 @@ function exportToExcel() {
     }
 
     var currentDate = new Date();
-    var currentMonth = currentDate.getMonth() + 1; // Adding 1 because getMonth() returns 0-based months
     var currentYear = currentDate.getFullYear();
+    var currentMonth = currentDate.toLocaleString('default', { month: 'long' }); // Get the full month name
+    var currentWeek = getWeekNumber(currentDate); // Function to get the week number
 
-    // Add the custom title as the first row
-    tableData.unshift(["Weekly Transaction - " + currentMonth + "-" + currentYear]);
+// Add the custom title as the first row
+tableData.unshift(["Weekly Transaction - Week " + currentWeek + " of " + currentMonth + " " + currentYear]);
+
+// Function to get the week number
+function getWeekNumber(date) {
+    date = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+    date.setUTCDate(date.getUTCDate() + 4 - (date.getUTCDay() || 7));
+    var yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+    var weekNumber = Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
+    return weekNumber;
+}
 
     // Create a worksheet and add data to it
     var worksheet = XLSX.utils.aoa_to_sheet(tableData);
