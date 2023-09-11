@@ -68,7 +68,9 @@ $sqlWeekly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 
 <script>
-    function exportToExcel() {
+    document.getElementById("exportButtonWeek").addEventListener("click", exportToExcel);
+
+function exportToExcel() {
     // Create a new workbook
     var workbook = XLSX.utils.book_new();
 
@@ -107,45 +109,44 @@ $sqlWeekly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
     worksheet["A1"].s = { font: { bold: true } };
 
     // Add the worksheet to the workbook
-    var currentYear = new Date().getFullYear();
     XLSX.utils.book_append_sheet(workbook, worksheet, currentMonth + "-" + currentYear);
 
     // Save the workbook as an XLSX file
     XLSX.writeFile(workbook, "WeekProcessCG.xlsx");
 }
 
-    // Add a click event listener to the export button
-    document.getElementById("exportButtonWeek").addEv
+document.getElementById("exportButtonWeek").addEventListener("click", exportToExcel);
+
     // Get a reference to the second button element
-var printButtonWeek = document.getElementById("printButtonWeek");
+    var printButtonWeek = document.getElementById("printButtonWeek");
 
-// Add a click event listener to the second button
-printButtonWeek.addEventListener("click", function () {
-    // Get the filtered table data for the second table (modify as needed)
-    var filteredTableData = getFilteredTableDataForWeek();
+    // Add a click event listener to the second button
+    printButtonWeek.addEventListener("click", function () {
+        // Get the filtered table data for the second table (modify as needed)
+        var filteredTableData = getFilteredTableDataForWeek();
 
-    // Encode the filtered data as a query parameter
-    var queryParams = encodeURIComponent(JSON.stringify(filteredTableData));
+        // Encode the filtered data as a query parameter
+        var queryParams = encodeURIComponent(JSON.stringify(filteredTableData));
 
-    // Redirect to the other page with the query parameter
-    window.location.href = "report/printDesign.php?tableData=" + queryParams;
-});
-
-// Function to get the filtered table data for the second table (modify as needed)
-function getFilteredTableDataForWeek() {
-    var filteredData = [];
-
-    // Modify this selector to target the second table's rows
-    $("#tableBodyWeekly tr:visible").each(function () {
-        var rowData = [];
-        $(this).find("td").each(function () {
-            rowData.push($(this).text().trim());
-        });
-        filteredData.push(rowData);
+        // Redirect to the other page with the query parameter
+        window.location.href = "report/printDesign.php?tableData=" + queryParams;
     });
 
-    return filteredData;
-}
+    // Function to get the filtered table data for the second table (modify as needed)
+    function getFilteredTableDataForWeek() {
+        var filteredData = [];
+
+        // Modify this selector to target the second table's rows
+        $("#tableBodyWeekly tr:visible").each(function () {
+            var rowData = [];
+            $(this).find("td").each(function () {
+                rowData.push($(this).text().trim());
+            });
+            filteredData.push(rowData);
+        });
+
+        return filteredData;
+    }
 
 </script>
 
