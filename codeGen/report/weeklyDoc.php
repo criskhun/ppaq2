@@ -16,7 +16,7 @@ $sqlWeekly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
     <div>
         <button class="btn btn-success" id="printButtonWeek"><i class="fa-solid fa-print"></i> Print</button>
-        <button class="btn btn-success" id="exportButton"><i class="fa-solid fa-file-export"></i> Export</button>
+        <button class="btn btn-success" id="exportButtonWeek"><i class="fa-solid fa-file-export"></i> Export</button>
     </div>
 </div>
 <br>
@@ -27,7 +27,7 @@ $sqlWeekly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
         </div>
     </div>
-                <table class="table table-striped table-borderless table-hover">
+                <table id="weektlb" class="table table-striped table-borderless table-hover">
                     <thead class="print-header">
                         <tr>
                             <th>#</th>
@@ -68,6 +68,54 @@ $sqlWeekly = "SELECT * FROM documentCG_tbl ORDER BY id DESC";
 
 
 <script>
+    function exportToExcel() {
+    // Create a new workbook
+    var workbook = XLSX.utils.book_new();
+
+    // Get the table element
+    var table = document.getElementById("weektlb");
+
+    // Get the table headers
+    var headers = [];
+    for (var i = 0; i < table.rows[0].cells.length; i++) {
+        headers.push(table.rows[0].cells[i].textContent);
+    }
+
+    // Create an array to store the table data
+    var tableData = [headers];
+
+    // Iterate through the table rows and collect data
+    for (var i = 1; i < table.rows.length; i++) {
+        var rowData = [];
+        for (var j = 0; j < table.rows[i].cells.length; j++) {
+            rowData.push(table.rows[i].cells[j].textContent);
+        }
+        tableData.push(rowData);
+    }
+
+    var currentDate = new Date();
+    var currentMonth = currentDate.getMonth() + 1; // Adding 1 because getMonth() returns 0-based months
+    var currentYear = currentDate.getFullYear();
+
+    // Add the custom title as the first row
+    tableData.unshift(["Monthly Transaction - " + currentMonth + "-" + currentYear]);
+
+    // Create a worksheet and add data to it
+    var worksheet = XLSX.utils.aoa_to_sheet(tableData);
+
+    // Style the custom title (make it bold)
+    worksheet["A1"].s = { font: { bold: true } };
+
+    // Add the worksheet to the workbook
+    var currentYear = new Date().getFullYear();
+    XLSX.utils.book_append_sheet(workbook, worksheet, currentMonth + "-" + currentYear);
+
+    // Save the workbook as an XLSX file
+    XLSX.writeFile(workbook, "WeekProcessCG.xlsx");
+}
+
+    // Add a click event listener to the export button
+    document.getElementById("exportButtonWeek").addEv
     // Get a reference to the second button element
 var printButtonWeek = document.getElementById("printButtonWeek");
 
