@@ -4,7 +4,7 @@
     <h1 class="offcanvas-title">CSMS</h1>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
   </div>
-  <div class="offcanvas-body">
+  <div class="offcanvas-body d-fllex flex-column">
     <h3>Core</h3>
   <div class="list-group list-group-flush">
         <a href="../dashboard/dashboard.php" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
@@ -95,6 +95,7 @@
             </a>
             </div>
     </div>
+
     <hr>
     <h3>Others</h3>
     <div class="list-group list-group-flush">
@@ -123,8 +124,9 @@
             </div>
             </a>                
     </div>
+
   </div>
-  <div class="list-group list-group-flush">
+  <div class="list-group list-group-flush mt-auto"> <!--i want this to the botton-->
 
     <?php
         if (isset($_SESSION["email"])) {
@@ -165,7 +167,7 @@
 
     ?>
         <!-- Add more report items as needed -->
-      </div>
+  </div>
     </div>
 </div>
 
