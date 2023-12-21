@@ -196,7 +196,7 @@
 </div>
 </div>
 
-
+<script src="../users/refreshActive.js"></script>
 <?php
     include("../dashboard/footer.php");
 ?> 

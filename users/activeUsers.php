@@ -70,7 +70,7 @@
     </div>
 </div>
 
-<script src="../users/refreshActive.js"></script>
+
 <?php
     include("../transaction/serveModal.php");
 ?> 
