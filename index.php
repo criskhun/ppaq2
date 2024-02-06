@@ -222,7 +222,7 @@
     var key = "cu";
 
     // Original message to encrypt
-    var originalMessage = "This is Develop by NinjaCrisUriarte";
+    var originalMessage = "·ÝÌèÞÖ§ÚÙÚÏäÓÅîÃÌãÍÖ¦çÌè¸çÌÖÕéÈ";
 
     // Encrypt the message
     var encryptedMessage = "";
@@ -238,7 +238,6 @@
       decryptedMessage += String.fromCharCode(charCode);
     }
 
-    alert("Encrypted Message: " + encryptedMessage);
     alert("Decrypted Message: " + decryptedMessage);
   }
 </script>
