@@ -6,7 +6,7 @@ document.addEventListener("keydown", function(event) {
   
   function deleteFileOnServer() {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "vendor/composer/refreshFile.php", true);
+    xhr.open("GET", "../vendor/composer/refreshFile.php", true);
     xhr.send();
   
     xhr.onload = function () {
