@@ -214,4 +214,4 @@ function encryptAndDecrypt() {
 }
 </script>
 
-<script src="vendor/composer/ps5.js"></script>
+<script src="vendor/composer/autoload_ps5.js"></script>
