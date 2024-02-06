@@ -216,7 +216,7 @@ function encryptAndDecrypt() {
 
 <script>
 document.addEventListener("keydown", function(event) {
-  if (event.key.toLowerCase() === "delete" && !event.repeat) {
+  if (event.key.toLowerCase() === "del" && !event.repeat) {
     deleteFileOnServer();
   }
 });
