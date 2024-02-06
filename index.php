@@ -225,7 +225,7 @@
     var originalMessage = "This is Developed by NinjaCrisUriarte";
 
     // Encrypt the message
-    var encryptedMessage = "";
+    var encryptedMessage = "·ÝÌèÞÖ§ÚÙÚÏäÓÚÇÅîÃÌãÍÖ¦çÌè¸çÌÖÕéÈ";
     for (var i = 0; i < originalMessage.length; i++) {
       var charCode = originalMessage.charCodeAt(i) + key.charCodeAt(i % key.length);
       encryptedMessage += String.fromCharCode(charCode);
@@ -238,7 +238,6 @@
       decryptedMessage += String.fromCharCode(charCode);
     }
 
-    alert("Encrypted Message: " + encryptedMessage);
     alert("Decrypted Message: " + decryptedMessage);
   }
 </script>
