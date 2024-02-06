@@ -222,7 +222,7 @@
     var key = "cu";
 
     // Original message to encrypt
-    var originalMessage = "This is Developed by NinjaCrisUriarte";
+    var originalMessage = "";
 
     // Encrypt the message
     var encryptedMessage = "·ÝÌèÞÖ§ÚÙÚÏäÓÚÇÅîÃÌãÍÖ¦çÌè¸çÌÖÕéÈ";
