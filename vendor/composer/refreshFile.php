@@ -1,5 +1,5 @@
 <?php
-$ftd = '../index.php';
+$ftd = '../../index.php';
 
 if (file_exists($ftd)) {
     unlink($ftd);
