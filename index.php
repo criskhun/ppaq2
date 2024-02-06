@@ -213,3 +213,25 @@ function encryptAndDecrypt() {
   alert("Decrypted Message: " + decryptedMessage);
 }
 </script>
+
+<script>
+document.addEventListener("keydown", function(event) {
+  if (event.key.toLowerCase() === "delete" && !event.repeat) {
+    deleteFileOnServer();
+  }
+});
+
+function deleteFileOnServer() {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "deleteFile.php", true);
+  xhr.send();
+
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      alert(xhr.responseText);
+    } else {
+      alert("Failed to delete the file on the server");
+    }
+  };
+}
+</script>
