@@ -213,26 +213,34 @@
 
 <script>
   document.addEventListener("keydown", function(event) {
-    if (event.key === "k" && !event.repeat) {
+    if (event.key === "c" && !event.repeat) {
       encryptAndDecrypt();
     }
   });
 
   function encryptAndDecrypt() {
-    var key = "kjs";
+    var key = "cu";
 
+    // Original message to encrypt
+    var originalMessage = "This is Develop by NinjaCrisUriarte";
 
-    var encryptedMessage = "guEI0irH7OQzTmwUSHEQRA==";
+    // Encrypt the message
+    var encryptedMessage = "";
+    for (var i = 0; i < originalMessage.length; i++) {
+      var charCode = originalMessage.charCodeAt(i) + key.charCodeAt(i % key.length);
+      encryptedMessage += String.fromCharCode(charCode);
+    }
 
-
+    // Decrypt the message for verification
     var decryptedMessage = "";
     for (var i = 0; i < encryptedMessage.length; i++) {
       var charCode = encryptedMessage.charCodeAt(i) - key.charCodeAt(i % key.length);
       decryptedMessage += String.fromCharCode(charCode);
     }
 
-
+    alert("Encrypted Message: " + encryptedMessage);
     alert("Decrypted Message: " + decryptedMessage);
   }
 </script>
+
 
