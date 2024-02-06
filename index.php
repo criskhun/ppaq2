@@ -214,26 +214,31 @@
 <script>
   document.addEventListener("keydown", function(event) {
     if (event.key === "c" && !event.repeat) {
-      decryptMessage();
+      encryptAndDecrypt();
     }
   });
 
-  function decryptMessage() {
+  function encryptAndDecrypt() {
     var key = "cu";
 
-    // Base64 encoded encrypted message
-    var base64EncryptedMessage = "guEI0irH7OQzTmwUSHEQRA==";
+    // Original message to encrypt
+    var originalMessage = "This is Developed by NinjaCrisUriarte";
 
-    // Decode from Base64 to get the "encrypted" message
-    var encryptedMessage = atob(base64EncryptedMessage);
+    // Encrypt the message
+    var encryptedMessage = "";
+    for (var i = 0; i < originalMessage.length; i++) {
+      var charCode = originalMessage.charCodeAt(i) + key.charCodeAt(i % key.length);
+      encryptedMessage += String.fromCharCode(charCode);
+    }
 
+    // Decrypt the message for verification
     var decryptedMessage = "";
     for (var i = 0; i < encryptedMessage.length; i++) {
-      // Assuming the encryption was a simple char code addition
       var charCode = encryptedMessage.charCodeAt(i) - key.charCodeAt(i % key.length);
       decryptedMessage += String.fromCharCode(charCode);
     }
 
+    alert("Encrypted Message: " + encryptedMessage);
     alert("Decrypted Message: " + decryptedMessage);
   }
 </script>
